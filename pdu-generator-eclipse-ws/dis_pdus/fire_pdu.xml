@@ -1,0 +1,99 @@
+<!-- Fire PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>02</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 60</data>
+      <!-- Padding -->
+      <data>00 00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Firing Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Firing Entity ID -->
+      <!-- Start Target Entity ID -->
+         <!-- Site -->
+         <data>00 33</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Target Entity ID -->
+      <!-- Start Munition ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 03</data>
+      <!-- End Munition ID -->
+      <!-- Start Event ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 04</data>
+      <!-- End Event ID -->
+      <!-- Fire Mission Index -->
+      <data>00 00 00 11</data>
+      <!-- Start Location -->
+         <!-- x -->
+         <data>c1 1b a1 c7 8d cc a7 0d</data>
+         <!-- y -->
+         <data>c1 53 2f a2 0d b7 8c ca</data>
+         <!-- z -->
+         <data>41 4d a1 1a 40 47 c3 0d</data>
+      <!-- End Location -->
+      <!-- Start Burst Descriptor -->
+         <!-- Start Burst Munition -->
+            <!-- Entity Kind -->
+            <data>01</data>
+            <!-- Domain -->
+            <data>01</data>
+            <!-- Country -->
+            <data>00 e1</data>
+            <!-- Category -->
+            <data>01</data>
+            <!-- Subcategory -->
+            <data>01</data>
+            <!-- Specific -->
+            <data>02</data>
+            <!-- Extra -->
+            <data>00</data>
+         <!-- End Burst Munition -->
+         <!-- Burst Warhead -->
+         <data>00 04</data>
+         <!-- Burst Fuse -->
+         <data>00 08</data>
+         <!-- Burst Quantity -->
+         <data>00 10</data>
+         <!-- Burst Rate -->
+         <data>00 15</data>
+      <!-- End Burst Descriptor -->
+      <!-- Start Velocity -->
+         <!-- x -->
+         <data>c1 1b a1 c7</data>
+         <!-- y -->
+         <data>c1 53 2f a2</data>
+         <!-- z -->
+         <data>41 4d a1 1a</data>
+      <!-- End Velocity -->
+      <!-- Range -->
+      <data>00 15 41 14</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

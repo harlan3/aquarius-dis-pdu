@@ -1,0 +1,67 @@
+<!-- Collision PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>04</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 3C</data>
+      <!-- Padding -->
+      <data>00 00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Issuing Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Issuing Entity ID -->
+      <!-- Start Colliding Entity ID -->
+         <!-- Site -->
+         <data>00 33</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Colliding Entity ID -->
+      <!-- Start Event ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 03</data>
+      <!-- End Event ID -->
+      <!-- Collision Type -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Start Velocity -->
+         <!-- x -->
+         <data>c1 1b a1 c7</data>
+         <!-- y -->
+         <data>c1 53 2f a2</data>
+         <!-- z -->
+         <data>41 4d a1 1a</data>
+      <!-- End Velocity -->
+      <!-- Mass -->
+      <data>00 00 00 11</data>
+      <!-- Start Location -->
+         <!-- x -->
+         <data>c1 1b a1 c7</data>
+         <!-- y -->
+         <data>c1 53 2f a2</data>
+         <!-- z -->
+         <data>41 4d a1 1a</data>
+      <!-- End Location -->
+   <!-- End DIS Payload -->
+</datagramPacket>

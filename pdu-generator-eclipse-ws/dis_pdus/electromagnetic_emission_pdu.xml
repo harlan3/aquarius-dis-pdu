@@ -1,0 +1,117 @@
+<!-- Electromagnetic Emission PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>17</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 6C</data>
+      <!-- Padding -->
+      <data>00 00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Emitting Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Emitting Entity ID -->
+      <!-- Begin Event ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Event Number -->
+         <data>00 02</data>
+      <!-- End Event ID -->
+      <!-- State Update Indicator -->
+      <data>01</data>
+      <!-- Number of Systems -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Begin Emission System Record -->
+         <!-- System Data Length -->
+         <data>01</data>
+         <!-- Number of Beams -->
+         <data>01</data>
+	 <!-- Padding -->
+         <data>00 00</data>
+         <!-- Begin Emitter System -->
+            <!-- Emitter Name -->
+            <data>00 02</data>
+            <!-- Function -->
+            <data>03</data>
+	    <!-- Emitter ID Number -->
+            <data>04</data>
+         <!-- End Emitter System -->
+         <!-- Begin Emitter Location -->
+            <!-- x -->
+            <data>11 22 33 44</data>
+            <!-- y -->
+            <data>55 66 77 88</data>
+	    <!-- z -->
+            <data>33 55 77 99</data>
+         <!-- End Emitter Location -->
+         <!-- Beam Data Length -->
+         <data>01</data>
+         <!-- Beam ID Number -->
+         <data>04</data>
+         <!-- Beam Parameter Index -->
+         <data>00 06</data>
+         <!-- Begin Fundamental Parameter Data -->
+            <!-- Frequency -->
+            <data>01 02 03 04</data>
+            <!-- Frequency Range -->
+            <data>01 02 03 04</data>
+            <!-- Effective Radiated Power -->
+            <data>04 05 06 07</data>
+            <!-- Pulse Repetition Frequency -->
+            <data>02 03 04 05</data>
+            <!-- Pulse Width -->
+            <data>01 22 33 44</data>
+            <!-- Beam Azimuth Center -->
+            <data>44 33 22 11</data>
+            <!-- Beam Azimuth Sweep -->
+            <data>22 33 11 66</data>
+            <!-- Beam Elevation Center -->
+            <data>55 44 33 22</data>
+            <!-- Beam Elevation Sweep -->
+            <data>77 22 11 44</data>
+            <!-- Beam Sweep Sync -->
+            <data>44 33 22 77</data>
+         <!-- End Fundamental Parameter Data -->
+         <!-- Beam Function -->
+         <data>03</data>
+         <!-- Number targets in Track/Jam Field -->
+         <data>01</data>
+         <!-- High Density Track/Jam -->
+         <data>00</data>
+         <!-- Padding -->
+         <data>00</data>
+         <!-- Jamming Mode Sequence -->
+         <data>00 00 00 00</data>
+         <!-- Begin Track/Jam -->
+            <!-- Site -->
+            <data>01 02</data>
+            <!-- Application -->
+            <data>03 04</data>
+            <!-- Entity -->
+            <data>05 06</data>
+            <!-- Emitter ID -->
+            <data>07</data>
+            <!-- Beam ID -->
+            <data>08</data>
+         <!-- End Track/Jam -->
+      <!-- End Emission System -->
+   <!-- End DIS Payload -->
+</datagramPacket>

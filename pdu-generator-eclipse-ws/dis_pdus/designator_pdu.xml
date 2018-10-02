@@ -1,0 +1,73 @@
+<!-- Designator PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>18</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 58</data>
+      <!-- Padding -->
+      <data>00 00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Designating Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Designating Entity ID -->
+      <!-- Code Name -->
+      <data>00 05</data>
+      <!-- Begin Designated Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Designated Entity ID -->
+      <!-- Designator Code -->
+      <data>11 22</data>
+      <!-- Designator Power -->
+      <data>11 22 33 44</data>
+      <!-- Designator Wavelength -->
+      <data>33 11 55 22</data>
+      <!-- Begin Designator Spot wrt Designated Entity -->
+         <!-- X Component -->
+         <data>11 22 33 44</data>
+         <!-- Y Component -->
+         <data>11 22 33 44</data>
+         <!-- Z Component -->
+         <data>11 22 33 44</data>
+      <!-- End Designator Spot wrt Designated Entity -->
+      <!-- Begin Designator Spot Location -->
+         <!-- X Component -->
+         <data>44 77 33 55 44 22 77 88</data>
+         <!-- Y Component -->
+         <data>33 11 33 44 33 55 77 22</data>
+         <!-- Z Component -->
+         <data>88 77 55 44 66 44 33 22</data>
+      <!-- End Designator Spot Location -->
+      <!-- Dead Reckoning Algorithm -->
+      <data>33</data>
+      <!-- Padding -->
+      <data>00 00 00</data>
+      <!-- Begin Entity Linear Acceleration -->
+         <!-- X Component -->
+         <data>04 05 06 07</data>
+         <!-- Y Component -->
+         <data>11 22 33 44</data>
+         <!-- Z Component -->
+         <data>03 01 02 03</data>
+      <!-- End Entity Linear Acceleration -->
+   <!-- End DIS Payload -->
+</datagramPacket>

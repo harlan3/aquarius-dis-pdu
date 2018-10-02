@@ -1,0 +1,61 @@
+<!-- Service Request PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>05</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 28</data>
+      <!-- Padding -->
+      <data>00 00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Requesting Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Requesting Entity ID -->
+      <!-- Servicing Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Servicing Entity ID -->
+      <!-- Service Type Requested -->
+      <data>01</data>
+      <!-- Number of Supply Types-->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Start Supplies -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+         <!-- Quantity -->
+         <data>00 11 22 33</data>
+      <!-- End Supplies -->
+   <!-- End DIS Payload -->
+</datagramPacket>
