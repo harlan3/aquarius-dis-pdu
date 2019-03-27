@@ -11,7 +11,7 @@ Aquarius DIS PDU Suite is licensed under the GNU GPL 3.0.
 
 Source code is available from the Git repository at the project's
 homepage:
-    https://github.com/harlan3/java-screen-recorder
+    https://github.com/harlan3/aquarius-dis-pdu
 
 Setup
 -----
