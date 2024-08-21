@@ -107,15 +107,18 @@ PDU Sequencer
 -------------
 PDU Sequencer generates a Composition XML file containing selected DIS PDUs
 for playback. The tool supports both dis_version_5 and dis_version_7, however
-the dis_versions cannot be mixed. DIS PDUs are drag and dropped into the 
-Composition Tree on top of the Message Group branch. Multiple Message
-Group branches can also be defined for organizational purposes. The 
-Composition Tree can be saved for use at a later time. The time between 
-PDUs can be modified under the Application Settings. Upon completion 
-of the DIS pdu sequence selection, the Generate Composition File button 
-can be pushed which generates the Sequence Composition file. This file 
-is then used by the PDU Generation - Sequence tab to send out the selected 
-DIS PDUs at the interval defined in the Application Settings of this tool.
+the dis_versions cannot be mixed. Note that it is an error to save a composition
+tree with one DIS version, and then load the composition tree with a
+different DIS version selected. This will result in an usuable composition file.
+DIS PDUs are drag and dropped into the Composition Tree on top of the Message
+Group branch. Multiple Message Group branches can also be defined for 
+organizational purposes. The Composition Tree can be saved for use at a 
+later time. The time between PDUs can be modified under the Application 
+Settings. Upon completion of the DIS pdu sequence selection, the Generate 
+Composition File button can be pushed which generates the Sequence Composition
+file. This file is then used by the PDU Generation - Sequence tab to send 
+out the selected DIS PDUs at the interval defined in the Application Settings 
+of this tool.
 
 Misc Tools
 ----------
