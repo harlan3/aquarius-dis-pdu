@@ -1,0 +1,100 @@
+<!-- Time Space Position Information PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>2e</data>
+      <!-- Family -->
+      <data>0b</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 37</data>
+      <!-- Subprotocol -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Live Entity ID -->
+         <!-- Site -->
+         <data>32</data>
+         <!-- Application -->
+         <data>01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Live Entity ID -->
+      <!-- Begin TSPI Flag -->
+      <data>56</data>
+      <!-- End TSPI Flag -->
+      <!-- Begin Entity Location -->
+         <!-- Reference Point -->
+         <data>00 01</data>
+         <!-- Delta X -->
+         <data>00 02</data>
+         <!-- Delta Y -->
+         <data>00 03</data>
+         <!-- Delta Z -->
+         <data>00 04</data>
+      <!-- End Entity Location -->
+      <!-- Begin Linear Velocity -->
+         <!-- X component -->
+         <data>00 05</data>
+         <!-- Y component -->
+         <data>00 06</data>
+         <!-- Y component -->
+         <data>00 07</data>
+      <!-- End Linear Velocity -->
+      <!-- Begin Entity Orientation -->
+         <!-- Psi component -->
+         <data>08</data>
+         <!-- Theta component -->
+         <data>09</data>
+         <!-- Phi component -->
+         <data>0a</data>
+      <!-- End Entity Orientation -->
+      <!-- Begin Position Error -->
+         <!-- Horizontal Error -->
+         <data>00 07</data>
+         <!-- Vertical Error -->
+         <data>00 08</data>
+      <!-- End Position Error -->
+      <!-- Begin Orientation Error -->
+         <!-- Azimuth Error -->
+         <data>00 09</data>
+         <!-- Elevation Error -->
+         <data>00 0a</data>
+         <!-- Rotation Error -->
+         <data>00 0b</data>
+      <!-- End Orientation Error -->
+      <!-- Begin Dead Reckoning Parameters -->
+         <!-- Dead Reckoning Algorithm -->
+         <data>0c</data>
+         <!-- Begin Entity Linear Acceleration -->
+            <!-- First -->
+            <data>2a</data>
+            <!-- Second -->
+            <data>2b</data>
+            <!-- Third -->
+            <data>2c</data>
+         <!-- End Entity Linear Acceleration -->
+         <!-- Begin Angular Velocity -->
+            <!-- First -->
+            <data>2a</data>
+            <!-- Second -->
+            <data>2b</data>
+            <!-- Third -->
+            <data>2c</data>
+        <!-- End Angular Velocity -->
+      <!-- End Dead Reckoning Parameters -->
+      <!-- Measured Speed -->
+      <data>00 2a</data>
+      <!-- System Specified Data Length -->
+      <data>01</data>
+      <!-- System Specified Data -->
+      <data>0a</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

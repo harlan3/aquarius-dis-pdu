@@ -1,0 +1,115 @@
+<!-- Transmitter PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>19</data>
+      <!-- Family -->
+      <data>04</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 72</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Radio Reference ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Host -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Radio Reference ID -->
+      <!-- Radio Number -->
+         <data>00 01</data>
+      <!-- Begin Radio Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>02</data>
+         <!-- Country -->
+         <data>00 03</data>
+         <!-- Category -->
+         <data>04</data>
+         <!-- Subcategory -->
+         <data>05</data>
+         <!-- Specific -->
+         <data>06</data>
+         <!-- Extra -->
+         <data>07</data>
+      <!-- End Radio Type -->
+      <!-- Transmit State -->
+      <data>0a</data>
+      <!-- Input Source -->
+      <data>0b</data>
+      <!-- Number Variable Transmitter Parameter Records -->
+      <data>00 01</data>
+      <!-- Begin Antenna Location -->
+         <!-- X Component -->
+         <data>44 77 33 55 44 22 77 88</data>
+         <!-- Y Component -->
+         <data>33 11 33 44 33 55 77 22</data>
+         <!-- Z Component -->
+         <data>88 77 55 44 66 44 33 22</data>
+      <!-- End Antenna Location -->
+      <!-- Begin Relative Antenna Location -->
+         <!-- X Component -->
+         <data>44 77 33 55</data>
+         <!-- Y Component -->
+         <data>33 11 33 44</data>
+         <!-- Z Component -->
+         <data>88 77 55 44</data>
+      <!-- End Relative Antenna Location -->
+      <!-- Antenna Pattern Type -->
+      <data>00 02</data>
+      <!-- Antenna Pattern Length -->
+      <data>00 06</data>
+      <!-- Frequency -->
+      <data>88 77 55 44 66 44 33 22</data>
+      <!-- Transmit Frequency Bandwidth -->
+      <data>88 77 55 44</data>
+      <!-- Power -->
+      <data>44 33 11 33</data>
+      <!-- Begin Modulation Type -->
+         <!-- Spread Spectrum -->
+         <data>44 33</data>
+         <!-- Major -->
+         <data>00 05</data>
+         <!-- Detail -->
+         <data>00 08</data>
+         <!-- Radio System -->
+         <data>00 35</data>
+      <!-- End Modulation Type -->
+      <!-- Crypto System -->
+      <data>11 22</data>
+      <!-- Crypto Key ID -->
+      <data>12 34</data>
+      <!-- Length of Modulation Parameters -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Modulation Parameters Record-->
+      <data>0a</data>
+      <!-- Antenna Patern Record-->
+      <data>0b</data>
+      <!-- Begin Variable Transmitter Parameters Record -->
+         <!-- Record Type -->
+         <data>00 00 00 0c</data>
+         <!-- Record Length -->
+         <data>00 01</data>
+         <!-- Record Specific Fields -->
+         <data>0c</data>
+         <!-- Padding -->
+         <data>00</data>
+      <!-- End Variable Transmitter Parameters Record -->
+   <!-- End DIS Payload -->
+</datagramPacket>

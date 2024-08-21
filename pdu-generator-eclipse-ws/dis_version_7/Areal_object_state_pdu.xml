@@ -1,0 +1,85 @@
+<!-- Areal Object State PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>2D</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 4C</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Object ID -->
+         <!-- Site Number -->
+         <data>00 11</data>
+         <!-- Application Number -->
+         <data>00 04</data>  
+         <!-- Object Number -->
+         <data>00 07</data>      
+      <!-- End Object ID -->
+      <!-- Begin Referenced Object ID -->
+          <!-- Site Number -->
+         <data>00 11</data>
+         <!-- Application Number -->
+         <data>00 04</data>  
+         <!-- Object Number -->
+         <data>00 07</data>   
+      <!-- End Referenced Object ID --> 
+      <!-- Update Number -->
+      <data>00 07</data> 
+      <!-- Force ID -->
+      <data>02</data>
+      <!-- Modifications -->
+      <data>04</data> 
+      <!-- Begin Object Type -->
+         <!-- Domain -->
+         <data>03</data> 
+         <!-- Kind -->
+         <data>02</data>
+         <!-- Category -->
+         <data>07</data> 
+         <!-- Subcategory -->
+         <data>08</data>  
+      <!-- End Object Type -->
+      <!-- Specific Object Appearance -->
+      <data>02 04 01 02</data>
+      <!-- General Object Appearance -->
+      <data>02 04</data>
+     <!-- Number Points -->
+      <data>00 01</data>
+         <!-- Begin Requester Simulation ID -->
+            <!-- Site Number -->
+            <data>00 11</data>
+            <!-- Application Number -->
+            <data>00 04</data>  
+            <!-- Object Number -->
+            <data>00 07</data>  
+        <!-- End Requester Simulation ID -->    
+        <!-- Begin Receiving Simulation ID -->
+            <!-- Site Number -->
+            <data>00 11</data>
+            <!-- Application Number -->
+            <data>00 04</data>  
+            <!-- Object Number -->
+            <data>00 07</data>  
+        <!-- End Receiving Simulation ID -->  
+        <!-- Point #1 -->
+            <!-- X Component -->
+            <data>10 40 A4 E7 90 30 00 11</data>
+            <!-- Y Component -->
+            <data>E7 90 30 00 11 45 E5 23</data> 
+            <!-- Z Component -->
+            <data>00 11 45 E5 23 E6 BC AE</data>
+        <!-- End Receiving Simulation ID --> 
+   <!-- End DIS Payload -->
+</datagramPacket>  

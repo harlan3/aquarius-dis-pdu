@@ -1,0 +1,53 @@
+<!-- Start Resume PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>0D</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 2C</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Originating Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Originating Entity ID -->
+      <!-- Begin Receiving Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Receiving Entity ID -->
+      <!-- Begin Real World Time -->
+         <!-- Hour -->
+         <data>00 00 00 04</data>
+         <!-- Time Past Hour -->
+         <data>00 00 00 05</data>
+      <!-- End Real World Time -->
+      <!-- Begin Simulation Time -->
+         <!-- Hour -->
+         <data>00 00 00 06</data>
+         <!-- Time Past Hour -->
+         <data>00 00 00 07</data>
+      <!-- End Simulation Time -->
+      <!-- Request ID -->
+      <data>00 00 00 08</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

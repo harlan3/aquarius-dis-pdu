@@ -1,0 +1,97 @@
+<!-- Minefield State PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>25</data>
+      <!-- Family -->
+      <data>08</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 58</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Minefield ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Minefield Number -->
+         <data>00 01</data>
+      <!-- End Minefield ID -->
+      <!-- Minefield Sequence Number -->
+      <data>00 32</data>
+      <!-- Force ID -->
+      <data>12</data>
+      <!-- Number of Perimeter Points -->
+      <data>01</data>
+      <!-- Start Mine Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Mine Type -->
+      <!-- Number of Mine Types -->
+      <data>00 01</data>
+      <!-- Start Minefield Location -->
+         <!-- X Component -->
+         <data>00 00 00 00 25 38 ee 40</data>
+         <!-- Y Component -->
+         <data>00 00 00 00 25 38 ee 40</data>
+         <!-- Z Component -->
+         <data>00 00 00 00 25 38 ee 40</data>
+      <!-- End Minefield Location -->
+      <!-- Start Mine Orientation -->
+         <!-- Psi -->
+         <data>25 38 ee 40</data>
+         <!-- Theta -->
+         <data>25 38 ee 40</data>
+         <!-- Phi -->
+         <data>25 38 ee 40</data>
+      <!-- End Mine Orientation -->
+      <!-- Appearance -->
+      <data>25 38</data>
+      <!-- Protocol Mode -->
+      <data>15 18</data>
+      <!-- Start Perimeter Point Coordinate #1 -->
+         <!-- X Component -->
+         <data>40 49 0f db</data>
+         <!-- Y Component -->
+         <data>40 49 0f db</data>
+      <!-- End Perimeter Point Coordinate #1 -->
+      <!-- Start Mine Type #1 -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Mine Type #1 -->
+   <!-- End DIS Payload -->
+</datagramPacket>

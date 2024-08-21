@@ -1,0 +1,67 @@
+<!-- Information Operations Report PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>47</data>
+      <!-- Family -->
+      <data>0D</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 2F</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Originating Simulation ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End Originating Simulation ID -->
+      <!-- IO Simulation Source -->
+      <data>00 60</data>      
+      <!-- IO Report Type -->
+      <data>60</data> 
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Start IO Attacker Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End IO Attacker Entity ID -->
+      <!-- Start Primary Target Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 11</data>
+         <!-- Reference -->
+         <data>00 23</data>
+      <!-- End Primary Target Entity ID -->
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Number of IO Records -->
+      <data>00 01</data>
+      <!-- Start IO Record -->
+         <!-- Record Type -->
+         <data>00 00 00 07</data>
+         <!-- Record Length -->
+         <data>00 01</data>
+         <!-- Record Specific Fields -->
+         <data>07</data>
+      <!-- End IO Record -->
+   <!-- End DIS Payload -->
+</datagramPacket>

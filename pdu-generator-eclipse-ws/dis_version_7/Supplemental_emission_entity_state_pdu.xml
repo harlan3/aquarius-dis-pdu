@@ -1,0 +1,53 @@
+<!-- Supplemental Emission Entity State PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>1e</data>
+      <!-- Family -->
+      <data>06</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 2C</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Originating Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity Number -->
+         <data>00 01</data>
+      <!-- End Originating ID -->
+      <!-- Infrared Signature Representation Index -->
+      <data>00 12</data>
+      <!-- Acoustic Signature Representation Index -->
+      <data>00 05</data>
+      <!-- Radar Cross-Section Signature Representation Index -->
+      <data>00 07</data>
+      <!-- Number of Propulsion Systems -->
+      <data>00 01</data>
+      <!-- Number of Vectoring Nozzle Systems -->
+      <data>00 01</data>
+      <!-- Begin Propulsion System Data -->
+         <!-- Power Setting -->
+         <data>40 49 0f db</data>
+         <!-- Engine RPM -->
+         <data>40 49 0f db</data>
+      <!-- End Propulsion System Data -->
+      <!-- Begin Vectoring Nozzle System Data -->
+         <!-- Horizontal Deflection Angle -->
+         <data>40 49 0f db</data>
+         <!-- Vertical Deflection Angle -->
+         <data>40 49 0f db</data>
+      <!-- End Vectoring Nozzle System Data -->      
+   <!-- End DIS Payload -->
+</datagramPacket>

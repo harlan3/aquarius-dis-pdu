@@ -1,0 +1,105 @@
+<!-- Gridded Data PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>2a</data>
+      <!-- Family -->
+      <data>09</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 60</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Environmental Simulation ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End Environmental Simulation ID -->
+      <!-- Field Number -->
+      <data>00 33</data>
+      <!-- PDU Number -->
+      <data>00 01</data>
+      <!-- PDU Total -->
+      <data>00 02</data>
+      <!-- Coordinate System -->
+      <data>00 32</data>
+      <!-- Number of Grid Axes -->
+      <data>01</data>
+      <!-- Constant Grid -->
+      <data>03</data>
+      <!-- Start Environment Type Record -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Environment Type Record -->
+      <!-- Start Orientation Record -->
+         <!-- Psi -->
+         <data>15 38 ee 60</data>
+         <!-- Theta -->
+         <data>35 38 ee 60</data>
+         <!-- Phi -->
+         <data>25 38 ee 60</data>
+      <!-- End Orientation Record -->
+      <!-- Sample Time -->
+      <data>25 38 ee 60 25 38 ee 60</data>
+      <!-- Total Values -->
+      <data>25 38 ee 60</data>
+      <!-- Vector Dimension -->
+      <data>25</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Start Grid Axis Descriptor Record -->
+         <!-- Domain Initial -->
+         <data>25 38 ee 60 25 38 ee 60</data>
+         <!-- Domain Final -->
+         <data>25 38 ee 60 25 38 ee 60</data>   
+         <!-- Domain Points -->
+         <data>00 00</data>
+         <!-- Interleaf Factor -->
+         <data>03</data>
+         <!-- Axis Type -->
+         <data>00</data>
+         <!-- Number of Points on Axis -->
+         <data>00 01</data>
+         <!-- Initial Index -->
+         <data>00 00</data>
+      <!-- End Grid Axis Descriptor Record -->
+      <!-- Start Grid Data Record -->
+         <!-- Sample Type -->
+         <data>00 04</data>    
+         <!-- Data Representation -->
+         <data>00 07</data>
+         <!-- Number Octets -->
+         <data>00 01</data>
+         <!-- Data Value -->
+         <data>03</data>
+         <!-- Padding -->
+         <data>00</data>
+      <!-- End Grid Data Record -->
+   <!-- End DIS Payload -->
+</datagramPacket>

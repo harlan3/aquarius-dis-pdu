@@ -1,0 +1,75 @@
+<!-- Minefield Query PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>26</data>
+      <!-- Family -->
+      <data>08</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 32</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Minefield ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Minefield Number -->
+         <data>00 01</data>
+      <!-- End Minefield ID -->
+      <!-- Start Requesting Simulation ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference Number -->
+         <data>00 01</data>
+      <!-- End Requesting Simulation ID -->
+      <!-- Request ID -->
+      <data>02</data>
+      <!-- Number of Perimeter Points -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Number of Sensor Types -->
+      <data>01</data>
+      <!-- Data Filter -->
+      <data>03 43 53 ae</data>
+      <!-- Start Requested Mine Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Requested Mine Type -->
+      <!-- Start Requested Permiter Point #1 -->
+         <!-- X component -->
+         <data>03 43 53 ae</data>
+         <!-- Y component -->
+         <data>40 49 0f db</data>
+      <!-- End Requested Permiter Point #1 -->
+      <!-- Start Sensor Type #1 -->
+         <!-- Minefield Sensor Type Record -->
+         <data>e5 c2</data>
+      <!-- End Sensor Type #1 -->
+   <!-- End DIS Payload -->
+</datagramPacket>

@@ -1,0 +1,97 @@
+<!-- Detonation PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>03</data>
+      <!-- Family -->
+      <data>02</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 78</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Source Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Source Entity ID -->
+      <!-- Begin Target Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Target Entity ID -->
+      <!-- Begin Exploding Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Exploding Entity ID -->
+      <!-- Begin Event ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Event ID -->
+      <!-- Begin Velocity -->
+         <!-- x -->
+         <data>b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e</data>
+         <!-- z -->
+         <data>39 05 0b f2</data>
+      <!-- End Velocity -->
+      <!-- Start Location in World Coordinates -->
+         <!-- x -->
+         <data>c1 1b a1 c7 8d cc a7 0d</data>
+         <!-- y -->
+         <data>c1 53 2f a2 0d b7 8c ca</data>
+         <!-- z -->
+         <data>41 4d a1 1a 40 47 c3 0d</data>
+      <!-- End Location in World Coordinates -->
+      <!-- Begin Descriptor -->
+         <!-- Entity Type Record -->
+         <data>00 00 00 00 00 00 00 0d</data>
+         <!-- Descriptor record fields -->
+         <data>00 00 00 00 00 00 00 0a</data>
+      <!-- End Descriptor -->
+      <!-- Begin Location in Entitys Coordinate -->
+         <!-- x -->
+         <data>b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e</data>
+         <!-- z -->
+         <data>39 05 0b f2</data>
+      <!-- End Location in Entitys Coordinate -->
+      <!-- Detonation Result -->
+      <data>22</data>
+      <!-- Number of Variable Parameter Records -->
+      <data>01</data>
+      <!-- Pading -->
+      <data>00 00</data>
+      <!-- Begin Parameter Record #1 -->
+         <!-- Record Type -->
+         <data>01</data>
+         <!-- Record-Specific fields -->
+         <data>00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c</data>
+      <!-- End Parameter Record #1 -->
+   <!-- End DIS Payload -->
+</datagramPacket>

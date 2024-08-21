@@ -7,12 +7,12 @@ rm -rf bin/*
 # Clean and compile source
 cd src
 find . -name "*.class" | xargs rm > /dev/null 2>&1
-javac -d ../bin orbisoftware/aquarius/pdu_generator/Main.java
+javac -d ../bin orbisoftware/aquarius/pdu_common/MainApplication.java
 cd ..
 
 # Create jar file
 cd bin
-echo "Main-Class: orbisoftware.aquarius.pdu_generator.Main" > tmp
+echo "Main-Class: orbisoftware.aquarius.pdu_common.MainApplication" > tmp
 jar cmf tmp ../pdu_generator.jar orbisoftware 
 rm tmp
 cd ..

@@ -1,0 +1,61 @@
+<!-- Event Report PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>15</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 39</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Originating Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End Originating Entity ID -->
+      <!-- Begin Receiving Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 02</data>
+      <!-- End Receiving Entity ID -->
+      <!-- Event Type -->
+      <data>00 00 00 03</data>
+      <!-- Padding -->
+      <data>00 00 00 00</data>
+      <!-- Number of Fixed Datum Records -->
+      <data>00 00 00 01</data>
+      <!-- Number of Variable Datum Records -->
+      <data>00 00 00 01</data>
+      <!-- Begin Fixed Datum #1 -->
+         <!-- Datum ID -->
+         <data>00 00 00 05</data>
+         <!-- Datum Value-->
+         <data>00 00 00 07</data>
+      <!-- End Fixed Datum #1 -->
+      <!-- Begin Variable Datum #1 -->
+         <!-- Datum ID -->
+         <data>00 00 00 06</data>
+         <!-- Datum Length -->
+         <data>00 00 00 09</data>
+         <!-- Datum Value -->
+         <data>05</data>
+      <!-- End Variable Datum #1 -->
+   <!-- End DIS Payload -->
+</datagramPacket>

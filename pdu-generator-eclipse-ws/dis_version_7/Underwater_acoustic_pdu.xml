@@ -1,0 +1,107 @@
+<!-- Underwater Acoustic PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>1d</data>
+      <!-- Family -->
+      <data>06</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 58</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Emitting Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Emitting Entity ID -->
+      <!-- Begin Event ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Event -->
+         <data>00 01</data>
+      <!-- End Event ID -->
+      <!-- State/Change Update Indicator -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Passive Parameter Index -->
+      <data>00 07</data>
+      <!-- Propulsion Plant Configuration -->
+      <data>02</data>
+      <!-- Number of Shafts -->
+      <data>01</data>
+      <!-- Number of Apas -->
+      <data>01</data>
+      <!-- Number of UA Emitter Systems -->
+      <data>01</data>
+      <!-- Current Shaft RPM -->
+      <data>10 11</data>   
+      <!-- Ordered Shaft RPM -->
+      <data>20 11</data>   
+      <!-- Shaft RPM Rate of Change -->
+      <data>15 38 ee 60</data>
+      <!-- Begin APA -->
+         <!-- APA Parameter Index -->
+         <data>00 01</data>
+         <!-- APA Value -->
+         <data>00 02</data>
+      <!-- End APA -->  
+      <!-- Emitter System Data Length -->
+      <data>01</data>
+      <!-- Number of Beams -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Begin Acoustic Emitter System -->
+         <!-- Acoustic System Name -->
+         <data>00 05</data>
+         <!-- Function -->
+         <data>06</data>
+         <!-- Acoustic ID Number -->
+         <data>07</data>
+      <!-- End Acoustic Emitter System -->   
+      <!-- Begin Location -->
+         <!-- Location X component -->
+         <data>15 38 ee 60</data>
+         <!-- Location Y component -->
+         <data>15 38 ee 60</data>
+         <!-- Location Z component -->
+         <data>15 38 ee 60</data>
+      <!-- End Location -->
+      <!-- Begin Emitter System -->
+         <!-- Beam Data Length -->
+         <data>01</data>
+         <!-- Beam ID Number -->
+         <data>06</data>
+         <!-- Padding -->
+         <data>00 00</data>
+         <!-- Begin Fundamental Data Parameters -->
+            <!-- Active Emission Parameter Index -->
+            <data>00 01</data>
+            <!-- Scan Pattern -->
+            <data>00 07</data>
+            <!-- Beam Center Azimuth -->
+            <data>40 49 0f db</data>
+            <!-- Azimuthal Beamwidth -->
+            <data>40 49 0f db</data>
+            <!-- Beam Center D/E -->
+            <data>40 49 0f db</data>
+            <!-- D/E Beamwidth -->
+            <data>40 49 0f db</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

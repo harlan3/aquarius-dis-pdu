@@ -1,0 +1,45 @@
+<!-- Signal PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>1A</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 24</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Radio Reference ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Radio Reference ID -->
+      <!-- Radio Number -->
+         <data>00 01</data>
+      <!-- Encoding Scheme -->
+         <data>00 02</data>
+      <!-- TDL Type -->
+         <data>00 03</data>
+      <!-- Sample Rate -->
+         <data>00 00 00 04</data>
+      <!-- Data Length -->
+         <data>00 20</data>
+      <!-- Samples -->
+         <data>00 01</data>
+      <!-- Data -->
+         <data>00 00 00 07</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

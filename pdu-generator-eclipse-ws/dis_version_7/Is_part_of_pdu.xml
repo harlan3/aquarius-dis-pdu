@@ -1,0 +1,75 @@
+<!-- Is Part of PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>24</data>
+      <!-- Family -->
+      <data>07</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 34</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Originating Simulation ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Originating Simulation ID -->
+      <!-- Start Receiving Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Receiving Entity ID -->
+      <!-- Start Relationship -->
+         <!-- Nature -->
+         <data>00 32</data>
+         <!-- Position -->
+         <data>00 01</data>
+      <!-- End Relationship -->
+      <!-- Start Part Location -->
+         <!-- Component A -->
+         <data>15 38 e3 60</data>
+         <!-- Component B -->
+         <data>15 11 ee 60</data>
+         <!-- Component C -->
+         <data>25 38 ee 60</data>
+      <!-- End Part Location -->
+      <!-- Start Named Location ID -->
+         <!-- Station Name -->
+         <data>00 04</data>
+         <!-- Station Number -->
+         <data>00 07</data>
+      <!-- End Named Location ID -->
+      <!-- Start Part Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Part Type -->
+   <!-- End DIS Payload -->
+</datagramPacket>

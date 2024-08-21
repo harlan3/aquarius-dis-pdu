@@ -1,0 +1,79 @@
+<!-- Information Operations Action PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>46</data>
+      <!-- Family -->
+      <data>0D</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 3F</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Originating Simulation ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End Originating Simulation ID -->
+      <!-- Start Receiving Simulation ID  -->
+         <!-- Site -->
+         <data>00 33</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 02</data>
+      <!-- End Receiving Simulation ID  -->
+      <!-- Request ID -->
+      <data>15 38 ee 60</data>
+      <!-- IO Warfare Type -->
+      <data>00 60</data>
+      <!-- IO Simulation Source -->
+      <data>00 43</data>
+      <!-- IO Action Type -->
+      <data>00 33</data>
+      <!-- IO Action Phase -->
+      <data>00 13</data>
+      <!-- Padding -->
+      <data>00 00 00 00</data>
+      <!-- Start IO Attacker Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Reference -->
+         <data>00 01</data>
+      <!-- End IO Attacker Entity ID -->
+      <!-- Start IO Primary Target Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 11</data>
+         <!-- Reference -->
+         <data>00 23</data>
+      <!-- End IO Primary Target Entity ID -->
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Number of IO Records -->
+      <data>00 01</data>
+      <!-- Start IO Record -->
+         <!-- Record Type -->
+         <data>00 00 00 07</data>
+         <!-- Record Length -->
+         <data>00 01</data>
+         <!-- Record Specific Fields -->
+         <data>07</data>
+      <!-- End IO Record -->
+   <!-- End DIS Payload -->
+</datagramPacket>

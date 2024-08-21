@@ -1,0 +1,49 @@
+<!-- Receiver PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>1B</data>
+      <!-- Family -->
+      <data>04</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 24</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Radio Reference ID -->
+         <!-- Site -->
+         <data>00 01</data>
+         <!-- Application -->
+         <data>00 02</data>
+         <!-- Entity -->
+         <data>00 03</data>
+      <!-- End Radio Reference ID -->
+      <!-- Radio Number -->
+         <data>00 04</data>
+      <!-- Receiver State -->
+         <data>00 05</data>
+      <!-- Padding -->
+         <data>00 00</data>
+      <!-- Received Power -->
+         <data>20 10 00 07</data>
+      <!-- Start Transmitter Radio Reference ID -->
+         <!-- Site -->
+         <data>00 08</data>
+         <!-- Application -->
+         <data>00 09</data>
+         <!-- Entity -->
+         <data>00 0A</data>
+      <!-- End Transmitter Entity ID -->
+      <!-- Transmitter Radio Number -->
+      <data>00 0B</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

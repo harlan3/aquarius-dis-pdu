@@ -1,0 +1,87 @@
+<!-- Appearance PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>2F</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 43</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Live Entity ID -->
+         <!-- Site -->
+         <data>32</data>
+         <!-- Application -->
+         <data>01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Live Entity ID -->
+      <!-- Appearance Flag-1 -->
+      <data>07</data>
+      <!-- Appearance Flag-2 -->
+      <data>05</data>
+      <!-- Force ID -->
+      <data>03</data>
+      <!-- Begin Entity Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Entity Type -->
+      <!-- Begin Alternate Entity Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Alternate Entity Type -->
+      <!-- Begin Entity Marking -->
+         <!-- Character Set -->
+         <data>05</data>
+         <!-- Data -->
+         <data>05 03 05 07 03 09 01 02 03 13 15</data>
+     <!-- End Entity Marking -->
+     <!-- Capabilities -->
+     <data>00 00 00 05</data>
+     <!-- Begin Appearance -->
+        <!-- Appearance Visual -->
+         <data>00 00 00 03</data>
+        <!-- Appearance IR -->
+         <data>00 00 00 07</data>       
+        <!-- Appearance EM -->
+         <data>00 00 00 09</data>
+        <!-- Appearance Audio -->
+         <data>00 00 00 12</data> 
+     <!-- End Appearance -->
+   <!-- End DIS Payload -->
+</datagramPacket>  

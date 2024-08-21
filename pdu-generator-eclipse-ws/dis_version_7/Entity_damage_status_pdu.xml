@@ -1,0 +1,45 @@
+<!-- Entity Damage Status PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>45</data>
+      <!-- Family -->
+      <data>02</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 1f</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Padding -->
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Damaged Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Damaged Entity ID -->
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Padding -->
+      <data>00 00</data>   
+      <!-- Number of Damage Description Records -->
+      <data>00 01</data>
+      <!-- Begin Damage Description Record #1 -->
+         <!-- Record Type -->
+         <data>00 00 00 03</data>
+         <!-- Record Length -->
+         <data>00 01</data>      
+         <!-- Record Specific fields -->
+         <data>05</data> 
+   <!-- End DIS Payload -->
+</datagramPacket>

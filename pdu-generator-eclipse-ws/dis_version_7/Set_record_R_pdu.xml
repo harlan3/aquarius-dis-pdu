@@ -1,0 +1,66 @@
+<!-- Set Record R PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>40</data>
+      <!-- Family -->
+      <data>0a</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 3c</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Originating ID -->
+         <!-- Site -->
+         <data>00 01</data>
+         <!-- Application -->
+         <data>00 02</data>
+         <!-- Reference Number -->
+         <data>00 03</data>
+      <!-- End Originating ID -->
+      <!-- Start Receiving ID -->
+         <!-- Site -->
+         <data>00 01</data>
+         <!-- Application -->
+         <data>00 02</data>
+         <!-- Reference Number -->
+         <data>00 03</data>
+      <!-- End Receiving ID -->
+      <!-- Request ID -->
+      <data>00 00 00 07</data>
+      <!-- Required Reliability Service -->
+      <data>03</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Padding -->
+      <data>00 00 00 00</data>
+      <!-- Number of Record Sets -->
+      <data>00 00 00 01</data>
+      <!-- Start Record Set -->
+         <!-- Record ID -->
+         <data>00 00 23 01</data>
+         <!-- Record Set Serial Number -->
+         <data>00 00 23 01</data>
+         <!-- Padding -->
+         <data>00 00 00 00</data>
+         <!-- Record Length -->
+         <data>00 14</data>
+         <!-- Record Count -->
+         <data>00 01</data>
+         <!-- Record Values -->
+         <data>00 0a</data>    
+         <!-- Padding -->
+         <data>00 00</data> 
+   <!-- End DIS Payload -->
+</datagramPacket>

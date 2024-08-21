@@ -1,0 +1,177 @@
+<!-- Aggregate State PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>21</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 C2</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Aggregate ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Aggregate -->
+         <data>00 02</data>
+      <!-- End Aggregate ID -->
+      <!-- Force ID -->
+      <data>01</data>
+      <!-- Aggregate State -->
+      <data>02</data>
+      <!-- Begin Aggregate Type -->
+         <!-- Aggregate Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Aggregate Type -->
+      <!-- Formulation -->
+      <data>00 00 00 02</data>
+      <!-- Begin Aggregate Marking -->
+         <!-- Character Set -->
+         <data>15</data>
+         <!-- Data -->
+         <data>41 4d a1 1a 40 47 c3 0d c1 1b a1 c7 8d cc a7 0d c1 1b a1</data>
+         <data>c7 8d cc a7 0d c1 53 2f a2 0d b7 8c</data>
+      <!-- End Aggregate Marking -->
+      <!-- Begin Dimensions -->
+         <!-- x -->
+         <data>b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e</data>
+         <!-- z -->
+         <data>39 05 0b f2</data>
+      <!-- End Dimensions -->
+      <!-- Begin Orientation -->
+         <!-- psi -->
+         <data>b7 e6 56 f4</data>
+         <!-- theta -->
+         <data>b8 d1 bc 2e</data>
+         <!-- phi -->
+         <data>39 05 0b f2</data>
+      <!-- End Orientation -->
+      <!-- Begin Center of Mass -->
+         <!-- x -->
+         <data>b7 e6 56 f4 b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e 41 4d a1 1a</data>
+         <!-- z -->
+         <data>39 05 0b f2 15 38 ee 60</data>
+      <!-- End Center of Mass -->
+      <!-- Begin Velocity -->
+         <!-- x -->
+         <data>b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e</data>
+         <!-- z -->
+         <data>39 05 0b f2</data>
+      <!-- End Velocity -->
+      <!-- Number Aggregate IDs -->
+      <data>00 01</data>
+      <!-- Number Entity IDs -->
+      <data>00 01</data>
+      <!-- Number Silent Aggregate Systems -->
+      <data>00 01</data>
+      <!-- Number Silent Entity Systems -->
+      <data>00 01</data>
+      <!-- Begin Aggregate ID -->
+         <!-- Site Number -->
+         <data>10 02</data>
+          <!-- Application Number -->
+         <data>10 15</data>        
+         <!-- Aggregate Number -->
+         <data>10 20</data>
+      <!-- End Aggregate ID -->  
+      <!-- Begin Entity ID -->
+         <!-- Site Number -->
+         <data>10 02</data>
+          <!-- Application Number -->
+         <data>10 15</data>        
+         <!-- Aggregate Number -->
+         <data>10 20</data>
+         <!-- Padding -->
+         <data>00 00</data>
+      <!-- End Entity ID -->
+      <!-- Begin Silent Aggregate System -->
+         <!-- Number Aggregates -->
+         <data>00 01</data>
+         <!-- Padding -->
+         <data>00 00</data>
+         <!-- Begin Aggregate Type -->
+            <!-- Aggregate Kind -->
+            <data>01</data>
+            <!-- Domain -->
+            <data>01</data>
+            <!-- Country -->
+            <data>00 e1</data>
+            <!-- Category -->
+            <data>01</data>
+            <!-- Subcategory -->
+            <data>01</data>
+            <!-- Specific -->
+            <data>02</data>
+            <!-- Extra -->
+            <data>00</data>
+         <!-- End Aggregate Type -->
+      <!-- End Silent Aggregate System -->
+      <!-- Begin Silent Entity System -->
+         <!-- Number Entities -->
+         <data>00 01</data>
+         <!-- Number Appearance Records -->
+         <data>00 01</data>
+         <!-- Begin Entity Type Record -->
+            <!-- Entity Kind -->
+            <data>01</data>
+            <!-- Domain -->
+            <data>01</data>
+            <!-- Country -->
+            <data>00 e1</data>
+            <!-- Category -->
+            <data>01</data>
+            <!-- Subcategory -->
+            <data>01</data>
+            <!-- Specific -->
+            <data>02</data>
+            <!-- Extra -->
+            <data>00</data>
+         <!-- End Entity Type Record -->
+         <!-- Begin Appearance Record -->
+         <data>b7 e6 56 f4</data>
+         <!-- End Appearance Record -->
+      <!-- End Silent Entity System -->
+      <!-- Number Variable Dataum Records -->
+      <data>00 00 00 01</data>
+      <!-- Begin Variable Datum Records -->
+         <!-- Variable Datum ID -->
+         <data>20 00 30 01</data>
+         <!-- Variable Datum Length -->
+         <data>00 00 00 08</data>
+         <!-- Variable Datum Value -->
+         <data>0A</data>
+         <!-- Padding -->
+         <data>00 00 00 00 00 00 00</data>
+      <!-- End Variable Dataum Records -->
+   <!-- End DIS Payload -->
+</datagramPacket>  

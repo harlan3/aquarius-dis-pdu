@@ -1,0 +1,91 @@
+<!-- Point Object State PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>2b</data>
+      <!-- Family -->
+      <data>09</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 58</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Object ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Object -->
+         <data>00 01</data>
+      <!-- End Object ID -->
+      <!-- Start Referenced Object ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Object -->
+         <data>00 01</data>
+      <!-- End Referenced Object ID -->
+      <!-- Update Number -->
+      <data>00 34</data>
+      <!-- Force ID -->
+      <data>04</data>
+      <!-- Modifications ID -->
+      <data>04</data>
+      <!-- Start Object Type -->
+         <!-- Domain -->
+         <data>32</data>
+         <!-- Object Kind -->
+         <data>12</data>
+         <!-- Category -->
+         <data>15</data>
+         <!-- Subcategory -->
+         <data>05</data>
+      <!-- End Object Type -->
+      <!-- Start Object Location --> 
+         <!-- X Component -->
+         <data>15 38 ee 60 15 38 ee 60</data>
+         <!-- Y Component -->
+         <data>15 38 ee 60 15 38 ee 60</data>    
+         <!-- Z Component -->
+         <data>15 38 ee 60 15 38 ee 60</data>  
+      <!-- End Object Location --> 
+      <!-- Start Object Orientation --> 
+         <!-- Psi Component -->
+         <data>15 38 ee 60</data>
+         <!-- Theta Component -->
+         <data>15 38 ee 60</data>    
+         <!-- Phi Component -->
+         <data>15 38 ee 60</data>  
+      <!-- End Object Location -->   
+      <!-- Specific Object Appearance -->
+      <data>15 38 ee 60</data>
+      <!-- General Object Appearance -->
+      <data>15 38</data>
+      <!-- Padding -->
+      <data>00 00</data>
+      <!-- Start Requester Simulation ID -->
+         <!-- Site Number -->
+         <data>00 01</data>
+         <!-- Application Number -->
+         <data>00 02</data>   
+      <!-- End Requester Simulation ID -->
+      <!-- Start Recieving Simulation ID -->
+         <!-- Site Number -->
+         <data>00 03</data>
+         <!-- Application Number -->
+         <data>00 04</data>   
+      <!-- End Recieving Simulation ID -->
+      <!-- Padding -->
+      <data>00 00 00 00</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

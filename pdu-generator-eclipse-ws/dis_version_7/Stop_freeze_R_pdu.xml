@@ -1,0 +1,55 @@
+<!-- Stop Freeze PDU -->
+<datagramPacket>
+   <!-- Begin DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>36</data>
+      <!-- Family -->
+      <data>0A</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 28</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Begin DIS Payload -->
+      <!-- Begin Originating ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Originating ID -->
+      <!-- Begin Receiving ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 02</data>
+      <!-- End Receiving ID -->
+      <!-- Begin Real World Time -->
+         <!-- Hour -->
+         <data>00 00 00 04</data>
+         <!-- Time Past Hour -->
+         <data>00 00 00 05</data>
+      <!-- End Real World Time -->
+      <!-- Reason -->
+      <data>02</data>
+      <!-- Frozen Behavior -->
+      <data>03</data>
+      <!-- Required Reliability Service -->
+      <data>04</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Request ID -->
+      <data>00 00 00 08</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

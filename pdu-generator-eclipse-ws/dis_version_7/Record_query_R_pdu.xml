@@ -1,0 +1,53 @@
+<!-- Record Query R PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>41</data>
+      <!-- Family -->
+      <data>0a</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 2C</data>
+      <!-- PDU Status -->
+      <data>02</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Originating ID -->
+         <!-- Site -->
+         <data>00 01</data>
+         <!-- Application -->
+         <data>00 02</data>
+         <!-- Reference Number -->
+         <data>00 03</data>
+      <!-- End Originating ID -->
+      <!-- Start Receiving ID -->
+         <!-- Site -->
+         <data>00 01</data>
+         <!-- Application -->
+         <data>00 02</data>
+         <!-- Reference Number -->
+         <data>00 03</data>
+      <!-- End Receiving ID -->
+      <!-- Request ID -->
+      <data>00 00 00 07</data>
+      <!-- Required Reliability Service -->
+      <data>03</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Event Type -->
+      <data>00 24</data>
+      <!-- Time -->
+      <data>00 00 00 0a</data>
+      <!-- Number of Records -->
+      <data>00 00 00 01</data>
+      <!-- Record ID #1 -->
+      <data>00 00 00 0b</data>
+   <!-- End DIS Payload -->
+</datagramPacket>

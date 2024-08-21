@@ -1,0 +1,135 @@
+<!-- Entity State PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>01</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 A0</data>
+      <!-- PDU Status -->
+      <data>00</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start Entity ID -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+         <!-- Entity -->
+         <data>00 01</data>
+      <!-- End Entity ID -->
+      <!-- Start Force ID -->
+         <!-- Force ID -->
+         <data>01</data>
+      <!-- End Force ID -->
+      <!-- Number of Variable Parameters -->
+         <data>01</data>
+      <!-- Start Entity Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Entity Type -->
+      <!-- Start Alternative (Guise) Entity Type -->
+         <!-- Entity Kind -->
+         <data>01</data>
+         <!-- Domain -->
+         <data>01</data>
+         <!-- Country -->
+         <data>00 e1</data>
+         <!-- Category -->
+         <data>01</data>
+         <!-- Subcategory -->
+         <data>01</data>
+         <!-- Specific -->
+         <data>02</data>
+         <!-- Extra -->
+         <data>00</data>
+      <!-- End Alternative (Guise) Entity Type -->
+      <!-- Start Entity Linear Velocity -->
+         <!-- x -->
+         <data>b7 e6 56 f4</data>
+         <!-- y -->
+         <data>b8 d1 bc 2e</data>
+         <!-- z -->
+         <data>39 05 0b f2</data>
+      <!-- End Entity Linear Velocity -->
+      <!-- Start Entity Location -->
+         <!-- x -->
+         <data>c1 1b a1 c7 8d cc a7 0d</data>
+         <!-- y -->
+         <data>c1 53 2f a2 0d b7 8c ca</data>
+         <!-- z -->
+         <data>41 4d a1 1a 40 47 c3 0d</data>
+      <!-- End Entity Location -->
+      <!-- Start Entity Orientation -->
+         <!-- psi -->
+         <data>40 1f 5c 28</data>
+         <!-- theta -->
+         <data>be da 9f be</data>
+         <!-- phi -->
+         <data>c0 09 99 99</data>
+      <!-- End Entity Orientation -->
+      <!-- Start Entity Appearance -->
+         <!-- Entity Appearance -->
+         <data>FF 40 00 00</data>
+      <!-- End Entity Appearance -->
+      <!-- Start Dead Reckoning Parameters -->
+         <!-- Dead Reckoning Algorithm -->
+         <data>02</data>
+         <!-- Other Parameters -->
+         <data>07 06 05 04 03 02 01 02 03 04 05 06 07 08 09></data>
+         <!-- Start Linear Acceleration -->
+            <!-- x -->
+            <data>be da 9f be</data>
+            <!-- y -->
+            <data>c0 09 99 99</data>
+            <!-- z -->
+            <data>40 1f 5c 28</data>
+         <!-- End Linear Acceleration -->
+         <!-- Start Angular Velocity -->
+            <!-- x -->
+            <data>b7 e6 56 f4</data>
+            <!-- y -->
+            <data>b8 d1 bc 2e</data>
+            <!-- z -->
+            <data>39 05 0b f2</data>
+         <!-- End Angular Velocity -->
+      <!-- End Dead Reckoning Parameters -->
+      <!-- Start Entity Marking -->
+         <!-- Character Set -->
+         <data>01</data>
+         <!-- Entity Marking -->
+         <data>41 42 43 00 00 00 00 00 00 00 00</data>
+      <!-- End Entity Marking -->
+      <!-- Start Capabilities -->
+         <!-- Capabilities -->
+         <data>01 00 00 00</data>
+      <!-- End Capabilities -->
+      <!-- Start Variable Parameter Record -->
+         <!-- Record Type -->
+         <data>01</data>
+         <!-- Record Specified Fields -->
+         <data>01 02 03 04 00 00 00 00 00 00 00 00 00 00 00></data>   
+     <!-- End Variable Parameter Record -->
+   <!-- End DIS Payload -->
+</datagramPacket>

@@ -57,6 +57,8 @@ struct Network_Device
 
 static int socket_desc = 0;
 static bool verbose_debug = 0;
+static int PCAP_SNAPLEN_MAX = 65535;
+static int max_packet_len = PCAP_SNAPLEN_MAX;
 
 static struct sockaddr_in source_sock_addr;
 static unsigned short source_port = 0;
@@ -66,6 +68,10 @@ static char *source_addr;
 static vector<UDP_Destination> destination_points;
 static vector<unsigned short> ignore_ports;
 static vector<Network_Device> network_devices;
+
+/* Data offset within raw ethernet frame */
+static const int DATA_OFFSET = sizeof(struct ether_header) + 
+   sizeof(struct iphdr) + sizeof(struct udphdr);
 
 void enumerate_devices()
 {
@@ -185,10 +191,17 @@ void create_socket()
         struct hostent *dest_host_info = gethostbyname(
                 destination_points[i].dest_addr);
 
+        if (!dest_host_info)
+        {
+            fprintf(stderr, "gethostbyname(%s) failed\n",
+                   destination_points[i].dest_addr);
+            exit(1);
+        }
+
         destination_points[i].dest_sock_addr.sin_family = AF_INET;
         destination_points[i].dest_sock_addr.sin_port = htons(
                 destination_points[i].dest_port);
-        strncpy((char *) &destination_points[i].dest_sock_addr.sin_addr,
+        memcpy((char *) &destination_points[i].dest_sock_addr.sin_addr,
                 (char *) dest_host_info->h_addr, dest_host_info->h_length);
 
         if (verbose_debug)
@@ -271,7 +284,8 @@ static void process_packet(u_char *x, const struct pcap_pkthdr *header,
             + sizeof(struct ether_header) + sizeof(struct iphdr));
 
     bool ignore_packet = false;
-
+    int bytes_sent;
+    
     /* Determine if the packet should be ignored */
     for (unsigned j = 0; j < ignore_ports.size(); j++)
     {
@@ -291,17 +305,11 @@ static void process_packet(u_char *x, const struct pcap_pkthdr *header,
     if (ignore_packet)
         return;
 
-    /* Calculate the data offset within raw ethernet frame */
-    int data_offset = sizeof(struct ether_header) + sizeof(struct iphdr)
-            + sizeof(struct udphdr);
-
-    int bytes_sent;
-
     /* Send UDP packet to each destination point */
     for (unsigned i = 0; i < destination_points.size(); i++)
     {
-        bytes_sent = sendto(socket_desc, (const char *) packet + data_offset,
-                header->len - data_offset, 0,
+        bytes_sent = sendto(socket_desc, (const char *) packet + DATA_OFFSET,
+                header->len - DATA_OFFSET, 0,
                 (struct sockaddr *) &destination_points[i].dest_sock_addr,
                 sizeof(destination_points[i].dest_sock_addr));
 
@@ -401,7 +409,7 @@ int main(int argc, char *argv[])
                 }
                 break;
 
-                /* Destination ip address and port */
+            /* Destination ip address and port */
             case 'd':
                 struct UDP_Destination udp_dest;
 
@@ -413,27 +421,28 @@ int main(int argc, char *argv[])
                 destination_points.push_back(udp_dest);
                 break;
 
-                /* bind reflector socket to a specific source port */
+            /* bind reflector socket to a specific source port */
             case 'b':
                 source_bind_port = atoi(&argv[1][3]);
                 break;
 
-                /* ignore all UDP trafic originating from a specific source port */
+            /* ignore all UDP trafic originating from a specific source port */
             case 'i':
                 ignore_ports.push_back(atoi(&argv[1][3]));
                 break;
 
-                /* enable verbose debugging */
+            /* enable verbose debugging */
             case 'v':
                 verbose_debug = true;
                 break;
 
+            /* list network devices */
             case 'l':
                 list_network_devices();
                 exit(0);
                 break;
 
-                /* show this help message */
+            /* show this help message */
             case 'h':
             default:
                 print_usage();
@@ -462,7 +471,7 @@ int main(int argc, char *argv[])
     }
 
     /* Open the session in promiscuous mode, with 1 ms read buffering/timeout */
-    pcap_handle = pcap_open_live(network_dev, 1536, 1, 1, errbuf);
+    pcap_handle = pcap_open_live(network_dev, max_packet_len, 1, 1, errbuf);
     if (pcap_handle == NULL)
     {
         fprintf(stderr, "Couldn't open device %s: %s\n", network_dev, errbuf);

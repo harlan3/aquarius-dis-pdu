@@ -1,0 +1,65 @@
+<!-- Attribute PDU -->
+<datagramPacket>
+   <!-- Start DIS Header -->
+      <!-- Version -->
+      <data>04</data>
+      <!-- Exercise -->
+      <data>01</data>
+      <!-- PDU Type -->
+      <data>48</data>
+      <!-- Family -->
+      <data>01</data>
+      <!-- Timestamp -->
+      <data>15 38 ee 60</data>
+      <!-- PDU Length -->
+      <data>00 30</data>
+      <!-- Subprotocol Number -->
+      <data>01</data>
+      <!-- Padding -->
+      <data>00</data>
+   <!-- End DIS Header -->
+   <!-- Start DIS Payload -->
+      <!-- Start OrigSimAddr -->
+         <!-- Site -->
+         <data>00 32</data>
+         <!-- Application -->
+         <data>00 01</data>
+      <!-- End OrigSimAddr -->
+      <!-- Padding -->
+      <data>00 00 00 00</data>
+      <!-- Padding -->
+      <data>00 00</data>      
+      <!-- Attribute Record PDU Type -->
+      <data>01</data>
+      <!-- Attribute Record Protocol Version -->
+      <data>02</data>
+      <!-- Master Attribute Record Type -->
+      <data>00 00 00 03</data>
+      <!-- Action Code -->
+      <data>04</data>
+      <!-- Padding -->
+      <data>00</data>
+      <!-- Number of Attribute Record Sets -->
+      <data>00 01</data>
+      <!-- Start Attribute Record Set -->
+         <!-- Entity / Object ID Site Number -->
+         <data>00 01</data>  
+         <!-- Entity / Object ID Application Number -->
+         <data>00 02</data> 
+         <!-- Entity / Object ID Number -->
+         <data>00 03</data> 
+         <!-- Number of Attribute Records -->
+         <data>00 01</data>
+            <!-- Start Attribute Record -->
+               <!-- Record Type -->
+               <data>00 00 00 03</data>
+               <!-- Record Length -->
+               <data>00 01</data>
+               <!-- Record Fields -->
+               <data>02</data>
+               <!-- Padding -->
+               <data>00</data>
+            <!-- End Attribute Record -->   
+      <!-- End Attribute Record Set -->
+   <!-- End DIS Payload -->
+</datagramPacket>
