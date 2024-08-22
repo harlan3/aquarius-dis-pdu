@@ -37,7 +37,7 @@ public class Detonation {
       ByteArrayInputStream byteArrayStream = new ByteArrayInputStream(packet.getData());
       DataInputStream din = new DataInputStream(byteArrayStream);
       Date date = new Date();
-      LoggerUtil.setPrettyPrintColumnWidth(20);
+      LoggerUtil.setPrettyPrintColumnWidth(30);
       
       byte pduType = 0;
       short length = 0;

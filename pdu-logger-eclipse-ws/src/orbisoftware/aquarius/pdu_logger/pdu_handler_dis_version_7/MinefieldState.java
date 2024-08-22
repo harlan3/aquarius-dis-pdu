@@ -39,7 +39,7 @@ public class MinefieldState {
       ByteArrayInputStream byteArrayStream = new ByteArrayInputStream(packet.getData());
       DataInputStream din = new DataInputStream(byteArrayStream);
       Date date = new Date();
-      LoggerUtil.setPrettyPrintColumnWidth(45);
+      LoggerUtil.setPrettyPrintColumnWidth(30);
 
       byte pduType = 0;
       byte family = 0;
