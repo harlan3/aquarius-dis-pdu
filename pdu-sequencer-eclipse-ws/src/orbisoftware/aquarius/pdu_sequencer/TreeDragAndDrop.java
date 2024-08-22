@@ -52,8 +52,8 @@ public class TreeDragAndDrop {
 		try {
 			FileOutputStream file = new FileOutputStream(selectedFile);
 			ObjectOutputStream out = new ObjectOutputStream(file);
-			int selectedDisVersion = Desktop.disVersionListComboBox.getSelectedIndex();
-			out.writeInt(selectedDisVersion);
+			String selectedDISString = (String) Desktop.disVersionListComboBox.getSelectedItem();
+			out.writeInt(selectedDISString.hashCode());
 			out.writeObject(jTree.getModel());
 			file.close();
 		} catch (Exception e) {
@@ -65,8 +65,12 @@ public class TreeDragAndDrop {
 		try {
 			FileInputStream file = new FileInputStream(selectedFile);
 			ObjectInputStream in = new ObjectInputStream(file);
-			int selectDisVersion = in.readInt();
-			Desktop.disVersionListComboBox.setSelectedIndex(selectDisVersion);
+			int embeddedDISHashCode = in.readInt();
+			for (int i=0; i < Desktop.disVersionListComboBox.getItemCount(); i++) {
+				String disVersionString = (String) Desktop.disVersionListComboBox.getItemAt(i);
+				if (disVersionString.hashCode() == embeddedDISHashCode)
+					Desktop.disVersionListComboBox.setSelectedIndex(i);
+			}
 			jTree.setModel((TreeModel) in.readObject());
 			file.close();
 		} catch (Exception e) {

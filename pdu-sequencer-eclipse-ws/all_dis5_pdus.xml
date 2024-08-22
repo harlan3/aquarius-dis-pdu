@@ -8,137 +8,137 @@
       <disPdu>
          <name>Acknowledge_pdu</name>
          <filePath>dis_version_5\Acknowledge_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Action_request_pdu</name>
          <filePath>dis_version_5\Action_request_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Action_response_pdu</name>
          <filePath>dis_version_5\Action_response_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Collision_pdu</name>
          <filePath>dis_version_5\Collision_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Comment_pdu</name>
          <filePath>dis_version_5\Comment_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Create_entity_pdu</name>
          <filePath>dis_version_5\Create_entity_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Data_pdu</name>
          <filePath>dis_version_5\Data_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Data_query_pdu</name>
          <filePath>dis_version_5\Data_query_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Designator_pdu</name>
          <filePath>dis_version_5\Designator_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Detonation_pdu</name>
          <filePath>dis_version_5\Detonation_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Electromagnetic_emission_pdu</name>
          <filePath>dis_version_5\Electromagnetic_emission_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Entity_state_pdu</name>
          <filePath>dis_version_5\Entity_state_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Event_report_pdu</name>
          <filePath>dis_version_5\Event_report_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Fire_pdu</name>
          <filePath>dis_version_5\Fire_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Receiver_pdu</name>
          <filePath>dis_version_5\Receiver_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Remove_entity_pdu</name>
          <filePath>dis_version_5\Remove_entity_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Repair_complete_pdu</name>
          <filePath>dis_version_5\Repair_complete_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Repair_response_pdu</name>
          <filePath>dis_version_5\Repair_response_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Resupply_cancel_pdu</name>
          <filePath>dis_version_5\Resupply_cancel_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Resupply_offer_pdu</name>
          <filePath>dis_version_5\Resupply_offer_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Resupply_received_pdu</name>
          <filePath>dis_version_5\Resupply_received_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Service_request_pdu</name>
          <filePath>dis_version_5\Service_request_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Set_data_pdu</name>
          <filePath>dis_version_5\Set_data_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Signal_pdu</name>
          <filePath>dis_version_5\Signal_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Start_resume_pdu</name>
          <filePath>dis_version_5\Start_resume_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Stop_freeze_pdu</name>
          <filePath>dis_version_5\Stop_freeze_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
          <name>Transmitter_pdu</name>
          <filePath>dis_version_5\Transmitter_pdu.xml</filePath>
-         <postDelayMilliseconds>5000</postDelayMilliseconds>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
    </messageGroup>
 

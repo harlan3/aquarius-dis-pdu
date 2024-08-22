@@ -2,6 +2,7 @@
 
 import sys
 import re
+import os
 import struct
 
 # This script writes out the binary manifest and pdu packet contents for PDU
@@ -110,16 +111,25 @@ def endHexPacketData(outputManifestFile):
    data = struct.pack(">h", packetSize)
    outputManifestFile.write(data)	
 
+def replace_extension(filename, new_extension):
+	
+   # Split the filename into the name and the current extension
+   name, _ = os.path.splitext(filename)
+   
+   # Add the new extension to the name
+   new_filename = name + new_extension
+   return new_filename
+    
 def parseLogFile(inputFileName):
     
    parserState = ParserState.NON_HEXPACKET_DATA
    packetCount = 0
    currentFilePos = 0
    
-   outputBinFileName = re.sub("\..*", ".bin", inputFileName)
-   outputManifestFileName = re.sub("\..*", ".man", inputFileName)
+   outputBinFileName = replace_extension(inputFileName, ".bin")
+   outputManifestFileName = replace_extension(inputFileName, ".man")
    
-   inputFile = open(inputFileName, "r", encoding="utf-16")
+   inputFile = open(inputFileName, "r", encoding="utf-8")
    outputManifestFile = open(outputManifestFileName,"wb")
    outputBinFile = open(outputBinFileName,"wb")
    
@@ -175,7 +185,7 @@ def parseLogFile(inputFileName):
 def main():
 
    if len(sys.argv) != 2:
-      print("Usage: create_player_file default_db.txt")
+      print("Usage: python create_playback_db.py default_db.txt")
       sys.exit()
    
    parseLogFile(sys.argv[1])
