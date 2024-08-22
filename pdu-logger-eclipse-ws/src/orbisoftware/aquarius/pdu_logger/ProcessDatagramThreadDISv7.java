@@ -228,6 +228,10 @@ public class ProcessDatagramThread extends Thread implements
                   EventReport.processPDU(packet, pduCounter);
                   break;
 
+               case Event_Report_R:
+                  EventReportR.processPDU(packet, pduCounter);
+                  break;
+                  
                case Fire:
                   Fire.processPDU(packet, pduCounter);
                   break;

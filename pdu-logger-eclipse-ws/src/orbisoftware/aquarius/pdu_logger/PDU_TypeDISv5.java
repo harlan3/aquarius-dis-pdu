@@ -21,10 +21,8 @@
 
 package orbisoftware.aquarius.pdu_logger;
 
-// Note that the uN messages are ordinal place holders representing 
-// undefined messages.
+//PDU types. Use config_DISv5.py and config_DISv7.py scripts to change current configuration.
 
-// DIS7 PDU_Type. Set current PDU_TypeDISv7 to "PDU_Type" for use of DIS7 in logger.
 public enum PDU_TypeDISv5 {
 
    Other_Log_All_PDU_Types(0), 

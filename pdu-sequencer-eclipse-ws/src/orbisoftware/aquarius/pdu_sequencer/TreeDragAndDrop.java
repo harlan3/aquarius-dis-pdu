@@ -162,8 +162,8 @@ public class TreeDragAndDrop {
 				treeModel.insertNodeInto(newNode, parentNode, childIndex);
 
 				// make the new node visible and scroll so that it's visible
-				jTree.makeVisible(path.pathByAddingChild(newNode));
-				jTree.scrollRectToVisible(jTree.getPathBounds(path.pathByAddingChild(newNode)));
+				//jTree.makeVisible(path.pathByAddingChild(newNode));
+				//jTree.scrollRectToVisible(jTree.getPathBounds(path.pathByAddingChild(newNode)));
 
 				return true;
 			}

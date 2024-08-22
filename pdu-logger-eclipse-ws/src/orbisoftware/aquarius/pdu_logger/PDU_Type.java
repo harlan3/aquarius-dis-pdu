@@ -21,11 +21,7 @@
 
 package orbisoftware.aquarius.pdu_logger;
 
-// Note that the uN messages are ordinal place holders representing 
-// undefined messages.
-
-//  PDU types. Set current PDU_Type to class and filename "PDU_Type.java" for use of DIS7 PDUs in logger.
-// Exclude the other DISv5 version of PDU types file from project.
+//  PDU types. Use config_DISv5.py and config_.py scripts to change current configuration.
 
 public enum PDU_Type {
 

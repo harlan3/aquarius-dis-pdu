@@ -16,8 +16,27 @@ Logging enabled for: Other_Log_All_PDU_Types
            requestID: 8
 
       PDU counter: 1
-Local packet time: 1724345670567
+Local packet time: 1724364565720
 0000 04 01 0F 01 15 38 EE 60 00 20 00 00 00 32 00 01 .....8.`. ...2..
+0010 00 01 00 32 00 01 00 02 00 02 00 03 00 00 00 08 ...2............
+
+             pduType: Acknowledge_R
+              family: 1
+              length: 32
+           pduStatus: 0
+       origEntIDSite: 50
+        origEntIDApp: 1
+        origEntIDRef: 1
+        recEntIDSite: 50
+         recEntIDApp: 1
+         recEntIDRef: 2
+             ackFlag: 2
+        responseFlag: 3
+           requestID: 8
+
+      PDU counter: 2
+Local packet time: 1724364566732
+0000 04 01 37 01 15 38 EE 60 00 20 00 00 00 32 00 01 ..7..8.`. ...2..
 0010 00 01 00 32 00 01 00 02 00 02 00 03 00 00 00 08 ...2............
 
                        pduType: Action_Request
@@ -40,8 +59,8 @@ Local packet time: 1724345670567
            variableDatumLength: 1
             variableDatumValue: 4
 
-      PDU counter: 2
-Local packet time: 1724345671573
+      PDU counter: 3
+Local packet time: 1724364567742
 0000 04 01 10 01 15 38 EE 60 00 3C 02 00 00 32 00 01 .....8.`.<...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 04 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 01 ................
@@ -68,8 +87,8 @@ Local packet time: 1724345671573
            variableDatumLength: 1
             variableDatumValue: 4
 
-      PDU counter: 3
-Local packet time: 1724345672576
+      PDU counter: 4
+Local packet time: 1724364568748
 0000 04 01 38 01 15 38 EE 60 00 44 02 00 00 32 00 01 ..8..8.`.D...2..
 0010 00 01 00 32 00 01 00 02 04 00 00 00 00 00 00 03 ...2............
 0020 00 00 00 04 00 00 00 00 00 00 00 01 00 00 00 01 ................
@@ -96,8 +115,8 @@ Local packet time: 1724345672576
            variableDatumLength: 1
             variableDatumValue: 4
 
-      PDU counter: 4
-Local packet time: 1724345673579
+      PDU counter: 5
+Local packet time: 1724364569762
 0000 04 01 11 01 15 38 EE 60 00 3C 02 00 00 32 00 01 .....8.`.<...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 04 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 01 ................
@@ -123,8 +142,8 @@ Local packet time: 1724345673579
            variableDatumLength: 1
             variableDatumValue: 4
 
-      PDU counter: 5
-Local packet time: 1724345674586
+      PDU counter: 6
+Local packet time: 1724364570771
 0000 04 01 39 01 15 38 EE 60 00 3C 02 00 00 32 00 01 ..9..8.`.<...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 04 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 01 ................
@@ -148,7 +167,7 @@ Local packet time: 1724345674586
                             aggTypeExtra: 0
                                formation: 2
                        aggMarkingCharSet: 21
-                          aggMarkingData: [B@76ee6dee
+                          aggMarkingData: [B@758e5692
                              dimensionsX: -2.7458627E-5
                              dimensionsY: -1.0000948E-4
                              dimensionsZ: 1.2688318E-4
@@ -218,15 +237,15 @@ Local packet time: 1724345674586
          altEntityTypeSpecific: 2
             altEntityTypeExtra: 0
              entityMarkCharSet: 5
-                entityMarkData: [B@22671264
+                entityMarkData: [B@79c9b7a3
                   capabilities: 00000000000000000000000000000101
               appearanceVisual: 00000000000000000000000000000011
                   appearanceIR: 00000000000000000000000000000111
                   appearanceEM: 00000000000000000000000000001001
                appearanceAudio: 00000000000000000000000000010010
 
-      PDU counter: 7
-Local packet time: 1724345676596
+      PDU counter: 8
+Local packet time: 1724364572784
 0000 04 01 2F 01 15 38 EE 60 00 43 02 00 32 01 00 02 ../..8.`.C..2...
 0010 07 05 03 01 01 00 E1 01 01 02 00 01 01 00 E1 01 ................
 0020 01 02 00 05 05 03 05 07 03 09 01 02 03 13 15 00 ................
@@ -261,8 +280,8 @@ Local packet time: 1724345676596
             pointNumYComponent: -1.0306014004607918E-230
             pointNumZComponent: 1.848500197684827E-225
 
-      PDU counter: 8
-Local packet time: 1724345677603
+      PDU counter: 9
+Local packet time: 1724364573788
 0000 04 01 2D 01 15 38 EE 60 00 4C 02 00 00 11 00 04 ..-..8.`.L......
 0010 00 07 00 11 00 04 00 07 00 07 02 04 03 02 07 08 ................
 0020 02 04 01 02 02 04 00 01 00 11 00 04 00 07 00 11 ................
@@ -280,8 +299,8 @@ Local packet time: 1724345677603
                 variableParamRec1RecType: -63
           variableParamRec1RecSpecFields: -63 83 47 -94 -63 83 47 -94 -63 83 47 -94 -63 83 34 
 
-      PDU counter: 9
-Local packet time: 1724345678611
+      PDU counter: 10
+Local packet time: 1724364574793
 0000 04 01 30 01 15 38 EE 60 00 21 01 00 32 04 00 07 ..0..8.`.!..2...
 0010 01 C1 C1 53 2F A2 C1 53 2F A2 C1 53 2F A2 C1 53 ...S/..S/..S/..S
 0020 22                                              "
@@ -306,8 +325,8 @@ Local packet time: 1724345678611
                  recSpecFields: 2
 
 
-      PDU counter: 10
-Local packet time: 1724345679617
+      PDU counter: 11
+Local packet time: 1724364575805
 0000 04 01 48 01 15 38 EE 60 00 30 01 00 00 32 00 01 ..H..8.`.0...2..
 0010 00 00 00 00 00 00 01 02 00 00 00 03 04 00 00 01 ................
 0020 00 01 00 02 00 03 00 01 00 00 00 03 00 01 02 00 ................
@@ -339,8 +358,8 @@ Local packet time: 1724345679617
  collisionIntermediateResultYZ: -9.726996
  collisionIntermediateResultZZ: -9.726996
 
-      PDU counter: 11
-Local packet time: 1724345680619
+      PDU counter: 12
+Local packet time: 1724364576817
 0000 04 01 42 01 15 38 EE 60 00 54 00 00 00 32 00 01 ..B..8.`.T...2..
 0010 00 01 00 33 00 01 00 02 00 32 00 01 00 03 00 00 ...3.....2......
 0020 C1 1B A1 C7 C1 53 2F A2 41 4D A1 1A 53 2F A2 11 .....S/.AM..S/..
@@ -370,8 +389,8 @@ Local packet time: 1724345680619
                      yLocation: -13.199129
                      zLocation: 12.851831
 
-      PDU counter: 12
-Local packet time: 1724345681627
+      PDU counter: 13
+Local packet time: 1724364577824
 0000 04 01 04 01 15 38 EE 60 00 3C 00 00 00 32 00 01 .....8.`.<...2..
 0010 00 01 00 33 00 01 00 02 00 32 00 01 00 03 01 00 ...3.....2......
 0020 C1 1B A1 C7 C1 53 2F A2 41 4D A1 1A 53 2F A2 11 .....S/.AM..S/..
@@ -393,8 +412,8 @@ Local packet time: 1724345681627
            variableDatumLength: 1
             variableDatumValue: 9
 
-      PDU counter: 13
-Local packet time: 1724345682637
+      PDU counter: 14
+Local packet time: 1724364578833
 0000 04 01 16 01 15 38 EE 60 00 29 00 00 00 32 00 01 .....8.`.)...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 00 00 00 00 01 ...2............
 0020 00 00 00 06 00 00 00 01 09                      .........
@@ -415,8 +434,8 @@ Local packet time: 1724345682637
            variableDatumLength: 1
             variableDatumValue: 9
 
-      PDU counter: 14
-Local packet time: 1724345683639
+      PDU counter: 15
+Local packet time: 1724364579841
 0000 04 01 3E 01 15 38 EE 60 00 29 00 00 00 32 00 01 ..>..8.`.)...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 00 00 00 00 01 ...2............
 0020 00 00 00 06 00 00 00 01 09                      .........
@@ -433,8 +452,8 @@ Local packet time: 1724345683639
             recIDRef: 2
            requestID: 24
 
-      PDU counter: 15
-Local packet time: 1724345684642
+      PDU counter: 16
+Local packet time: 1724364580847
 0000 04 01 0B 01 15 38 EE 60 00 1C 00 00 00 32 00 01 .....8.`.....2..
 0010 00 01 00 32 00 01 00 02 00 00 00 18             ...2........
 
@@ -451,8 +470,8 @@ Local packet time: 1724345684642
           reqRelServ: 2
            requestID: 24
 
-      PDU counter: 16
-Local packet time: 1724345685643
+      PDU counter: 17
+Local packet time: 1724364581854
 0000 04 01 33 01 15 38 EE 60 00 20 00 00 00 32 00 01 ..3..8.`. ...2..
 0010 00 01 00 32 00 01 00 02 02 00 00 00 00 00 00 18 ...2............
 
@@ -475,8 +494,8 @@ Local packet time: 1724345685643
            variableDatumLength: 1
             variableDatumValue: 7
 
-      PDU counter: 17
-Local packet time: 1724345686652
+      PDU counter: 18
+Local packet time: 1724364582860
 0000 04 01 14 01 15 38 EE 60 00 39 00 00 00 32 00 01 .....8.`.9...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 09 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 03 ................
@@ -499,8 +518,8 @@ Local packet time: 1724345686652
                   fixedDatumID: 5
                variableDatumID: 6
 
-      PDU counter: 18
-Local packet time: 1724345687659
+      PDU counter: 19
+Local packet time: 1724364583868
 0000 04 01 12 01 15 38 EE 60 00 30 00 00 00 32 00 01 .....8.`.0...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 04 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 06 ................
@@ -523,8 +542,8 @@ Local packet time: 1724345687659
                   fixedDatumID: 5
                variableDatumID: 6
 
-      PDU counter: 19
-Local packet time: 1724345688665
+      PDU counter: 20
+Local packet time: 1724364584871
 0000 04 01 3A 0A 15 38 EE 60 00 34 00 00 00 32 00 01 ..:..8.`.4...2..
 0010 00 01 00 32 00 01 00 02 02 00 00 00 00 00 00 03 ...2............
 0020 00 00 00 04 00 00 00 01 00 00 00 01 00 00 00 05 ................
@@ -550,8 +569,8 @@ Local packet time: 1724345688665
       variableDatumLength: 1
        variableDatumValue: 7
 
-      PDU counter: 20
-Local packet time: 1724345689669
+      PDU counter: 21
+Local packet time: 1724364585876
 0000 04 01 3C 0A 15 38 EE 60 00 39 00 00 00 32 00 01 ..<..8.`.9...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 05 00 00 00 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 03 ................
@@ -582,8 +601,8 @@ Local packet time: 1724345689669
             entityLinearAccelY: 1.2795344E-28
             entityLinearAccelZ: 3.7912E-37
 
-      PDU counter: 21
-Local packet time: 1724345690673
+      PDU counter: 22
+Local packet time: 1724364586883
 0000 04 01 18 01 15 38 EE 60 00 58 00 00 00 32 00 01 .....8.`.X...2..
 0010 00 01 00 05 00 32 00 01 00 01 11 22 11 22 33 44 .....2....."."3D
 0020 33 11 55 22 11 22 33 44 11 22 33 44 11 22 33 44 3.U"."3D."3D."3D
@@ -623,8 +642,8 @@ Local packet time: 1724345690673
                recordType: 1
      recordSpecificFields: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12
 
-      PDU counter: 22
-Local packet time: 1724345691680
+      PDU counter: 23
+Local packet time: 1724364587890
 0000 04 01 03 02 15 38 EE 60 00 78 00 00 00 32 00 01 .....8.`.x...2..
 0010 00 01 00 32 00 01 00 01 00 32 00 01 00 01 00 32 ...2.....2.....2
 0020 00 01 00 01 B7 E6 56 F4 B8 D1 BC 2E 39 05 0B F2 ......V.....9...
@@ -662,8 +681,8 @@ Local packet time: 1724345691680
                        recordLength: 1
                    recordSpecFields: 10
 
-      PDU counter: 23
-Local packet time: 1724345692687
+      PDU counter: 24
+Local packet time: 1724364588898
 0000 04 01 44 02 15 38 EE 60 00 5F 00 00 00 32 00 01 ..D..8.`._...2..
 0010 00 01 00 32 00 01 00 01 00 00 00 00 00 00 00 78 ...2...........x
 0020 15 38 EE 60 00 00 13 34 15 38 EE 60 B7 E6 56 F4 .8.`...4.8.`..V.
@@ -721,8 +740,8 @@ Local packet time: 1724345692687
                trackJamEmitter: 7
             trackJamBeamNumber: 8
 
-      PDU counter: 24
-Local packet time: 1724345693702
+      PDU counter: 25
+Local packet time: 1724364589904
 0000 04 01 17 01 15 38 EE 60 00 6C 00 00 00 32 00 01 .....8.`.l...2..
 0010 00 01 00 32 00 01 00 02 01 01 00 00 01 01 00 00 ...2............
 0020 00 02 03 04 11 22 33 44 55 66 77 88 33 55 77 99 ....."3DUfw.3Uw.
@@ -743,8 +762,8 @@ Local packet time: 1724345693702
                   recordLength: 1
               recordSpecFields: 5
 
-      PDU counter: 25
-Local packet time: 1724345694706
+      PDU counter: 26
+Local packet time: 1724364590907
 0000 04 01 45 02 15 38 EE 60 00 1F 00 00 00 32 00 01 ..E..8.`.....2..
 0010 00 01 00 00 00 00 00 01 00 00 00 03 00 01 05    ...............
 
@@ -795,8 +814,8 @@ Local packet time: 1724345694706
             variableParamRecordType: 1
    variableParamRecordRecSpecFields: 1 2 3 4 0 0 0 0 0 0 0 0 0 0 0 
 
-      PDU counter: 26
-Local packet time: 1724345695712
+      PDU counter: 27
+Local packet time: 1724364591913
 0000 04 01 01 01 15 38 EE 60 00 A0 00 00 00 32 00 01 .....8.`.....2..
 0010 00 01 01 01 01 01 00 E1 01 01 02 00 01 01 00 E1 ................
 0020 01 01 02 00 B7 E6 56 F4 B8 D1 BC 2E 39 05 0B F2 ......V.....9...
@@ -829,8 +848,8 @@ Local packet time: 1724345695712
             variableParamRecordType: 1
    variableParamRecordRecSpecFields: 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 
 
-      PDU counter: 27
-Local packet time: 1724345696715
+      PDU counter: 28
+Local packet time: 1724364592917
 0000 04 01 43 01 15 38 EE 60 00 58 00 00 00 32 00 01 ..C..8.`.X...2..
 0010 00 01 00 01 B7 E6 56 F4 B8 D1 BC 2E 39 05 0B F2 ......V.....9...
 0020 C1 1B A1 C7 8D CC A7 0D C1 53 2F A2 0D B7 8C CA .........S/.....
@@ -861,8 +880,8 @@ Local packet time: 1724345696715
                      envRecordIndex: 5
                  stateOrGeometryRec: 7
 
-      PDU counter: 28
-Local packet time: 1724345697720
+      PDU counter: 29
+Local packet time: 1724364593927
 0000 04 01 29 09 15 38 EE 60 00 29 00 00 00 32 00 01 ..)..8.`.)...2..
 0010 00 01 32 11 00 45 52 12 72 17 50 05 00 01 00 05 ..2..ER.r.P.....
 0020 00 00 00 04 00 01 05 00 07                      .........
@@ -886,12 +905,38 @@ Local packet time: 1724345697720
            variableDatumLength: 9
             variableDatumValue: 5
 
-      PDU counter: 29
-Local packet time: 1724345698726
+      PDU counter: 30
+Local packet time: 1724364594927
 0000 04 01 15 01 15 38 EE 60 00 39 00 00 00 32 00 01 .....8.`.9...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 00 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 07 ................
 0030 00 00 00 06 00 00 00 09 05                      .........
+
+                       pduType: Event_Report_R
+                        family: 10
+                        length: 57
+                     pduStatus: 0
+                    origIDSite: 50
+                     origIDApp: 1
+                     origIDRef: 1
+                     recIDSite: 50
+                      recIDApp: 1
+                      recIDRef: 2
+                     eventType: 3
+          numberFixedDatumRecs: 1
+       numberVariableDatumRecs: 1
+                  fixedDatumID: 5
+               fixedDatumValue: 7
+               variableDatumID: 6
+           variableDatumLength: 8
+            variableDatumValue: 5
+
+      PDU counter: 31
+Local packet time: 1724364595932
+0000 04 01 3D 0A 15 38 EE 60 00 39 00 00 00 32 00 01 ..=..8.`.9...2..
+0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 00 ...2............
+0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 07 ................
+0030 00 00 00 06 00 00 00 08 05                      .........
 
                        pduType: Fire
                         family: 1
@@ -929,8 +974,8 @@ Local packet time: 1724345698726
                      zVelocity: 12.851831
                          range: 1.951891E-39
 
-      PDU counter: 30
-Local packet time: 1724345699732
+      PDU counter: 32
+Local packet time: 1724364596937
 0000 04 01 02 01 15 38 EE 60 00 60 00 00 00 32 00 01 .....8.`.`...2..
 0010 00 01 00 33 00 01 00 02 00 32 00 01 00 03 00 32 ...3.....2.....2
 0020 00 01 00 04 00 00 00 11 C1 1B A1 C7 8D CC A7 0D ................
@@ -975,8 +1020,8 @@ Local packet time: 1724345699732
                gridDataRecNumOctets: 1
                gridDataRecDataValue: 3
 
-      PDU counter: 31
-Local packet time: 1724345700739
+      PDU counter: 33
+Local packet time: 1724364597945
 0000 04 01 2A 09 15 38 EE 60 00 60 00 00 00 32 00 01 ..*..8.`.`...2..
 0010 00 01 00 33 00 01 00 02 00 32 01 03 01 01 00 E1 ...3.....2......
 0020 01 01 02 00 15 38 EE 60 35 38 EE 60 25 38 EE 60 .....8.`58.`%8.`
@@ -1014,8 +1059,8 @@ Local packet time: 1724345700739
                  fodParm5: 9528
                  fodParm6: -4512
 
-      PDU counter: 31
-Local packet time: 1724345700740
+      PDU counter: 33
+Local packet time: 1724364597946
 0000 04 01 2A 09 15 38 EE 60 00 60 00 00 00 32 00 01 ..*..8.`.`...2..
 0010 00 01 00 33 00 01 00 02 00 32 01 03 01 01 00 E1 ...3.....2......
 0020 01 01 02 00 15 38 EE 60 35 38 EE 60 25 38 EE 60 .....8.`58.`%8.`
@@ -1053,8 +1098,8 @@ Local packet time: 1724345700740
                  fodParm5: 5
                  fodParm6: 6
 
-      PDU counter: 32
-Local packet time: 1724345701743
+      PDU counter: 34
+Local packet time: 1724364598950
 0000 04 01 1C 01 15 38 EE 60 00 3C 00 00 00 32 00 01 .....8.`.<...2..
 0010 00 01 00 32 00 01 00 02 B7 E6 56 F4 B8 D1 BC 2E ...2......V.....
 0020 39 05 0B F2 00 32 00 01 01 03 07 08 32 46 41 74 9....2......2FAt
@@ -1086,8 +1131,8 @@ Local packet time: 1724345701743
                        recordLength: 1
                    recordSpecFields: 7
 
-      PDU counter: 33
-Local packet time: 1724345702751
+      PDU counter: 35
+Local packet time: 1724364599958
 0000 04 01 46 0D 15 38 EE 60 00 3F 00 00 00 32 00 01 ..F..8.`.?...2..
 0010 00 01 00 33 00 01 00 02 15 38 EE 60 00 60 00 43 ...3.....8.`.`.C
 0020 00 33 00 13 00 00 00 00 00 32 00 01 00 01 00 32 .3.......2.....2
@@ -1113,8 +1158,8 @@ Local packet time: 1724345702751
                        recordLength: 1
                    recordSpecFields: 7
 
-      PDU counter: 34
-Local packet time: 1724345703758
+      PDU counter: 36
+Local packet time: 1724364600962
 0000 04 01 47 0D 15 38 EE 60 00 2F 00 00 00 32 00 01 ..G..8.`./...2..
 0010 00 01 00 60 60 00 00 32 00 01 00 01 00 32 00 11 ...``..2.....2..
 0020 00 23 00 00 00 00 00 01 00 00 00 07 00 01 07    .#.............
@@ -1143,8 +1188,8 @@ Local packet time: 1724345703758
           intercomParamsRecordLenth: 1
      intercomParamsRecordSpecFields: 7
 
-      PDU counter: 35
-Local packet time: 1724345704767
+      PDU counter: 37
+Local packet time: 1724364601970
 0000 04 01 20 04 15 38 EE 60 00 2D 00 00 60 10 00 32 .. ..8.`.-..`..2
 0010 00 01 00 01 00 05 03 05 04 09 00 32 00 01 00 01 ...........2....
 0020 00 03 00 03 00 00 00 01 00 32 00 01 07          .........2...
@@ -1164,8 +1209,8 @@ Local packet time: 1724345704767
                   samples: 1
                      data: 3
 
-      PDU counter: 36
-Local packet time: 1724345705773
+      PDU counter: 38
+Local packet time: 1724364602973
 0000 04 01 1F 04 15 38 EE 60 00 21 00 00 00 32 00 01 .....8.`.!...2..
 0010 00 01 00 2D 00 1D 01 1D 00 00 01 1D 00 01 00 01 ...-............
 0020 03                                              .
@@ -1184,8 +1229,8 @@ Local packet time: 1724345705773
                    groupRefPointLon: 5.2338881249779344E-139
                           gedRecord: 7
 
-      PDU counter: 37
-Local packet time: 1724345706780
+      PDU counter: 39
+Local packet time: 1724364603980
 0000 04 01 22 07 15 38 EE 60 00 29 00 00 00 32 00 01 .."..8.`.)...2..
 0010 00 01 2D 01 00 00 00 00 15 38 EE 60 00 44 43 12 ..-......8.`.DC.
 0020 23 38 EE 60 44 44 43 12 07                      #8.`DDC..
@@ -1215,8 +1260,8 @@ Local packet time: 1724345706780
                    partTypeSpecific: 2
                       partTypeExtra: 0
 
-      PDU counter: 38
-Local packet time: 1724345707784
+      PDU counter: 40
+Local packet time: 1724364604984
 0000 04 01 24 07 15 38 EE 60 00 34 00 00 00 32 00 01 ..$..8.`.4...2..
 0010 00 01 00 32 00 01 00 01 00 32 00 01 15 38 E3 60 ...2.....2...8.`
 0020 15 11 EE 60 25 38 EE 60 00 04 00 07 01 01 00 E1 ...`%8.`........
@@ -1258,8 +1303,8 @@ Local packet time: 1724345707784
                       segmentHeight: 2.6757873E32
                        segmentDepth: 3.1415927
 
-      PDU counter: 39
-Local packet time: 1724345708794
+      PDU counter: 41
+Local packet time: 1724364605985
 0000 04 01 2C 09 15 38 EE 60 00 68 02 00 00 32 00 01 ..,..8.`.h...2..
 0010 00 01 00 32 00 01 00 01 00 34 11 01 00 32 00 01 ...2.....4...2..
 0020 00 32 00 01 01 02 03 04 01 05 00 0A 00 00 00 0C .2..............
@@ -1312,8 +1357,8 @@ Local packet time: 1724345708794
                           locEntityCoordZComp: 3
                              detonationResult: 7
 
-      PDU counter: 40
-Local packet time: 1724345709799
+      PDU counter: 42
+Local packet time: 1724364606992
 0000 04 01 32 0B 15 38 EE 60 00 49 02 00 32 01 00 01 ..2..8.`.I..2...
 0010 CB 0A 32 01 00 01 32 01 00 01 32 01 00 01 00 32 ..2...2...2....2
 0020 00 04 00 06 00 07 00 05 00 07 00 09 00 05 00 07 ................
@@ -1357,8 +1402,8 @@ Local packet time: 1724345709799
                            velocityZComponent: 9
                                         range: 7
 
-      PDU counter: 41
-Local packet time: 1724345710804
+      PDU counter: 43
+Local packet time: 1724364607996
 0000 04 01 31 0B 15 38 EE 60 00 3D 02 00 32 01 00 01 ..1..8.`.=..2...
 0010 05 32 01 00 01 32 01 00 01 32 01 00 01 00 32 00 .2...2...2....2.
 0020 04 00 06 00 07 01 01 00 E1 01 01 02 00 00 07 00 ................
@@ -1412,8 +1457,8 @@ Local packet time: 1724345710804
                                   vertexYComp: 1.6040178E-16
                                   vertexZComp: 3.1415927
 
-      PDU counter: 42
-Local packet time: 1724345711811
+      PDU counter: 44
+Local packet time: 1724364609003
 0000 04 01 27 0B 15 38 EE 60 00 84 02 00 00 32 00 01 ..'..8.`.....2..
 0010 00 01 00 32 00 01 00 01 00 02 02 05 01 01 01 00 ...2............
 0020 00 00 00 40 01 01 00 E1 01 01 02 00 00 32 00 00 ...@.........2..
@@ -1449,8 +1494,8 @@ Local packet time: 1724345711811
                                    yComponent: 3.1415927
                                 sensorTypeCat: 1110010111000010
 
-      PDU counter: 43
-Local packet time: 1724345712818
+      PDU counter: 45
+Local packet time: 1724364610006
 0000 04 01 26 08 15 38 EE 60 00 32 02 00 00 32 00 01 ..&..8.`.2...2..
 0010 00 01 00 32 00 01 00 01 02 01 00 01 03 43 53 AE ...2.........CS.
 0020 01 01 00 E1 01 01 02 00 03 43 53 AE 40 49 0F DB .........CS.@I..
@@ -1470,8 +1515,8 @@ Local packet time: 1724345712818
       numberOfMissingPDUs: 1
        missingPDUSequence: 7
 
-      PDU counter: 44
-Local packet time: 1724345713826
+      PDU counter: 46
+Local packet time: 1724364611011
 0000 04 01 28 08 15 38 EE 60 00 1E 02 00 00 32 00 01 ..(..8.`.....2..
 0010 00 01 00 32 00 01 00 01 02 01 07 00 00 00       ...2..........
 
@@ -1511,8 +1556,8 @@ Local packet time: 1724345713826
            mineTypeNumSpecific: 2
               mineTypeNumExtra: 0
 
-      PDU counter: 45
-Local packet time: 1724345714829
+      PDU counter: 47
+Local packet time: 1724364612016
 0000 04 01 25 08 15 38 EE 60 00 58 02 00 00 32 00 01 ..%..8.`.X...2..
 0010 00 01 00 32 12 01 01 01 00 E1 01 01 02 00 00 01 ...2............
 0020 00 00 00 00 25 38 EE 40 00 00 00 00 25 38 EE 40 ....%8.@....%8.@
@@ -1547,8 +1592,8 @@ Local packet time: 1724345714829
                recSimIDSiteNum: 3
                 recSimIDAppNum: 4
 
-      PDU counter: 46
-Local packet time: 1724345715836
+      PDU counter: 48
+Local packet time: 1724364613020
 0000 04 01 2B 09 15 38 EE 60 00 58 02 00 00 32 00 01 ..+..8.`.X...2..
 0010 00 01 00 32 00 01 00 01 00 34 04 04 32 12 15 05 ...2.....4..2...
 0020 15 38 EE 60 15 38 EE 60 15 38 EE 60 15 38 EE 60 .8.`.8.`.8.`.8.`
@@ -1571,8 +1616,8 @@ Local packet time: 1724345715836
          transRadioRefIDRefNum: 10
                  transRadioNum: 11
 
-      PDU counter: 47
-Local packet time: 1724345716846
+      PDU counter: 49
+Local packet time: 1724364614026
 0000 04 01 1B 04 15 38 EE 60 00 24 02 00 00 01 00 02 .....8.`.$......
 0010 00 03 00 04 00 05 00 00 20 10 00 07 00 08 00 09 ........ .......
 0020 00 0A 00 0B                                     ....
@@ -1594,8 +1639,8 @@ Local packet time: 1724345716846
                     numRecords: 1
                       recordID: 11
 
-      PDU counter: 48
-Local packet time: 1724345717853
+      PDU counter: 50
+Local packet time: 1724364615032
 0000 04 01 41 0A 15 38 EE 60 00 2C 02 00 00 01 00 02 ..A..8.`.,......
 0010 00 03 00 01 00 02 00 03 00 00 00 07 03 00 00 24 ...............$
 0020 00 00 00 0A 00 00 00 01 00 00 00 0B             ............
@@ -1622,8 +1667,8 @@ Local packet time: 1724345717853
                    recordCount: 1
                   recordValues: 10
 
-      PDU counter: 49
-Local packet time: 1724345718855
+      PDU counter: 51
+Local packet time: 1724364616040
 0000 04 01 3F 0A 15 38 EE 60 00 3C 02 00 00 01 00 02 ..?..8.`.<......
 0010 00 03 00 01 00 02 00 03 00 00 00 07 03 00 00 24 ...............$
 0020 00 00 00 0A 00 00 00 01 00 00 23 01 00 00 23 01 ..........#...#.
@@ -1641,8 +1686,8 @@ Local packet time: 1724345718855
          recIDEntity: 2
            requestID: 24
 
-      PDU counter: 50
-Local packet time: 1724345719863
+      PDU counter: 52
+Local packet time: 1724364617043
 0000 04 01 0C 05 15 38 EE 60 00 1C 00 00 00 32 00 01 .....8.`.....2..
 0010 00 01 00 32 00 01 00 02 00 00 00 18             ...2........
 
@@ -1659,8 +1704,8 @@ Local packet time: 1724345719863
    requiredReliabilityServ: 40
            requestID: 24
 
-      PDU counter: 51
-Local packet time: 1724345720871
+      PDU counter: 53
+Local packet time: 1724364618048
 0000 04 01 34 0A 15 38 EE 60 00 20 00 00 00 32 00 01 ..4..8.`. ...2..
 0010 00 01 00 32 00 01 00 02 28 00 00 00 00 00 00 18 ...2....(.......
 
@@ -1676,8 +1721,8 @@ Local packet time: 1724345720871
             repairEntityIDEntityNum: 2
                              repair: 40
 
-      PDU counter: 52
-Local packet time: 1724345721879
+      PDU counter: 54
+Local packet time: 1724364619053
 0000 04 01 09 03 15 38 EE 60 00 1C 02 00 00 32 00 01 .....8.`.....2..
 0010 00 01 00 32 00 01 00 02 00 28 00 00             ...2.....(..
 
@@ -1693,8 +1738,8 @@ Local packet time: 1724345721879
         repairEntIDEntNum: 2
              repairResult: 40
 
-      PDU counter: 53
-Local packet time: 1724345722885
+      PDU counter: 55
+Local packet time: 1724364620062
 0000 04 01 0A 03 15 38 EE 60 00 1C 02 00 00 32 00 01 .....8.`.....2..
 0010 00 01 00 32 00 01 00 02 28 00 00 00             ...2....(...
 
@@ -1709,8 +1754,8 @@ Local packet time: 1724345722885
            supplyEntIDApp: 1
         supplyEntIDEntity: 2
 
-      PDU counter: 54
-Local packet time: 1724345723891
+      PDU counter: 56
+Local packet time: 1724364621071
 0000 04 01 08 03 15 38 EE 60 00 18 02 00 00 32 00 01 .....8.`.....2..
 0010 00 01 00 32 00 01 00 02                         ...2....
 
@@ -1735,8 +1780,8 @@ Local packet time: 1724345723891
               supplyExtra: 0
            supplyQuantity: 3.1415927
 
-      PDU counter: 55
-Local packet time: 1724345724899
+      PDU counter: 57
+Local packet time: 1724364622073
 0000 04 01 06 01 15 38 EE 60 00 28 02 00 00 32 00 01 .....8.`.(...2..
 0010 00 01 00 32 00 01 00 02 01 00 00 00 01 01 00 E1 ...2............
 0020 01 01 02 00 40 49 0F DB                         ....@I..
@@ -1762,8 +1807,8 @@ Local packet time: 1724345724899
                    supplyExtra: 0
                 supplyQuantity: 3.1415927
 
-      PDU counter: 56
-Local packet time: 1724345725900
+      PDU counter: 58
+Local packet time: 1724364623077
 0000 04 01 07 03 15 38 EE 60 00 28 02 00 00 32 00 01 .....8.`.(...2..
 0010 00 01 00 32 00 01 00 02 01 00 00 00 01 01 00 E1 ...2............
 0020 01 01 02 00 40 49 0F DB                         ....@I..
@@ -1790,8 +1835,8 @@ Local packet time: 1724345725900
                    supplyExtra: 0
                 supplyQuantity: 3.1415927
 
-      PDU counter: 57
-Local packet time: 1724345726903
+      PDU counter: 59
+Local packet time: 1724364624082
 0000 04 01 05 01 15 38 EE 60 00 28 02 00 00 32 00 01 .....8.`.(...2..
 0010 00 01 00 32 00 01 00 02 01 01 00 00 01 01 00 E1 ...2............
 0020 01 01 02 00 40 49 0F DB                         ....@I..
@@ -1815,8 +1860,8 @@ Local packet time: 1724345726903
            variableDatumLength: 32
             variableDatumValue: 10
 
-      PDU counter: 58
-Local packet time: 1724345727907
+      PDU counter: 60
+Local packet time: 1724364625083
 0000 04 01 13 01 15 38 EE 60 00 3C 02 00 00 32 00 01 .....8.`.<...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 03 00 00 00 00 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 07 ................
@@ -1842,8 +1887,8 @@ Local packet time: 1724345727907
            variableDatumLength: 32
             variableDatumValue: 10
 
-      PDU counter: 59
-Local packet time: 1724345728921
+      PDU counter: 61
+Local packet time: 1724364626092
 0000 04 01 3B 01 15 38 EE 60 00 3C 02 00 00 32 00 01 ..;..8.`.<...2..
 0010 00 01 00 32 00 01 00 02 03 00 00 00 00 00 00 07 ...2............
 0020 00 00 00 01 00 00 00 01 00 00 00 05 00 00 00 07 ................
@@ -1868,8 +1913,8 @@ Local packet time: 1724345728921
                    recordCount: 1
                   recordValues: 10
 
-      PDU counter: 60
-Local packet time: 1724345729927
+      PDU counter: 62
+Local packet time: 1724364627096
 0000 04 01 40 0A 15 38 EE 60 00 3C 02 00 00 01 00 02 ..@..8.`.<......
 0010 00 03 00 01 00 02 00 03 00 00 00 07 03 00 00 00 ................
 0020 00 00 00 00 00 00 00 01 00 00 23 01 00 00 23 01 ..........#...#.
@@ -1890,8 +1935,8 @@ Local packet time: 1724345729927
              samples: 1
                 data: 7
 
-      PDU counter: 61
-Local packet time: 1724345730935
+      PDU counter: 63
+Local packet time: 1724364628106
 0000 04 01 1A 01 15 38 EE 60 00 24 02 00 00 32 00 01 .....8.`.$...2..
 0010 00 01 00 01 00 02 00 03 00 00 00 04 00 20 00 01 ............. ..
 0020 00 00 00 07                                     ....
@@ -1912,8 +1957,8 @@ Local packet time: 1724345730935
  simTimeTimePastHour: 7
            requestID: 8
 
-      PDU counter: 62
-Local packet time: 1724345731946
+      PDU counter: 64
+Local packet time: 1724364629112
 0000 04 01 0D 01 15 38 EE 60 00 2C 02 00 00 32 00 01 .....8.`.,...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 04 00 00 00 05 ...2............
 0020 00 00 00 06 00 00 00 07 00 00 00 08             ............
@@ -1935,8 +1980,8 @@ Local packet time: 1724345731946
   reqReliabilityServ: 8
            requestID: 7
 
-      PDU counter: 63
-Local packet time: 1724345732955
+      PDU counter: 65
+Local packet time: 1724364630117
 0000 04 01 35 0A 15 38 EE 60 00 30 02 00 00 32 00 01 ..5..8.`.0...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 04 00 00 00 05 ...2............
 0020 00 00 00 06 00 00 00 07 08 00 00 00 00 00 00 07 ................
@@ -1957,8 +2002,8 @@ Local packet time: 1724345732955
       frozenBehavior: 3
            requestID: 8
 
-      PDU counter: 64
-Local packet time: 1724345733961
+      PDU counter: 66
+Local packet time: 1724364631122
 0000 04 01 0E 01 15 38 EE 60 00 28 02 00 00 32 00 01 .....8.`.(...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 04 00 00 00 05 ...2............
 0020 02 03 00 00 00 00 00 08                         ........
@@ -1980,8 +2025,8 @@ Local packet time: 1724345733961
   reqReliabilityServ: 4
            requestID: 8
 
-      PDU counter: 65
-Local packet time: 1724345734966
+      PDU counter: 67
+Local packet time: 1724364632129
 0000 04 01 36 0A 15 38 EE 60 00 28 02 00 00 32 00 01 ..6..8.`.(...2..
 0010 00 01 00 32 00 01 00 02 00 00 00 04 00 00 00 05 ...2............
 0020 02 03 04 00 00 00 00 08                         ........
@@ -2003,8 +2048,8 @@ Local packet time: 1724345734966
            horzDeflectionAngle: 3.1415927
            vertDeflectionAngle: 3.1415927
 
-      PDU counter: 66
-Local packet time: 1724345735969
+      PDU counter: 68
+Local packet time: 1724364633135
 0000 04 01 1E 06 15 38 EE 60 00 2C 02 00 00 32 00 01 .....8.`.,...2..
 0010 00 01 00 12 00 05 00 07 00 01 00 01 40 49 0F DB ............@I..
 0020 40 49 0F DB 40 49 0F DB 40 49 0F DB             @I..@I..@I..
@@ -2043,8 +2088,8 @@ Local packet time: 1724345735969
                           systemSpecificDataLength: 1
                                 systemSpecificData: 10
 
-      PDU counter: 67
-Local packet time: 1724345736979
+      PDU counter: 69
+Local packet time: 1724364634139
 0000 04 01 2E 0B 15 38 EE 60 00 37 02 00 32 01 00 01 .....8.`.7..2...
 0010 56 00 01 00 02 00 03 00 04 00 05 00 06 00 07 08 V...............
 0020 09 0A 00 07 00 08 00 09 00 0A 00 0B 0C 2A 2B 2C .............*+,
@@ -2073,8 +2118,8 @@ Local packet time: 1724345736979
                    recordCount: 1
                   recordValues: 10
 
-      PDU counter: 68
-Local packet time: 1724345737984
+      PDU counter: 70
+Local packet time: 1724364635149
 0000 04 01 23 07 15 38 EE 60 00 3C 02 00 00 01 00 02 ..#..8.`.<......
 0010 00 03 00 01 00 02 00 03 00 00 00 07 03 04 00 01 ................
 0020 00 02 00 03 00 00 00 01 00 00 23 01 00 00 23 01 ..........#...#.
@@ -2122,8 +2167,8 @@ Local packet time: 1724345737984
                   recordLength: 1
           recordSpecificFields: 12
 
-      PDU counter: 69
-Local packet time: 1724345738988
+      PDU counter: 71
+Local packet time: 1724364636155
 0000 04 01 19 04 15 38 EE 60 00 72 02 00 00 32 00 01 .....8.`.r...2..
 0010 00 01 00 01 01 02 00 03 04 05 06 07 0A 0B 00 01 ................
 0020 44 77 33 55 44 22 77 88 33 11 33 44 33 55 77 22 Dw3UD"w.3.3D3Uw"
@@ -2173,8 +2218,8 @@ Local packet time: 1724345738988
                     beamCenter: 3.1415927
                    deBeamwidth: 3.1415927
 
-      PDU counter: 70
-Local packet time: 1724345739996
+      PDU counter: 72
+Local packet time: 1724364637160
 0000 04 01 1D 06 15 38 EE 60 00 58 02 00 00 32 00 01 .....8.`.X...2..
 0010 00 01 00 32 00 01 00 01 01 00 00 07 02 01 01 01 ...2............
 0020 10 11 20 11 15 38 EE 60 00 01 00 02 01 01 00 00 .. ..8.`........

@@ -11,6 +11,11 @@
          <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
+         <name>Acknowledge_R_pdu</name>
+         <filePath>dis_version_7\Acknowledge_R_pdu.xml</filePath>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
+      </disPdu>
+      <disPdu>
          <name>Action_request_pdu</name>
          <filePath>dis_version_7\Action_request_pdu.xml</filePath>
          <postDelayMilliseconds>1000</postDelayMilliseconds>
@@ -148,6 +153,11 @@
       <disPdu>
          <name>Event_report_pdu</name>
          <filePath>dis_version_7\Event_report_pdu.xml</filePath>
+         <postDelayMilliseconds>1000</postDelayMilliseconds>
+      </disPdu>
+      <disPdu>
+         <name>Event_report_R_pdu</name>
+         <filePath>dis_version_7\Event_report_R_pdu.xml</filePath>
          <postDelayMilliseconds>1000</postDelayMilliseconds>
       </disPdu>
       <disPdu>
