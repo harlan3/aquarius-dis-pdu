@@ -57,7 +57,8 @@ public class Desktop {
 	private LoadDISPdus loadDISPdus = new LoadDISPdus();
 	private TreeDragAndDrop treeDragAndDrop = new TreeDragAndDrop();
 	private CompositionFile compositionFile = new CompositionFile();
-
+	public static JComboBox disVersionListComboBox;
+	
 	private JTree jTree = null;
 
 	private ArrayList<String> disVersions = new ArrayList<String>();
@@ -239,7 +240,7 @@ public class Desktop {
 		c.gridy = 2;
 		frame.add(listView, c);
 
-		JComboBox disVersionListComboBox = new JComboBox(disVersions.toArray());
+		disVersionListComboBox = new JComboBox(disVersions.toArray());
 		loadDISPdus.addActionListener(disVersionListComboBox, listModel);
 		loadDISPdus.loadDISPdus(listModel, disVersionListComboBox.getSelectedItem().toString());
 		disVersionListComboBox.addActionListener (new ActionListener () {
