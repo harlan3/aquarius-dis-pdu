@@ -73,7 +73,7 @@ simulation exercise containing multiple PDU producers, that was captured
 using PDU Logger.  These are the steps to generate a database and playback 
 a captured exercise.
 
-   1)  Use PDU logger to capture all simulation exercise PDUs <br />
+   1.  Use PDU logger to capture all simulation exercise PDUs <br />
        cd aquarius-dis-pdu <br />
        python config_DISv7.py <br />
        cd pdu-logger-eclipse-ws <br />
@@ -82,14 +82,14 @@ a captured exercise.
        when simulation is complete press ctrl-c <br />
        copy default_db.txt ..\pdu-generator-eclipse-ws\playback_db\ <br />
 
-   2)  Generate the PDU manifest file and binary database files. <br />
+   2.  Generate the PDU manifest file and binary database files. <br />
        cd pdu-generator-eclipse-ws\playback_db <br />
        python create_playback_db default_db.txt <br />
 
        This will generate the default_db.man manifest, and default_db.bin 
        database files.
 
-   3)  Start PDU Generator and select the Db Playback tab. Then use the file
+   3.  Start PDU Generator and select the Db Playback tab. Then use the file
        selector to choose the default_db.man file for playback. <br />
        cd pdu-generator-eclipse-ws <br />
        java -jar pdu_generator.jar <br />
