@@ -76,27 +76,27 @@ simulation exercise containing multiple PDU producers, that was captured
 using PDU Logger.  These are the steps to generate a database and playback 
 a captured exercise.
 
-   1)  Use PDU logger to capture all simulation exercise PDUs
-       cd aquarius-dis-pdu
-       python config_DISv7.py
-       cd pdu-logger-eclipse-ws
-       java -jar pdu_logger.jar -p 3000 > default_db.txt
-       start the simulation
-       when simulation is complete press ctrl-c
-       copy default_db.txt ..\pdu-generator-eclipse-ws\playback_db\
+   1)  Use PDU logger to capture all simulation exercise PDUs <br />
+       cd aquarius-dis-pdu <br />
+       python config_DISv7.py <br />
+       cd pdu-logger-eclipse-ws <br />
+       java -jar pdu_logger.jar -p 3000 > default_db.txt <br />
+       start the simulation <br />
+       when simulation is complete press ctrl-c <br />
+       copy default_db.txt ..\pdu-generator-eclipse-ws\playback_db\ <br />
 
-   2)  Generate the PDU manifest file and binary database files.
-       cd pdu-generator-eclipse-ws\playback_db
-       python create_playback_db default_db.txt
+   2)  Generate the PDU manifest file and binary database files. <br />
+       cd pdu-generator-eclipse-ws\playback_db <br />
+       python create_playback_db default_db.txt <br />
 
        This will generate the default_db.man manifest, and default_db.bin 
        database files.
 
    3)  Start PDU Generator and select the Db Playback tab. Then use the file
-       selector to choose the default_db.man file for playback.
-       cd pdu-generator-eclipse-ws
-       java -jar pdu_generator.jar
-       select the previously generated default_db.man file
+       selector to choose the default_db.man file for playback. <br />
+       cd pdu-generator-eclipse-ws <br />
+       java -jar pdu_generator.jar <br />
+       select the previously generated default_db.man file <br />
 
        The previously captured DIS PDUs are now played back. Note this 
        will include all of the PDUs that were visible on the configured
@@ -107,15 +107,18 @@ PDU Sequencer
 -------------
 PDU Sequencer generates a Composition XML file containing selected DIS PDUs
 for playback. The tool supports both dis_version_5 and dis_version_7, however
-the dis_versions cannot be mixed. DIS PDUs are drag and dropped into the 
-Composition Tree on top of the Message Group branch. Multiple Message
-Group branches can also be defined for organizational purposes. The 
-Composition Tree can be saved for use at a later time. The time between 
-PDUs can be modified under the Application Settings. Upon completion 
-of the DIS pdu sequence selection, the Generate Composition File button 
-can be pushed which generates the Sequence Composition file. This file 
-is then used by the PDU Generation - Sequence tab to send out the selected 
-DIS PDUs at the interval defined in the Application Settings of this tool.
+the dis_versions cannot be mixed. Note that it is an error to save a composition
+tree with one DIS version, and then load the composition tree with a
+different DIS version selected. This will result in an usuable composition file.
+DIS PDUs are drag and dropped into the Composition Tree on top of the Message
+Group branch. Multiple Message Group branches can also be defined for 
+organizational purposes. The Composition Tree can be saved for use at a 
+later time. The time between PDUs can be modified under the Application 
+Settings. Upon completion of the DIS pdu sequence selection, the Generate 
+Composition File button can be pushed which generates the Sequence Composition
+file. This file is then used by the PDU Generation - Sequence tab to send 
+out the selected DIS PDUs at the interval defined in the Application Settings 
+of this tool.
 
 Misc Tools
 ----------
