@@ -21,12 +21,6 @@
 
 package orbisoftware.aquarius.pdu_heartbeat_generator;
 
-import java.net.InetAddress;
-import java.net.InterfaceAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
-
 public class HeartbeatGeneratorData {
 
    private static HeartbeatGeneratorData instance = null;
@@ -36,7 +30,7 @@ public class HeartbeatGeneratorData {
    private int port = 3000;
 
    protected HeartbeatGeneratorData() {
-      findBroadcastAddress();
+      setDefaultIpAddress();
    }
 
    public static HeartbeatGeneratorData getInstance() {
@@ -91,35 +85,7 @@ public class HeartbeatGeneratorData {
       return port;
    }
 
-   private void findBroadcastAddress() {
-
-      Enumeration<NetworkInterface> interfaces;
-      InetAddress broadcast = null;
-      boolean foundAddress = false;
-
-      try {
-         interfaces = NetworkInterface.getNetworkInterfaces();
-
-         while (interfaces.hasMoreElements() && foundAddress == false) {
-            NetworkInterface networkInterface = interfaces.nextElement();
-            if (networkInterface.isLoopback())
-               continue;
-            for (InterfaceAddress interfaceAddress : networkInterface
-                  .getInterfaceAddresses()) {
-
-               broadcast = interfaceAddress.getBroadcast();
-               if (broadcast == null)
-                  continue;
-               else
-                  foundAddress = true;
-            }
-         }
-      } catch (SocketException e) {
-      }
-
-      if (broadcast != null)
-         ipAddress = broadcast.getHostAddress();
-      else
+   private void setDefaultIpAddress() {
          ipAddress = "127.0.0.1";
    }
 }

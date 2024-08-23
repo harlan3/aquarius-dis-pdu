@@ -21,12 +21,6 @@
 
 package orbisoftware.aquarius.pdu_playback_capture;
 
-import java.net.InetAddress;
-import java.net.InterfaceAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
-
 public class PlaybackCaptureData {
 
    private static PlaybackCaptureData instance = null;
@@ -36,7 +30,7 @@ public class PlaybackCaptureData {
    private int port = 0;
 
    protected PlaybackCaptureData() {
-      findBroadcastAddress();
+      setDefaultIpAddress();
       port = 3000;
    }
 
@@ -79,34 +73,7 @@ public class PlaybackCaptureData {
       return currentPDUnumber;
    }
 
-   private void findBroadcastAddress() {
-
-      Enumeration<NetworkInterface> interfaces;
-      InetAddress broadcast = null;
-      boolean foundAddress = false;
-
-      try {
-         interfaces = NetworkInterface.getNetworkInterfaces();
-
-         while (interfaces.hasMoreElements() && foundAddress == false) {
-            NetworkInterface networkInterface = interfaces.nextElement();
-            if (networkInterface.isLoopback())
-               continue;
-            for (InterfaceAddress interfaceAddress : networkInterface
-                  .getInterfaceAddresses()) {
-               broadcast = interfaceAddress.getBroadcast();
-               if (broadcast == null)
-                  continue;
-               else
-                  foundAddress = true;
-            }
-         }
-      } catch (SocketException e) {
-      }
-
-      if (broadcast != null)
-         ipAddress = broadcast.getHostAddress();
-      else
+   private void setDefaultIpAddress() {
          ipAddress = "127.0.0.1";
    }
 }
