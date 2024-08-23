@@ -4,6 +4,7 @@
 import shutil
 
 def copyfiles():
+    shutil.copyfile("./pdu-logger-eclipse-ws/log_filterDISv7.cfg", "./pdu-logger-eclipse-ws/log_filter.cfg")
     shutil.copyfile("./pdu-logger-eclipse-ws/src/orbisoftware/aquarius/pdu_logger/PDU_TypeDISv7.java", "pdu-logger-eclipse-ws/src/orbisoftware/aquarius/pdu_logger/PDU_Type.java")
     shutil.copyfile("./pdu-logger-eclipse-ws/src/orbisoftware/aquarius/pdu_logger/ProcessDatagramThreadDISv7.java", "pdu-logger-eclipse-ws/src/orbisoftware/aquarius/pdu_logger/ProcessDatagramThread.java")
 
