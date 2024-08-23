@@ -368,7 +368,7 @@ public class Desktop {
 		desktop.createMenuBar(frame);
 		desktop.createGUI(frame);
 		frame.setVisible(true);
-		frame.setSize(1024, 768);
+		frame.setSize(1300, 850);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
