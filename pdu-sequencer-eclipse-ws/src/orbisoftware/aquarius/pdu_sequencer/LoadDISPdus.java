@@ -30,6 +30,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 
 public class LoadDISPdus {
+	
+	private OSValidator osValidator = new OSValidator();
 
 	public void addActionListener(JComboBox loadMsgButton, DefaultListModel<String> listModel) {
 
@@ -59,6 +61,9 @@ public class LoadDISPdus {
 					disPdu.pduName = strTokens[strTokens.length - 1].replaceAll(".xml", "");
 					String filePath = pduFiles[i].toString();
 					filePath = filePath.replaceAll(".*pdu-generator-eclipse-ws.*dis_version", "dis_version");
+					// Use forward slash for paths in XML file
+					if (osValidator.isWindows())
+						filePath = filePath.replaceAll(Pattern.quote(File.separator), "/");
 					disPdu.filePath = filePath;
 					
 					SharedData.getInstance().disPdus.put(disPdu.pduName, disPdu);
