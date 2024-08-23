@@ -160,7 +160,7 @@ public class Desktop {
 				popupFrame.setLayout(new GridBagLayout());
 				GridBagConstraints c = new GridBagConstraints();
 		        
-		        JLabel label1 = new JLabel("Default interval between DIS PDUs (milliseconds):");
+		        JLabel label1 = new JLabel("Default interval between PDUs (ms):");
 		        label1.setHorizontalAlignment(JTextField.CENTER);
 				c.fill = GridBagConstraints.NONE;
 				c.weightx = 0.15;
