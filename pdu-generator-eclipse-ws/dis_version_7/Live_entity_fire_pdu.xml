@@ -8,7 +8,7 @@
       <!-- PDU Type -->
       <data>31</data>
       <!-- Family -->
-      <data>0B</data>
+      <data>0b</data>
       <!-- Timestamp -->
       <data>15 38 ee 60</data>
       <!-- PDU Length -->

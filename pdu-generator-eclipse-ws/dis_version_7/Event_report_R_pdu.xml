@@ -1,4 +1,4 @@
-<!-- Event Report PDU -->
+<!-- Event Report R PDU -->
 <datagramPacket>
    <!-- Begin DIS Header -->
       <!-- Version -->

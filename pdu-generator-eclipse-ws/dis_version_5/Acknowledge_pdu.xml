@@ -6,9 +6,9 @@
       <!-- Exercise -->
       <data>01</data>
       <!-- PDU Type -->
-      <data>0F</data>
+      <data>0f</data>
       <!-- Family -->
-      <data>01</data>
+      <data>05</data>
       <!-- Timestamp -->
       <data>15 38 ee 60</data>
       <!-- PDU Length -->

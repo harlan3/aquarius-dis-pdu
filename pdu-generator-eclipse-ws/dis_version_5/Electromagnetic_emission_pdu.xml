@@ -8,11 +8,11 @@
       <!-- PDU Type -->
       <data>17</data>
       <!-- Family -->
-      <data>01</data>
+      <data>06</data>
       <!-- Timestamp -->
       <data>15 38 ee 60</data>
       <!-- PDU Length -->
-      <data>00 6C</data>
+      <data>00 6c</data>
       <!-- Padding -->
       <data>00 00</data>
    <!-- End DIS Header -->
