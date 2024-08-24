@@ -40,6 +40,7 @@ public class Transmitter {
       LoggerUtil.setPrettyPrintColumnWidth(30);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short radioEntitySite = 0;
       short radioEntityApp = 0;
@@ -53,7 +54,6 @@ public class Transmitter {
       short radioEntityNomen = 0;
       byte transmitState = 0;
       byte inputSource = 0;
-      @SuppressWarnings("unused")
       short padding1 = 0;
       double antennaLocationX = 0.0;
       double antennaLocationY = 0.0;
@@ -73,9 +73,7 @@ public class Transmitter {
       short cryptoSystem = 0;
       short cryptoKeyID = 0;
       byte lengthOfModParams = 0;
-      @SuppressWarnings("unused")
       short padding2;
-      @SuppressWarnings("unused")
       byte padding3;
 
       try {
@@ -83,6 +81,7 @@ public class Transmitter {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -126,6 +125,7 @@ public class Transmitter {
          padding3 = din.readByte();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("radioEntitySite") + radioEntitySite);
          System.out.println(LoggerUtil.prettyPrintField("radioEntityApp") + radioEntityApp);
          System.out.println(LoggerUtil.prettyPrintField("radioEntityID") + radioEntityID);

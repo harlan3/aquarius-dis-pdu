@@ -40,6 +40,7 @@ public class ElectromagneticEmission {
       LoggerUtil.setPrettyPrintColumnWidth(30);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short emitEntIDSite = 0;
       short emitEntIDApp = 0;
@@ -49,11 +50,9 @@ public class ElectromagneticEmission {
       short eventIDEventNum = 0;
       byte stateUpdateIndicator = 0;
       byte numberOfSystems = 0;
-      @SuppressWarnings("unused")
       short padding1 = 0;
       byte systemDataLength = 0;
       byte numberOfBeams = 0;
-      @SuppressWarnings("unused")
       short padding2 = 0;
       short emitterName = 0;
       byte emitterFunction = 0;
@@ -77,7 +76,6 @@ public class ElectromagneticEmission {
       byte beamFunction = 0;
       byte numberTargetsInTrackJam = 0;
       byte highDensityTrackJam = 0;
-      @SuppressWarnings("unused")
       byte padding3 = 0;
       int jammingModeSequence = 0;
       short trackJamSite = 0;
@@ -91,6 +89,7 @@ public class ElectromagneticEmission {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -110,6 +109,7 @@ public class ElectromagneticEmission {
          padding1 = din.readShort();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("emitEntIDSite") + emitEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("emitEntIDApp") + emitEntIDApp);

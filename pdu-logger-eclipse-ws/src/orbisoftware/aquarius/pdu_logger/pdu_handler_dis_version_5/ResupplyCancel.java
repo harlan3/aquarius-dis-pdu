@@ -40,6 +40,7 @@ public class ResupplyCancel {
       LoggerUtil.setPrettyPrintColumnWidth(25);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short receiveEntIDSite = 0;
       short receiveEntIDApp = 0;
@@ -53,8 +54,9 @@ public class ResupplyCancel {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
-
+         
          din.skipBytes(8);
          length = din.readShort();
          din.reset();
@@ -69,6 +71,7 @@ public class ResupplyCancel {
          supplyEntIDEntity = din.readShort();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDSite") + receiveEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDApp") + receiveEntIDApp);

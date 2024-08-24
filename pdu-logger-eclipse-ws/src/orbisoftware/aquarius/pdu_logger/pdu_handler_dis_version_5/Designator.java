@@ -40,8 +40,8 @@ public class Designator {
       LoggerUtil.setPrettyPrintColumnWidth(30);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
-      @SuppressWarnings("unused")
       short padding0 = 0;
       short designatingEntitySite = 0;
       short designatingEntityApp = 0;
@@ -60,9 +60,7 @@ public class Designator {
       double designatorSpotLocY = 0.0;
       double designatorSpotLocZ = 0.0;
       byte deadReckonAlgorithm = 0;
-      @SuppressWarnings("unused")
       short padding1 = 0;
-      @SuppressWarnings("unused")
       byte padding2 = 0;
       float entityLinearAccelX = 0.0f;
       float entityLinearAccelY = 0.0f;
@@ -73,6 +71,7 @@ public class Designator {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -105,6 +104,7 @@ public class Designator {
          entityLinearAccelZ = din.readFloat();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("designatingEntitySite") + designatingEntitySite);
          System.out.println(LoggerUtil.prettyPrintField("designatingEntityApp") + designatingEntityApp);

@@ -40,6 +40,7 @@ public class Detonation {
       LoggerUtil.setPrettyPrintColumnWidth(30);
       
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short firingEntSite = 0;
       short firingEntApp = 0;
@@ -82,6 +83,7 @@ public class Detonation {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -127,6 +129,7 @@ public class Detonation {
          padding = din.readShort();
          
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("firingEntSite") + firingEntSite);
          System.out.println(LoggerUtil.prettyPrintField("firingEntApp") + firingEntApp);

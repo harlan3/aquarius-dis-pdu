@@ -40,6 +40,7 @@ public class RepairResponse {
       LoggerUtil.setPrettyPrintColumnWidth(25);
       
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short receiveEntIDSite = 0;
       short receiveEntIDApp = 0;
@@ -48,9 +49,7 @@ public class RepairResponse {
       short repairEntIDApp = 0;
       short repairEntIDEntity = 0;
       byte repairResult = 0;
-      @SuppressWarnings("unused")
       short padding1 = 0;
-      @SuppressWarnings("unused")
       byte padding2 = 0;
 
       try {
@@ -58,8 +57,9 @@ public class RepairResponse {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
-
+         
          din.skipBytes(8);
          length = din.readShort();
          din.reset();
@@ -77,6 +77,7 @@ public class RepairResponse {
          padding2 = din.readByte();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDSite") + receiveEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDApp") + receiveEntIDApp);

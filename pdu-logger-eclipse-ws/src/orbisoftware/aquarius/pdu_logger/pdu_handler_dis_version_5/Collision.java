@@ -40,6 +40,7 @@ public class Collision {
       LoggerUtil.setPrettyPrintColumnWidth(25);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short issuingEntIDSite = 0;
       short issuingEntIDApp = 0;
@@ -51,7 +52,6 @@ public class Collision {
       short eventIDApp = 0;
       short eventIDEventNum = 0;
       byte collisionType = 0;
-      @SuppressWarnings("unused")
       byte padding = 0;
       float xVelocity = 0.0f;
       float yVelocity = 0.0f;
@@ -66,6 +66,7 @@ public class Collision {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -94,6 +95,7 @@ public class Collision {
          zLocation = din.readFloat();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("issuingEntIDSite") + issuingEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("issuingEntIDApp") + issuingEntIDApp);

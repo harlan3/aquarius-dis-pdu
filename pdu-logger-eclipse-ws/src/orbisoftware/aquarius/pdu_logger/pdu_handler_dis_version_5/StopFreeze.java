@@ -40,6 +40,7 @@ public class StopFreeze {
       LoggerUtil.setPrettyPrintColumnWidth(20);
       
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short origEntIDSite = 0;
       short origEntIDApp = 0;
@@ -51,7 +52,6 @@ public class StopFreeze {
       int rwtTimePastHour = 0;
       byte reason = 0;
       byte frozenBehavior = 0;
-      @SuppressWarnings("unused")
       short padding = 0;
       int requestID = 0;
 
@@ -60,6 +60,7 @@ public class StopFreeze {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -82,6 +83,7 @@ public class StopFreeze {
          requestID = din.readInt();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("origEntIDSite") + origEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("origEntIDApp") + origEntIDApp);

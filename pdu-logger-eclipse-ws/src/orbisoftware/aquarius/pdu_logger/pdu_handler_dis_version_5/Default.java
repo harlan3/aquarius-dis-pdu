@@ -40,13 +40,15 @@ public class Default {
       LoggerUtil.setPrettyPrintColumnWidth(20);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
 
       try {
       	      
-      	 /* Start Message Header */
+         /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -54,8 +56,9 @@ public class Default {
          din.reset();
          /* End Message Header */
          
-         System.out.println(LoggerUtil.prettyPrintField("PDU Type") + PDU_Type.values()[pduType]);
-         System.out.println(LoggerUtil.prettyPrintField("PDU Length") + length);
+         System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
+         System.out.println(LoggerUtil.prettyPrintField("length") + length);
 
          /* Verify that the length defined in PDU matches what was received */
          if (length != packet.getLength()) {

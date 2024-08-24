@@ -40,6 +40,7 @@ public class EntityState {
       LoggerUtil.setPrettyPrintColumnWidth(30);
       
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short siteNum = 0;
       short appNum = 0;
@@ -89,6 +90,7 @@ public class EntityState {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -140,6 +142,7 @@ public class EntityState {
          capabilities = din.readInt();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("siteNum") + siteNum);
          System.out.println(LoggerUtil.prettyPrintField("appNum") + appNum);

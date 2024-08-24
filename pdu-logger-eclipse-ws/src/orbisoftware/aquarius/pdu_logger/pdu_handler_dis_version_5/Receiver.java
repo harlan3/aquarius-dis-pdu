@@ -40,13 +40,13 @@ public class Receiver {
       LoggerUtil.setPrettyPrintColumnWidth(30);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short site = 0;
       short application = 0;
       short entity = 0;
       short radioID = 0;
       short receiverState = 0;
-      @SuppressWarnings("unused")
       short padding = 0;
       float receivedPower = 0;
       short transEntityIDSite = 0;
@@ -59,6 +59,7 @@ public class Receiver {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -80,6 +81,7 @@ public class Receiver {
          transRadioID = din.readShort();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("site") + site);
          System.out.println(LoggerUtil.prettyPrintField("application") + application);

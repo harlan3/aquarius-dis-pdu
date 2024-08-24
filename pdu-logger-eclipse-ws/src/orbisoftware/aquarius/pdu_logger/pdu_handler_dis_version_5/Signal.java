@@ -40,6 +40,7 @@ public class Signal {
       LoggerUtil.setPrettyPrintColumnWidth(20);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short site = 0;
       short application = 0;
@@ -56,6 +57,7 @@ public class Signal {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -75,6 +77,7 @@ public class Signal {
          samples = din.readShort();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("site") + site);
          System.out.println(LoggerUtil.prettyPrintField("application") + application);

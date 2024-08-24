@@ -40,6 +40,7 @@ public class ServiceRequest {
       LoggerUtil.setPrettyPrintColumnWidth(30);
       
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short requestEntIDSite = 0;
       short requestEntIDApp = 0;
@@ -49,7 +50,6 @@ public class ServiceRequest {
       short serviceEntIDEntity = 0;
       byte serviceTypeReq = 0;
       byte numberSupplyTypes = 0;
-      @SuppressWarnings("unused")
       short padding = 0;
       byte supplyEntityKind = 0;
       byte supplyDomain = 0;
@@ -65,6 +65,7 @@ public class ServiceRequest {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -84,6 +85,7 @@ public class ServiceRequest {
          padding = din.readShort();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("requestEntIDSite") + requestEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("requestEntIDApp") + requestEntIDApp);

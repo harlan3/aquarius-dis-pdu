@@ -40,6 +40,7 @@ public class ResupplyOffer {
       LoggerUtil.setPrettyPrintColumnWidth(25);
 
       byte pduType = 0;
+      byte family = 0;
       short length = 0;
       short receiveEntIDSite = 0;
       short receiveEntIDApp = 0;
@@ -48,9 +49,7 @@ public class ResupplyOffer {
       short supplyEntIDApp = 0;
       short supplyEntIDEntity = 0;
       byte numberSupplyTypes = 0;
-      @SuppressWarnings("unused")
       short padding1 = 0;
-      @SuppressWarnings("unused")
       byte padding2 = 0;
       byte supplyEntityKind = 0;
       byte supplyDomain = 0;
@@ -66,6 +65,7 @@ public class ResupplyOffer {
          /* Start Message Header */
          din.skipBytes(2);
          pduType = din.readByte();
+         family = din.readByte();
          din.reset();
 
          din.skipBytes(8);
@@ -85,6 +85,7 @@ public class ResupplyOffer {
          padding2 = din.readByte();
 
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
+         System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDSite") + receiveEntIDSite);
          System.out.println(LoggerUtil.prettyPrintField("receiveEntIDApp") + receiveEntIDApp);
