@@ -116,6 +116,8 @@ which generates the Sequence Composition file. This file is then used by
 the PDU Generation - Sequence tab to send out the selected DIS PDUs at the 
 interval defined in the Application Settings of this tool.
 
+If you would like to use a customized set of PDUs containing modified fields, create a new folder and copy the modified xml files into aquarius-dis-pdu-master\pdu-generator-eclipse-ws\dis_version_xyz. All directories that start with “dis_version” will be available for selection by the pdu-generator and pdu-sequencer.
+
 Misc Tools
 ----------
 UDP Reflector - Reflect the udp packets on a source port to a mirrored 
