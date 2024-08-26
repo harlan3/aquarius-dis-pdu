@@ -185,7 +185,7 @@ public class Desktop {
 					public void actionPerformed(ActionEvent e) {
 						try {
 						SharedData.getInstance().delayBetweenMessages = Integer.parseInt(delayTextField.getText());
-						popupFrame.hide();
+						popupFrame.setVisible(false);
 						} catch (Exception ex) {
 						}
 					}
@@ -199,7 +199,7 @@ public class Desktop {
 		        
 		        // set the size of the frame
 				popupFrame.setSize(375, 200);
-		        popupFrame.show();
+		        popupFrame.setVisible(true);
 		        
 			}
 		});
