@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="orbisoftware/aquarius/dis_sim_map/DISLayer.java|orbisoftware/aquarius/dis_sim_map/DISMap.java|cmp/LEDataStream/|uk/ac/leeds/ccg/dbffile/|uk/ac/leeds/ccg/geotools/|uk/ac/leeds/ccg/geotools/misc/|uk/ac/leeds/ccg/geotools/projections/|uk/ac/leeds/ccg/shapefile/|uk/ac/leeds/ccg/widgets/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/geotools.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

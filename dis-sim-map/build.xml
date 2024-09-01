@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="Ant-Test" default="main" basedir=".">
+   <!-- Sets variables which can later be used. -->
+   <!-- The value of a property is accessed via ${} -->
+   <property name="src.dir" location="src" />
+   <property name="build.dir" location="bin" />
+   <property name="lib.dir" location="lib" />
+   <property name="dist.dir" location="dist" />
+   <property name="debuglevel" value="source,lines,vars"/>
+   
+   <!-- Deletes the existing docs, build and dist directory-->
+   <target name="clean">
+      <delete dir="${build.dir}" />
+      <delete dir="${dist.dir}" />
+   </target>
+   
+   <!-- Creates the docs, build and dist directory-->
+   <target name="makedir">
+      <mkdir dir="${build.dir}" />
+      <mkdir dir="${dist.dir}" />
+   </target>
+    
+   <!-- Compiles the java code -->
+   <target name="compile" depends="clean, makedir">
+      <javac srcdir="${src.dir}" destdir="${build.dir}" source="11" target="11" debuglevel="${debuglevel}">
+         <classpath>
+            <pathelement path="${lib.dir}/geotools.jar"/>
+         </classpath>
+      </javac>
+   </target>
+   
+   <!--Creates the deployable jar file  -->
+   <target name="jar" depends="compile">
+      <jar destfile="${dist.dir}\dis_sim_map.jar" basedir="${build.dir}">
+         <zipgroupfileset dir="${lib.dir}" includes="geotools.jar"/>
+         <manifest>
+            <attribute name="Main-Class" value="orbisoftware.aquarius.dis_sim_map.MainApplication"/>
+         </manifest>
+      </jar>
+   </target>
+   
+   <target name="main" depends="compile, jar">
+      <description>Main target</description>
+   </target>
+
+</project>
