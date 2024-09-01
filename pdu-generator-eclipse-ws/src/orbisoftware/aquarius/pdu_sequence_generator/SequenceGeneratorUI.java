@@ -294,11 +294,20 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
 
          pduSlider.setMinimum(1);
          pduSlider.setMaximum(numberSequencePDUs);
-         if (numberSequencePDUs < 10)
+         
+         if (numberSequencePDUs < 10) {
             pduSlider.setLabelTable(pduSlider.createStandardLabels(1));
-         else
+            pduSlider.setMajorTickSpacing(1);
+         } else if (numberSequencePDUs < 100) {
             pduSlider.setLabelTable(pduSlider.createStandardLabels(10));
-         pduSlider.setMajorTickSpacing(numberSequencePDUs / 4);
+            pduSlider.setMajorTickSpacing(10);
+         } else if (numberSequencePDUs < 1000) {
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(100));
+            pduSlider.setMajorTickSpacing(100);
+         } else if (numberSequencePDUs < 10000) {
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(1000));
+            pduSlider.setMajorTickSpacing(1000);
+         }
       }
    }
 

@@ -289,11 +289,20 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener, ItemLi
 
          pduSlider.setMinimum(1);
          pduSlider.setMaximum(numberPackets);
-         if (numberPackets < 10)
+         
+         if (numberPackets < 10) {
             pduSlider.setLabelTable(pduSlider.createStandardLabels(1));
-         else
+            pduSlider.setMajorTickSpacing(1);
+         } else if (numberPackets < 100) {
             pduSlider.setLabelTable(pduSlider.createStandardLabels(10));
-         pduSlider.setMajorTickSpacing(numberPackets / 4);
+            pduSlider.setMajorTickSpacing(10);
+         } else if (numberPackets < 1000) {
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(100));
+            pduSlider.setMajorTickSpacing(100);
+         } else if (numberPackets < 10000) {
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(1000));
+            pduSlider.setMajorTickSpacing(1000);
+         }
       }
    }
 
