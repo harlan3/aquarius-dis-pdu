@@ -24,13 +24,18 @@ package orbisoftware.aquarius.pdu_sequence_generator;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import orbisoftware.aquarius.pdu_playback_capture.SendDatagramPlaybackCaptureThread;
+
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -38,13 +43,14 @@ import javax.swing.JFileChooser;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
 
-public class SequenceGeneratorUI implements ActionListener, ChangeListener {
+public class SequenceGeneratorUI implements ActionListener, ChangeListener, ItemListener {
 
    private static SequenceGeneratorUI instance = null;
 
    private static Path currentWorkingDir = Paths.get("").toAbsolutePath().getParent();
    private static JTextField ipAddress = null;
    private static JTextField port = null;
+   private static JCheckBox loopPlayback = null;
    private static JButton fileSelectButton = null;
    private static JButton startButton = null;
    private static JButton stopButton = null;
@@ -103,16 +109,42 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
       c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(port, c);
+      
 
-      label = new JLabel("Sequence File Name:");
+
+      
+      
+      
+      
+      label = new JLabel("Loop Playback:");
       c.gridx = 0;
       c.gridy = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
-      fileSelectButton = new JButton("File Select");
+      loopPlayback = new JCheckBox();
+      loopPlayback.setText("Enabled");
       c.gridx = 1;
       c.gridy = 2;
+      c.insets = new Insets(20, 10, 0, 10);
+      pane.add(loopPlayback, c);
+      loopPlayback.addItemListener(this);
+      
+      
+      
+      
+      
+      
+
+      label = new JLabel("Sequence File Name:");
+      c.gridx = 0;
+      c.gridy = 3;
+      c.insets = new Insets(20, 10, 0, 10);
+      pane.add(label, c);
+
+      fileSelectButton = new JButton("File Select");
+      c.gridx = 1;
+      c.gridy = 3;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileSelectButton, c);
       fileSelectButton.setEnabled(true);
@@ -124,14 +156,14 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
             System.getProperty("file.separator") + "pdu-sequencer-eclipse-ws");
 
       c.gridx = 0;
-      c.gridy = 3;
+      c.gridy = 4;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileName, c);
 
       startButton = new JButton("Start");
       c.gridx = 0;
-      c.gridy = 4;
+      c.gridy = 5;
       c.gridwidth = 1;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(startButton, c);
@@ -140,7 +172,7 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
 
       stopButton = new JButton("Stop");
       c.gridx = 1;
-      c.gridy = 4;
+      c.gridy = 5;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(stopButton, c);
       stopButton.setEnabled(false);
@@ -148,25 +180,25 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
 
       label = new JLabel("Current PDU:");
       c.gridx = 0;
-      c.gridy = 5;
+      c.gridy = 6;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       currentPDULabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 5;
+      c.gridy = 6;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(currentPDULabel, c);
 
       label = new JLabel("Elapsed Time:");
       c.gridx = 0;
-      c.gridy = 6;
+      c.gridy = 7;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       elapsedTimeLabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 6;
+      c.gridy = 7;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(elapsedTimeLabel, c);
 
@@ -175,7 +207,7 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
       pduSlider.setPaintLabels(true);
       pduSlider.setValue(0);
       c.gridx = 0;
-      c.gridy = 7;
+      c.gridy = 8;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(pduSlider, c);
@@ -204,6 +236,12 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
       addComponentsToPane(panel);
       
       return panel;
+   }
+   
+   public void resetStartingDisplay() {
+      
+      currentPDULabel.setText(Integer.toString(1));
+      elapsedTimeLabel.setText(Integer.toString(0));
    }
 
    public void actionPerformed(ActionEvent e) {
@@ -256,11 +294,22 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
 
          pduSlider.setMinimum(1);
          pduSlider.setMaximum(numberSequencePDUs);
-         pduSlider.setLabelTable(null);
+         if (numberSequencePDUs < 10)
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(1));
+         else
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(10));
          pduSlider.setMajorTickSpacing(numberSequencePDUs / 4);
       }
    }
 
+   @Override
+   public void itemStateChanged(ItemEvent e) {
+      
+      SequenceGeneratorData pduPlayerData = SequenceGeneratorData.getInstance();
+      pduPlayerData.setLoopPlayback(e.getStateChange() == 1 ? true : false);
+   }
+   
+   @Override
    public void stateChanged(ChangeEvent ce) {
 
       SequenceGeneratorData pduPlayerData = SequenceGeneratorData.getInstance();
@@ -323,4 +372,5 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener {
       // Interrupt SendDatagramThread so that it will stop sleeping
       SendDatagramSeqGenThread.getInstance().interrupt();
    }
+
 }

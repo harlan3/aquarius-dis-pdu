@@ -33,6 +33,7 @@ import javax.swing.event.ChangeEvent;
 import org.xml.sax.XMLReader;
 
 import orbisoftware.aquarius.pdu_heartbeat_generator.XMLPacketHandler;
+import orbisoftware.aquarius.pdu_playback_capture.SendDatagramPlaybackCaptureThread;
 
 public class SendDatagramSeqGenThread extends Thread {
 
@@ -45,7 +46,7 @@ public class SendDatagramSeqGenThread extends Thread {
    private DatagramPacket datagram = null;
    private static SendDatagramSeqGenThread instance = null;
    private int THREAD_SLEEP_TIME = 500;
-
+   
    public static SendDatagramSeqGenThread getInstance() {
       return instance;
    }
@@ -136,8 +137,18 @@ public class SendDatagramSeqGenThread extends Thread {
                         pduPlayerUI.stateChanged(ce);
                      } else {
                         
-                        pduPlayerData.setPlayerActive(false);
-                        SequenceGeneratorUI.getInstance().pushStopButton();
+                        if (pduPlayerData.getLoopPlayback()) {
+                           SequenceGeneratorUI.getInstance().resetStartingDisplay();
+                           pduPlayerData.setCurrentPDUnumber(0);
+                           
+                           // Generate Change Event to update GUI info
+                           ChangeEvent ce = new ChangeEvent(SendDatagramSeqGenThread.class);
+                           pduPlayerUI.stateChanged(ce);
+                        }
+                        else {                        
+                           pduPlayerData.setPlayerActive(false);
+                           SequenceGeneratorUI.getInstance().pushStopButton();
+                        }
                      }
                   }
                } else {

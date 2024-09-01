@@ -28,6 +28,7 @@ public class PlaybackCaptureData {
    private Boolean playerActive = false;
    private int currentPDUnumber = 0;
    private int port = 0;
+   private boolean loopPlayback = false;
 
    protected PlaybackCaptureData() {
       setDefaultIpAddress();
@@ -65,6 +66,14 @@ public class PlaybackCaptureData {
       return port;
    }
 
+   public void setLoopPlayback(boolean newLoopPlayback) {
+      loopPlayback = newLoopPlayback;
+   }
+   
+   public boolean getLoopPlayback() {
+      return loopPlayback;
+   }
+   
    public void setCurrentPDUnumber(int currentPDUnumber) {
       this.currentPDUnumber = currentPDUnumber;
    }

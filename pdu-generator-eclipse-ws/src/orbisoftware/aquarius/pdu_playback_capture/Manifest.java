@@ -27,6 +27,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.List;
+
+import javax.swing.event.ChangeEvent;
+
+import orbisoftware.aquarius.pdu_sequence_generator.SendDatagramSeqGenThread;
+import orbisoftware.aquarius.pdu_sequence_generator.SequenceGeneratorUI;
+
 import java.util.ArrayList;
 
 public class Manifest {
@@ -128,9 +134,23 @@ public class Manifest {
       // If manifest hasn't been loaded or we have played all the PDUs,
       // stop the player and return false.
       if ((numberPDUs == 0) || (currentPDUnumber == numberPDUs)) {
-
-         pduPlayerUI.pushStopButton();
-         return false;
+         
+         if (pduPlayerData.getLoopPlayback() && currentPDUnumber == numberPDUs) {
+            
+            PlaybackCaptureUI.getInstance().resetStartingDisplay();
+            pduPlayerData.setCurrentPDUnumber(0);
+            currentPDUnumber = 0;
+            
+            // Generate Change Event to update GUI info
+            ChangeEvent ce = new ChangeEvent(SendDatagramPlaybackCaptureThread.class);
+            pduPlayerUI.stateChanged(ce);
+            
+         }
+         else {
+            
+            pduPlayerUI.pushStopButton();
+            return false;
+         }
       }
 
       manifestEntry = manifestList.get(currentPDUnumber);

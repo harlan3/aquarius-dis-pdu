@@ -24,10 +24,13 @@ package orbisoftware.aquarius.pdu_playback_capture;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,12 +39,13 @@ import javax.swing.JFileChooser;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
 
-public class PlaybackCaptureUI implements ActionListener, ChangeListener {
+public class PlaybackCaptureUI implements ActionListener, ChangeListener, ItemListener {
 
    private static PlaybackCaptureUI instance = null;
 
    private static JTextField ipAddress = null;
    private static JTextField port = null;
+   private static JCheckBox loopPlayback = null;
    private static JButton fileSelectButton = null;
    private static JButton startButton = null;
    private static JButton stopButton = null;
@@ -101,16 +105,30 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
       c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(port, c);
-
-      label = new JLabel("Db Playback File Name:");
+      
+      label = new JLabel("Loop Playback:");
       c.gridx = 0;
       c.gridy = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
-      fileSelectButton = new JButton("File Select");
+      loopPlayback = new JCheckBox();
+      loopPlayback.setText("Enabled");
       c.gridx = 1;
       c.gridy = 2;
+      c.insets = new Insets(20, 10, 0, 10);
+      pane.add(loopPlayback, c);
+      loopPlayback.addItemListener(this);
+
+      label = new JLabel("Db Playback File Name:");
+      c.gridx = 0;
+      c.gridy = 3;
+      c.insets = new Insets(20, 10, 0, 10);
+      pane.add(label, c);
+
+      fileSelectButton = new JButton("File Select");
+      c.gridx = 1;
+      c.gridy = 3;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileSelectButton, c);
       fileSelectButton.setEnabled(true);
@@ -124,14 +142,14 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
             + System.getProperty("file.separator") + fileNameDefault);
 
       c.gridx = 0;
-      c.gridy = 3;
+      c.gridy = 4;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileName, c);
 
       startButton = new JButton("Start");
       c.gridx = 0;
-      c.gridy = 4;
+      c.gridy = 5;
       c.gridwidth = 1;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(startButton, c);
@@ -140,7 +158,7 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
 
       stopButton = new JButton("Stop");
       c.gridx = 1;
-      c.gridy = 4;
+      c.gridy = 5;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(stopButton, c);
       stopButton.setEnabled(false);
@@ -148,25 +166,25 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
 
       label = new JLabel("Current PDU:");
       c.gridx = 0;
-      c.gridy = 5;
+      c.gridy = 6;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       currentPDULabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 5;
+      c.gridy = 6;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(currentPDULabel, c);
 
       label = new JLabel("Elapsed Time:");
       c.gridx = 0;
-      c.gridy = 6;
+      c.gridy = 7;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       elapsedTimeLabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 6;
+      c.gridy = 7;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(elapsedTimeLabel, c);
 
@@ -175,7 +193,7 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
       pduSlider.setPaintLabels(true);
       pduSlider.setValue(0);
       c.gridx = 0;
-      c.gridy = 7;
+      c.gridy = 8;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(pduSlider, c);
@@ -207,7 +225,21 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
 
       return panel;
    }
+   
+   public void resetStartingDisplay() {
+      
+      currentPDULabel.setText(Integer.toString(1));
+      elapsedTimeLabel.setText(Integer.toString(0));
+   }
+   
+   @Override
+   public void itemStateChanged(ItemEvent e) {
 
+      PlaybackCaptureData playbackCaptureData = PlaybackCaptureData.getInstance();
+      playbackCaptureData.setLoopPlayback(e.getStateChange() == 1 ? true : false);
+   }
+
+   @Override
    public void actionPerformed(ActionEvent e) {
 
       PlaybackCaptureData pduPlayerData = PlaybackCaptureData.getInstance();
@@ -257,7 +289,10 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
 
          pduSlider.setMinimum(1);
          pduSlider.setMaximum(numberPackets);
-         pduSlider.setLabelTable(null);
+         if (numberPackets < 10)
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(1));
+         else
+            pduSlider.setLabelTable(pduSlider.createStandardLabels(10));
          pduSlider.setMajorTickSpacing(numberPackets / 4);
       }
    }
@@ -287,8 +322,6 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
             pduPlayerData.setCurrentPDUnumber(currentPDUnumber);
          }
       } else if (ce.getSource() == SendDatagramPlaybackCaptureThread.class) {
-
-         String test = instance.currentPDULabel.getText();
          
          int currentPDUnumber = pduPlayerData.getCurrentPDUnumber();
 
@@ -301,7 +334,7 @@ public class PlaybackCaptureUI implements ActionListener, ChangeListener {
          // the ignoreChangeEvent flag to true, since the SendDatagramThread
          // is the controller in this case (not the slider control).
          ignoreChangeEvent = true;
-         pduSlider.setValue(currentPDUnumber);
+         pduSlider.setValue(currentPDUnumber + 1);
       }
 
       ignoreChangeEvent = false;

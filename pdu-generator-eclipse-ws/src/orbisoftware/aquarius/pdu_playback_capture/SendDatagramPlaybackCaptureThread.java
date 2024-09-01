@@ -107,6 +107,10 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
                      // Generate Change Event to update GUI info
                      ChangeEvent ce = new ChangeEvent(SendDatagramPlaybackCaptureThread.class);
                      pduPlayerUI.stateChanged(ce);
+                     
+                     try {
+                        Thread.sleep(2000);
+                     } catch (InterruptedException e) { }
 
                      // Increment and save currentPDUnumber
                      currentPDUnumber = pduPlayerData.getCurrentPDUnumber();

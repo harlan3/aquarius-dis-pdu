@@ -25,7 +25,8 @@ public class SequenceGeneratorData {
 
    private static SequenceGeneratorData instance = null;
    private String ipAddress = null;
-   private Boolean playerActive = false;
+   private boolean playerActive = false;
+   private boolean loopPlayback;
    private int currentPDUnumber = 0;
    private int port = 0;
 
@@ -41,11 +42,11 @@ public class SequenceGeneratorData {
       return instance;
    }
 
-   public void setPlayerActive(Boolean newValue) {
+   public void setPlayerActive(boolean newValue) {
       playerActive = newValue;
    }
 
-   public Boolean getPlayerActive() {
+   public boolean getPlayerActive() {
       return playerActive;
    }
 
@@ -63,6 +64,14 @@ public class SequenceGeneratorData {
 
    public int getPort() {
       return port;
+   }
+   
+   public void setLoopPlayback(boolean newLoopPlayback) {
+      loopPlayback = newLoopPlayback;
+   }
+   
+   public boolean getLoopPlayback() {
+      return loopPlayback;
    }
 
    public void setCurrentPDUnumber(int currentPDUnumber) {
