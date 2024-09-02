@@ -45,16 +45,11 @@ public class GISViewer extends Frame {
 			System.out.println("Error loading map file " + e);
 		}
 		
-		int secondaryGUIWidth = 300;
+		int secondaryGUIWidth = 235;
+		int bottomBorder = 40;
 		
-		GraphicsEnvironment localGraphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		int numScreenDevices = localGraphicsEnvironment.getScreenDevices().length;
-		
-		int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-		int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
-		
-		if (numScreenDevices < 2)
-			w -= secondaryGUIWidth;
+		int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width - secondaryGUIWidth;
+		int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height - bottomBorder;
 		
 		setSize(w, h);
 		setVisible(true);

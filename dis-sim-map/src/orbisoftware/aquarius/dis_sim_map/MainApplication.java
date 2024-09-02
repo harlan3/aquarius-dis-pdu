@@ -278,20 +278,15 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 
 				JPanel panel = mainApplication.disSimMapPanel();
 				jFrame.add(panel);
+				
+				int secondaryGUIWidth = 235;
+				int bottomBorder = 40;
 
 				// Position panel to the right of map
 				int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-				int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
-				int secondaryGUIWidth = 300;
+				int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height - bottomBorder;
 				
-				GraphicsEnvironment localGraphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-				int numScreenDevices = localGraphicsEnvironment.getScreenDevices().length;
-				
-				// If more than 1 monitor is available, put the secondary GUI on left of the 2nd screen
-				if (numScreenDevices > 1)
-					jFrame.setLocation(w, 0);
-				else // else only 1 monitor is available, put secondary GUI on the right
-					jFrame.setLocation(w - secondaryGUIWidth, 0);
+				jFrame.setLocation(w - secondaryGUIWidth, 0);
 				
 				// Close operation when the window is closed
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

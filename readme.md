@@ -140,7 +140,7 @@ exercise with controls as well as the listing of all of the received Entity Stat
 Selection of any of the received Entity State PDUs in this listing will highlight the 
 corresponding entity on the map. The exercise number defaults to 0 which will receive 
 all Entity State PDUs. Setting the exercise field to a value greater than 0 will filter
-out all other Entity State PDUs except for the specified value of this field.
+out all other Entity State PDUs except for the exercise number specified in this field.
 
 Source code for geotools which provides the map definition can be found here:  <br />
 https://geotools.cvs.sourceforge.net/
