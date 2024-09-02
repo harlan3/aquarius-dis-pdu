@@ -279,14 +279,14 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 				JPanel panel = mainApplication.disSimMapPanel();
 				jFrame.add(panel);
 				
-				int secondaryGUIWidth = 235;
+				int secondaryGUIWidth = 240;
 				int bottomBorder = 40;
 
 				// Position panel to the right of map
 				int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 				int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height - bottomBorder;
 				
-				jFrame.setLocation(w - secondaryGUIWidth, 0);
+				jFrame.setLocation(w - secondaryGUIWidth + 10, 0);
 				
 				// Close operation when the window is closed
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
