@@ -116,7 +116,33 @@ which generates the Sequence Composition file. This file is then used by
 the PDU Generation - Sequence tab to send out the selected DIS PDUs at the 
 interval defined in the Application Settings of this tool.
 
-If you would like to use a customized set of PDUs containing modified fields, create a new folder and copy the modified xml files into aquarius-dis-pdu-master\pdu-generator-eclipse-ws\dis_version_xyz. All directories that start with “dis_version” will be available for selection by the pdu-generator and pdu-sequencer.
+If you would like to use a customized set of PDUs containing modified fields, 
+create a new folder and copy the modified xml files into
+aquarius-dis-pdu-master\pdu-generator-eclipse-ws\dis_version_modified. All directories
+that start with “dis_version” will be available for selection by the pdu-generator
+and pdu-sequencer.
+
+DIS Sim Map
+-----------
+DIS simulation map provides the display of entity locations on an interactive
+map using the PDU generator to send heartbeats or sequences of Entity State PDUs. 
+The force definition found in the Entity State PDU for Friendly, Opposing, or 
+Neutral forces will show up as either Blue, Red or Green markers, respectively. Entity
+states have a time to live for 15 seconds, before being removed from the map. This
+provides an indication of how frequently the Entity State pdus are being published. 
+Dead reckoning is not being used in the display of the the entities. Only the position
+information contained in the Entity State PDU is used for display. A cantor pairing
+function is used to uniquely identify each entity by creating a hash of the Site, 
+Application and Entity ID contained in the Entity State PDU. The secondary GUI provides
+the simulation exercise controls as well as a listing of all of the received Entity 
+State PDUs. Selection of any of the received Entity State PDUs in this listing will 
+highlight the corresponding entity on the map. The exercise number defaults to 0 which
+will receive all Entity State PDUs. Setting the exercise field to a value greater than
+0 will filter out all other Entity State PDUs except for the specified value of this
+field.
+
+Source code for geotools which provides the map definition can be found here:
+https://geotools.cvs.sourceforge.net/
 
 Misc Tools
 ----------
