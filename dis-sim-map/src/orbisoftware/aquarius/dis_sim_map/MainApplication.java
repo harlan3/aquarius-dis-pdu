@@ -273,10 +273,10 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 					xWidthAdjustPrimary = -23;
 					xLocationAdjustSecondary = 8;
 				} else if (OSUtils.isUnix()) {
-					secondaryGUIWidth = 220;
+					secondaryGUIWidth = 240;
 					bottomBorder = 40;
-					xWidthAdjustPrimary = 0;
-					xLocationAdjustSecondary = 2;
+					xWidthAdjustPrimary = 3;
+					xLocationAdjustSecondary = 8;
 				}
 				
 				GISViewer gisViewer = new GISViewer(fileArray);
