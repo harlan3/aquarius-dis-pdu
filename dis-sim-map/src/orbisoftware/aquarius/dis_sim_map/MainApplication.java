@@ -63,6 +63,11 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 	private ProcessEntityTimeToLiveThread processEntityTimeToLiveThread;
 	private boolean initProcessDatagram = false;
 
+	public static int secondaryGUIWidth;
+	public static int bottomBorder;
+	public static int xWidthAdjustPrimary;
+	public static int xLocationAdjustSecondary;
+	
 	protected MainApplication() {
 
 		// Suppress system output. This eliminates all System.out.println!
@@ -261,6 +266,19 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 				String[] fileArray = new String[1];
 				fileArray[0] = "shape_files" + File.separator + "world.shp";
 
+				if (OSUtils.isWindows()) {
+					
+					secondaryGUIWidth = 240;
+					bottomBorder = 40;
+					xWidthAdjustPrimary = -23;
+					xLocationAdjustSecondary = 8;
+				} else if (OSUtils.isUnix()) {
+					secondaryGUIWidth = 220;
+					bottomBorder = 40;
+					xWidthAdjustPrimary = 0;
+					xLocationAdjustSecondary = 2;
+				}
+				
 				GISViewer gisViewer = new GISViewer(fileArray);
 				gisViewer.addWindowListener(new WindowAdapter() {
 					public void windowClosing(WindowEvent e) {
@@ -278,15 +296,12 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 
 				JPanel panel = mainApplication.disSimMapPanel();
 				jFrame.add(panel);
-				
-				int secondaryGUIWidth = 240;
-				int bottomBorder = 40;
 
 				// Position panel to the right of map
-				int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+				int w = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width - secondaryGUIWidth;
 				int h = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height - bottomBorder;
 				
-				jFrame.setLocation(w - secondaryGUIWidth + 10, 0);
+				jFrame.setLocation(w + xLocationAdjustSecondary, 0);
 				
 				// Close operation when the window is closed
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
