@@ -147,12 +147,8 @@ https://geotools.cvs.sourceforge.net/
 
 Misc Tools
 ----------
-UDP Reflector - Reflect the udp packets on a source port to a mirrored 
-destination port. Data is captured at the data link layer using libpcap. This 
-allows another process to bind to the port, and avoids the error "Bind: Address 
-Already in Use". Note it requires administrative account access for libpcap.
-
-convert_tuple - Converts a DIS septuple to hex data that can be copied into the
-entity type fields of the XML data file used by PDU Generator.
+Companion is a tool to assist in the modification of the hex data contained in the
+XML files used for representing the DIS PDU data. Many of the common conversion
+functions are supported by this tool.
 
 
