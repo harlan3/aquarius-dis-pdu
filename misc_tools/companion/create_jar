@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Prepare bin directory
+mkdir -p bin
+rm -rf bin/*
+
+# Clean and compile source
+cd src
+find . -name "*.class" | xargs rm > /dev/null 2>&1
+javac -d ../bin companion/MainApplication.java
+cd ..
+
+# Create jar file
+cd bin
+echo "Main-Class: companion.MainApplication" > tmp
+jar cmf tmp ../companion.jar companion
+rm tmp
+cd ..
+
+echo
+echo "companion.jar created"
+echo "usage: java -jar companion.jar"
