@@ -14,7 +14,7 @@ public class CompanionUI {
 	JTextField zField;
 	JTextField septupleField;
 	JTextField septupleOutput;
-	
+
 	Computations computations = new Computations();
 
 	void generateUI(JFrame jFrame) {
@@ -50,9 +50,10 @@ public class CompanionUI {
 					xField.setText("");
 					yField.setText("");
 					zField.setText("");
-					
+
 					double values[] = computations.convertGeodeticToGeocentric(
-							Double.parseDouble(latitudeField.getText()), Double.parseDouble(longitudeField.getText()), 0.0);
+							Double.parseDouble(latitudeField.getText()), Double.parseDouble(longitudeField.getText()),
+							0.0);
 					xField.setText(computations.doubleToHexWithSpaces(values[0]));
 					yField.setText(computations.doubleToHexWithSpaces(values[1]));
 					zField.setText(computations.doubleToHexWithSpaces(values[2]));
@@ -146,7 +147,7 @@ public class CompanionUI {
 
 		JScrollPane scrollPane1 = new JScrollPane(panel1);
 		tabbedPane.addTab("Misc Conversions", scrollPane1);
-		
+
 		gbc.gridx = 2;
 		gbc.gridy = 5;
 		gbc.gridwidth = 1;
@@ -157,7 +158,7 @@ public class CompanionUI {
 		gbc.ipady = 1;
 		label = new JLabel("DIS septuple conversion");
 		panel1.add(label, gbc);
-		
+
 		gbc.gridx = 3;
 		gbc.gridy = 5;
 		gbc.weighty = 1;
@@ -165,7 +166,7 @@ public class CompanionUI {
 		gbc.insets = new Insets(10, 10, 10, 70);
 		JButton convertSeptuple = new JButton("Convert");
 		panel1.add(convertSeptuple, gbc);
-		
+
 		convertSeptuple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -177,7 +178,7 @@ public class CompanionUI {
 				}
 			}
 		});
-		
+
 		gbc.gridx = 0;
 		gbc.gridy = 6;
 		gbc.anchor = GridBagConstraints.EAST;
@@ -194,7 +195,7 @@ public class CompanionUI {
 		septupleField = new JTextField();
 		septupleField.setText("11:15:263:20:25:30:40");
 		panel1.add(septupleField, gbc);
-		
+
 		gbc.gridx = 2;
 		gbc.gridy = 6;
 		gbc.weighty = 1;
@@ -211,7 +212,7 @@ public class CompanionUI {
 		septupleOutput = new JTextField();
 		septupleOutput.setEditable(false);
 		panel1.add(septupleOutput, gbc);
-		
+
 		gbc.gridx = 0;
 		gbc.gridy = 7;
 		gbc.fill = GridBagConstraints.BOTH;
@@ -219,9 +220,9 @@ public class CompanionUI {
 		gbc.ipady = 150;
 		label = new JLabel("");
 		panel1.add(label, gbc);
-		
+
 		// **************************************************************************************
-		
+
 		// Create the second tab with GridBagLayout
 		JPanel panel2 = new JPanel(new GridBagLayout());
 
@@ -262,7 +263,7 @@ public class CompanionUI {
 		gbc.fill = GridBagConstraints.NONE;
 		JButton convertButton1 = new JButton("Convert");
 		panel2.add(convertButton1, gbc);
-		
+
 		convertButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -347,7 +348,7 @@ public class CompanionUI {
 		gbc.insets = new Insets(10, 10, 10, 50);
 		JButton convertButton3 = new JButton("Convert");
 		panel2.add(convertButton3, gbc);
-		
+
 		convertButton3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -389,7 +390,7 @@ public class CompanionUI {
 		gbc.insets = new Insets(10, 10, 10, 50);
 		JButton convertButton4 = new JButton("Convert");
 		panel2.add(convertButton4, gbc);
-		
+
 		convertButton4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -432,7 +433,7 @@ public class CompanionUI {
 		gbc.insets = new Insets(10, 10, 10, 50);
 		JButton convertButton5 = new JButton("Convert");
 		panel2.add(convertButton5, gbc);
-		
+
 		convertButton5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -485,7 +486,7 @@ public class CompanionUI {
 				}
 			}
 		});
-		
+
 		gbc.gridx = 0;
 		gbc.gridy = 6;
 		gbc.insets = new Insets(0, 75, 0, 0);
@@ -516,7 +517,7 @@ public class CompanionUI {
 		gbc.insets = new Insets(10, 10, 10, 50);
 		JButton convertButton7 = new JButton("Convert");
 		panel2.add(convertButton7, gbc);
-		
+
 		convertButton7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
