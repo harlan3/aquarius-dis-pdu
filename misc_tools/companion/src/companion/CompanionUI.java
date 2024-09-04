@@ -47,6 +47,10 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					xField.setText("");
+					yField.setText("");
+					zField.setText("");
+					
 					double values[] = computations.convertGeodeticToGeocentric(
 							Double.parseDouble(latitudeField.getText()), Double.parseDouble(longitudeField.getText()), 0.0);
 					xField.setText(computations.doubleToHexWithSpaces(values[0]));
@@ -166,6 +170,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					septupleOutput.setText("");
 					String septupleHex = computations.convertSeptupleToHex(septupleField.getText());
 					septupleOutput.setText(septupleHex);
 				} catch (Exception ee) {
@@ -187,7 +192,7 @@ public class CompanionUI {
 		gbc.weighty = 1;
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		septupleField = new JTextField();
-		septupleField.setText("11:15:18:20:25:30:40");
+		septupleField.setText("11:15:263:20:25:30:40");
 		panel1.add(septupleField, gbc);
 		
 		gbc.gridx = 2;
@@ -262,6 +267,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput1.setText("");
 					hexOutput1.setText(computations.floatToHexWithSpaces(Float.parseFloat(inputField1.getText())));
 				} catch (Exception e2) {
 				}
@@ -304,6 +310,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput2.setText("");
 					hexOutput2.setText(computations.doubleToHexWithSpaces(Double.parseDouble(inputField2.getText())));
 				} catch (Exception e2) {
 				}
@@ -345,6 +352,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput3.setText("");
 					hexOutput3.setText(computations.asciiToHexWithSpaces(inputField3.getText()));
 				} catch (Exception e2) {
 				}
@@ -386,6 +394,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput4.setText("");
 					int value = Integer.parseInt(inputField4.getText());
 					hexOutput4.setText(computations.byteToHex(value));
 				} catch (Exception e2) {
@@ -428,6 +437,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput5.setText("");
 					hexOutput5.setText(computations.shortToHexWithSpaces(Integer.parseInt(inputField5.getText())));
 				} catch (Exception e2) {
 				}
@@ -469,6 +479,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput6.setText("");
 					hexOutput6.setText(computations.intToHexWithSpaces(Long.parseLong(inputField6.getText())));
 				} catch (Exception e2) {
 				}
@@ -510,6 +521,7 @@ public class CompanionUI {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
+					hexOutput7.setText("");
 					hexOutput7.setText(computations.longToHexWithSpaces(Long.parseLong(inputField7.getText())));
 				} catch (Exception e2) {
 				}

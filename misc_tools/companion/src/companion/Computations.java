@@ -1,6 +1,8 @@
 package companion;
 
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 public class Computations {
 
@@ -150,13 +152,32 @@ public class Computations {
         String[] numbers = septuple.split(":");
         StringBuilder hexString = new StringBuilder();
 
-        for (int i = 0; i < numbers.length; i++) {
-            int number = Integer.parseInt(numbers[i]); // Convert each part to an integer
-            hexString.append(String.format("%02X", number)); // Convert to hex and append
-
-            if (i < numbers.length - 1) {
-                hexString.append(" "); // Add space between hex values
-            }
+        int i = 0;
+        
+        while (i < numbers.length) {
+        	
+        	if (i != 2) {
+	            int number = Integer.parseInt(numbers[i]); // Convert each part to an integer
+	            hexString.append(String.format("%02X", number)); // Convert to hex and append
+	
+	            if (i < numbers.length - 1) {
+	                hexString.append(" "); // Add space between hex values
+	            }
+	            
+        	} else { // two bytes for country code
+        		
+        		short data[] = new short[2];
+        		short number = Short.parseShort(numbers[i]);
+        		data[0] = (byte) number;
+        		data[1] = (byte) (number >>> 8);
+        	
+	            hexString.append(String.format("%02X", data[1]));
+	            hexString.append(" "); // Add space between hex values
+	            hexString.append(String.format("%02X", data[0]));
+	            hexString.append(" "); // Add space between hex values
+        	}
+        	
+        	i++;
         }
 
         return hexString.toString();
