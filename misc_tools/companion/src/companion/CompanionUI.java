@@ -34,12 +34,15 @@ public class CompanionUI {
 		gbc.weighty = 1;
 		gbc.ipadx = 1;
 		gbc.ipady = 1;
+		gbc.anchor = GridBagConstraints.WEST;
+		gbc.insets = new Insets(0, 0, 0, 0);
 		JLabel label = new JLabel("Geodetic to Geocentric Conversion");
 		panel1.add(label, gbc);
 
 		gbc.gridx = 3;
 		gbc.gridy = 0;
 		gbc.weighty = 1;
+		gbc.anchor = GridBagConstraints.CENTER;
 		JButton calculateConversion = new JButton("Convert");
 		panel1.add(calculateConversion, gbc);
 
@@ -156,14 +159,21 @@ public class CompanionUI {
 		gbc.weighty = 1;
 		gbc.ipadx = 1;
 		gbc.ipady = 1;
+		gbc.anchor = GridBagConstraints.CENTER;
+		gbc.insets = new Insets(0, 0, 0, 0);
 		label = new JLabel("DIS septuple conversion");
 		panel1.add(label, gbc);
 
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.weightx = 1;
+		gbc.weighty = 1;
+		gbc.ipadx = 1;
+		gbc.ipady = 1;
+		gbc.fill = GridBagConstraints.NONE;
+		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.gridx = 3;
 		gbc.gridy = 5;
-		gbc.weighty = 1;
-		gbc.fill = GridBagConstraints.NONE;
-		gbc.insets = new Insets(10, 10, 10, 70);
 		JButton convertSeptuple = new JButton("Convert");
 		panel1.add(convertSeptuple, gbc);
 
