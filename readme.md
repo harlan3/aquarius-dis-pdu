@@ -3,7 +3,8 @@ Aquarius DIS PDU Suite - Orbis Software
 The Aquarius DIS PDU Suite is a collection of simple tools supporting the
 Distributed Interactive Simulation protocol used by the modeling and simulation
 industry.  The suite provides the capability to easily heartbeat, capture,
-sequence a set of PDUs, and playback DIS PDUs from a captured session.
+sequence a set of PDUs, and playback DIS PDUs from a captured session. It also
+supports the display on Entity State PDU locations on a world map.
 
 License
 -------
