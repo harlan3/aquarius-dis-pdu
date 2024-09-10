@@ -161,7 +161,7 @@ public class CompanionUI {
 		gbc.ipady = 1;
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.insets = new Insets(0, 0, 0, 0);
-		label = new JLabel("DIS septuple conversion");
+		label = new JLabel("DIS Septuple Conversion");
 		panel1.add(label, gbc);
 
 		gbc.gridwidth = 1;
