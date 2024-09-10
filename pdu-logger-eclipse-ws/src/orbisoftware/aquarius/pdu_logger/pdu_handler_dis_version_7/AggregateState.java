@@ -252,6 +252,19 @@ public class AggregateState {
             System.out.println(LoggerUtil.prettyPrintField("variableDatumLength") + variableDatumLength);
             System.out.println(LoggerUtil.prettyPrintField("variableDatumValue") + variableDatumValue);
          }
+         
+         /* Verify that the length defined in PDU matches what was received */
+         if (length != packet.getLength()) {
+            System.out.println("\nWARNING: Reported PDU length is incorrect!");
+            System.out.println("         Read " + packet.getLength() + "     " + "Reported: " + length);
+         }
+         
+         /* The following code is required for pdu logger */
+         System.out.println();
+         System.out.println("      PDU counter: " + pduCounter);
+         System.out.println("Local packet time: " + date.getTime());
+         System.out.println(HexDump.dump(packet.getData(), 0, 0, packet.getLength()));
+
       } catch (IOException e) {
          e.printStackTrace();
       }
