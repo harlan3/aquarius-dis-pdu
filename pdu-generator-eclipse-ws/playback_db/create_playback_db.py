@@ -129,7 +129,7 @@ def parseLogFile(inputFileName):
    outputBinFileName = replace_extension(inputFileName, ".bin")
    outputManifestFileName = replace_extension(inputFileName, ".man")
    
-   inputFile = open(inputFileName, "r", encoding="utf-8")
+   inputFile = open(inputFileName, "r", encoding="utf-16")
    outputManifestFile = open(outputManifestFileName,"wb")
    outputBinFile = open(outputBinFileName,"wb")
    
