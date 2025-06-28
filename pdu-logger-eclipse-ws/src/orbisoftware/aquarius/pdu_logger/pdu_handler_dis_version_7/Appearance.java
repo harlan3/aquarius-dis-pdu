@@ -37,7 +37,9 @@ public class Appearance {
       DataInputStream din = new DataInputStream(byteArrayStream);
       Date date = new Date();
       LoggerUtil.setPrettyPrintColumnWidth(30);
-      
+
+      byte protocolVersion = 0;
+      byte exercise = 0;
       byte pduType = 0;
       byte family = 0;
       short length = 0;
@@ -73,7 +75,8 @@ public class Appearance {
       try {
 
          /* Start Message Header */
-         din.skipBytes(2);
+         protocolVersion = din.readByte();
+         exercise = din.readByte();
          pduType = din.readByte();
          family = din.readByte();
          din.reset();
@@ -113,6 +116,8 @@ public class Appearance {
          appearanceEM = din.readInt();
          appearanceAudio = din.readInt();
          
+         System.out.println(LoggerUtil.prettyPrintField("protocolVersion") + protocolVersion);
+         System.out.println(LoggerUtil.prettyPrintField("exercise") + exercise);
          System.out.println(LoggerUtil.prettyPrintField("pduType") + PDU_Type.values()[pduType]);
          System.out.println(LoggerUtil.prettyPrintField("family") + family);
          System.out.println(LoggerUtil.prettyPrintField("length") + length);
