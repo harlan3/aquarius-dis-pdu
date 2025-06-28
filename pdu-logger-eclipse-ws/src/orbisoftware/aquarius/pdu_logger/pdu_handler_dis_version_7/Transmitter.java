@@ -37,7 +37,7 @@ public class Transmitter {
       ByteArrayInputStream byteArrayStream = new ByteArrayInputStream(packet.getData());
       DataInputStream din = new DataInputStream(byteArrayStream);
       Date date = new Date();
-      LoggerUtil.setPrettyPrintColumnWidth(30);
+      LoggerUtil.setPrettyPrintColumnWidth(45);
 
       byte protocolVersion = 0;
       byte exercise = 0;
