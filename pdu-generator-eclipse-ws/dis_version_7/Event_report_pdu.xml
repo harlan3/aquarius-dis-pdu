@@ -2,7 +2,7 @@
 <datagramPacket>
    <!-- Begin DIS Header -->
       <!-- Version -->
-      <data>04</data>
+      <data>07</data>
       <!-- Exercise -->
       <data>01</data>
       <!-- PDU Type -->
