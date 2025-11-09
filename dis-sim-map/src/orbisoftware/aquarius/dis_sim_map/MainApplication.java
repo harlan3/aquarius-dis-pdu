@@ -28,6 +28,15 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.Map;
+import java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -37,7 +46,6 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -48,13 +56,12 @@ import uk.ac.leeds.ccg.geotools.DisObject;
 public class MainApplication implements ActionListener, ListSelectionListener {
 
 	private static MainApplication instance = null;
-	private JTextField ipAddress = null;
-	private JTextField port = null;
-	private JTextField exercise = null;
 	private JButton startButton = null;
 	private JButton stopButton = null;
 	public JScrollPane listScrollPane;
 	private JPanel panel1 = new JPanel();
+	
+	public HashMap<String, String> xmlMap = new HashMap<>();
 
 	public DefaultListModel<String> model = new DefaultListModel<>();
 	public JList<String> displayList = new JList<String>(model);
@@ -79,6 +86,39 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 		
 		displayList.addListSelectionListener(this);
 	}
+	
+	private void parseElements(Element root) {
+
+       String name = "";
+    
+       if (root != null) {
+    
+          NodeList nl = root.getChildNodes();
+    
+          if (nl != null) {
+    
+             for (int i = 0; i < nl.getLength(); i++) {
+                Node node = nl.item(i);
+    
+                if (node.getNodeName().equalsIgnoreCase("setting")) {
+    
+                   NodeList childNodes = node.getChildNodes();
+    
+                   for (int j = 0; j < childNodes.getLength(); j++) {
+    
+                      Node child = childNodes.item(j);
+    
+                      if (child.getNodeName().equalsIgnoreCase("name"))
+                         name = child.getTextContent();
+                      else if (child.getNodeName().equalsIgnoreCase("value"))
+                         MainApplication.getInstance().xmlMap.put(name,
+                               child.getTextContent());
+                   }
+                }
+             }
+          }
+       }
+    }
 
 	public static MainApplication getInstance() {
 
@@ -130,48 +170,9 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 		c.weightx = 1.0;
 		c.fill = GridBagConstraints.HORIZONTAL;
 
-		label = new JLabel("IP Address:");
-		c.gridx = 0;
-		c.gridy = 1;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(label, c);
-
-		ipAddress = new JTextField();
-		ipAddress.setText(PDULoggerConfig.getInstance().getDefaultIPAddress());
-		c.gridx = 1;
-		c.gridy = 1;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(ipAddress, c);
-
-		label = new JLabel("Port:");
-		c.gridx = 0;
-		c.gridy = 2;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(label, c);
-
-		port = new JTextField();
-		port.setText(Integer.toString(PDULoggerConfig.getInstance().getPortNumber()));
-		c.gridx = 1;
-		c.gridy = 2;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(port, c);
-
-		label = new JLabel("Exercise:");
-		c.gridx = 0;
-		c.gridy = 3;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(label, c);
-
-		exercise = new JTextField();
-		exercise.setText(Integer.toString(PDULoggerConfig.getInstance().getDISExerciseID()));
-		c.gridx = 1;
-		c.gridy = 3;
-		c.insets = new Insets(20, 10, 0, 10);
-		pane.add(exercise, c);
-
 		startButton = new JButton("Start");
 		c.gridx = 0;
-		c.gridy = 4;
+		c.gridy = 1;
 		c.gridwidth = 1;
 		c.insets = new Insets(20, 10, 10, 10);
 		pane.add(startButton, c);
@@ -180,7 +181,7 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 
 		stopButton = new JButton("Stop");
 		c.gridx = 1;
-		c.gridy = 4;
+		c.gridy = 1;
 		c.insets = new Insets(20, 10, 10, 10);
 		pane.add(stopButton, c);
 		stopButton.setEnabled(false);
@@ -197,7 +198,7 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 		panel1.add(listScrollPane);
 
 		c.gridx = 0;
-		c.gridy = 5;
+		c.gridy = 2;
 		c.gridwidth = 2;
 		c.gridheight = 1;
 		c.ipady = 1000;
@@ -230,18 +231,11 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 
 			if (!initProcessDatagram) {
 				
-				PDULoggerConfig.getInstance().setIPAddress(ipAddress.getText());
-				PDULoggerConfig.getInstance().setPortNumber(Integer.parseInt(port.getText()));
-				
-				ipAddress.setEnabled(false);
-				port.setEnabled(false);
-				
 				processEntityTimeToLiveThread.start();
 				processDatagramThread.start();
 				initProcessDatagram = true;
 			}
 			
-			PDULoggerConfig.getInstance().setDISExerciseID(Integer.parseInt(exercise.getText()));
 			processDatagramThread.setThreadIsActive(true);
 
 		} else if (e.getSource() == stopButton) {
@@ -262,6 +256,20 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 				MainApplication mainApplication = MainApplication.getInstance();
 				mainApplication.processDatagramThread = new ProcessDatagramThread();
 				mainApplication.processEntityTimeToLiveThread = new ProcessEntityTimeToLiveThread();
+				
+				try {
+					// Process XML
+					DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+					DocumentBuilder db = dbf.newDocumentBuilder();
+					Document doc = db.parse("settings.xml");
+					Element rootElem = doc.getDocumentElement();
+					
+					if (rootElem != null) {
+						mainApplication.parseElements(rootElem);
+					}
+				}  catch (Exception e) {
+					e.printStackTrace();
+				}
 
 				String[] fileArray = new String[1];
 				fileArray[0] = "shape_files" + File.separator + "world.shp";

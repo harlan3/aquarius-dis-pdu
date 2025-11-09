@@ -20,9 +20,18 @@ package orbisoftware.aquarius.pdu_common;
  *
  */
 
+import java.util.HashMap;
+
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import orbisoftware.aquarius.pdu_heartbeat_generator.HeartbeatGeneratorUI;
 import orbisoftware.aquarius.pdu_heartbeat_generator.SendDatagramHeartbeatThread;
@@ -33,27 +42,84 @@ import orbisoftware.aquarius.pdu_sequence_generator.SequenceGeneratorUI;
 
 public class MainApplication {
    
+   private static MainApplication instance = null;
+   public HashMap<String, String> xmlMap = new HashMap<String, String>();
+   
+   private void parseElements(Element root) {
+
+      String name = "";
+   
+      if (root != null) {
+   
+         NodeList nl = root.getChildNodes();
+   
+         if (nl != null) {
+   
+            for (int i = 0; i < nl.getLength(); i++) {
+               Node node = nl.item(i);
+   
+               if (node.getNodeName().equalsIgnoreCase("setting")) {
+   
+                  NodeList childNodes = node.getChildNodes();
+   
+                  for (int j = 0; j < childNodes.getLength(); j++) {
+   
+                     Node child = childNodes.item(j);
+   
+                     if (child.getNodeName().equalsIgnoreCase("name"))
+                        name = child.getTextContent();
+                     else if (child.getNodeName().equalsIgnoreCase("value"))
+                        MainApplication.getInstance().xmlMap.put(name,
+                              child.getTextContent());
+                  }
+               }
+            }
+         }
+      }
+   }
+   
+   public static MainApplication getInstance() {
+
+      if (instance == null) {
+         instance = new MainApplication();
+      }
+      return instance;
+   }
+   
    public static void main(String[] args) {
-
-      // Start pdu heartbeat generator send datagram thread
-      SendDatagramHeartbeatThread sendDatagramHeartbeatThread = new SendDatagramHeartbeatThread();
-      sendDatagramHeartbeatThread.start();
-      
-      // Start pdu sequence generator datagram thread
-      SendDatagramSeqGenThread sendDatagramSeqGenThread = new SendDatagramSeqGenThread();
-      sendDatagramSeqGenThread.start();
-      
-      // Start pdu playback capture thread
-      SendDatagramPlaybackCaptureThread sendDatagramPlaybackCaptureThread = new SendDatagramPlaybackCaptureThread();
-      sendDatagramPlaybackCaptureThread.start();
-
-      // Schedule a job for the event-dispatching thread to
-      // create and show this application's GUI.
 
       javax.swing.SwingUtilities.invokeLater(new Runnable() {
 
          public void run() {
 
+            MainApplication mainApplication = MainApplication.getInstance();
+            
+            try {
+               // Process XML
+               DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+               DocumentBuilder db = dbf.newDocumentBuilder();
+               Document doc = db.parse("settings.xml");
+               Element rootElem = doc.getDocumentElement();
+               
+               if (rootElem != null) {
+                  mainApplication.parseElements(rootElem);
+               }
+            }  catch (Exception e) {
+               e.printStackTrace();
+            }
+            
+            // Start pdu heartbeat generator send datagram thread
+            SendDatagramHeartbeatThread sendDatagramHeartbeatThread = new SendDatagramHeartbeatThread();
+            sendDatagramHeartbeatThread.start();
+            
+            // Start pdu sequence generator datagram thread
+            SendDatagramSeqGenThread sendDatagramSeqGenThread = new SendDatagramSeqGenThread();
+            sendDatagramSeqGenThread.start();
+            
+            // Start pdu playback capture thread
+            SendDatagramPlaybackCaptureThread sendDatagramPlaybackCaptureThread = new SendDatagramPlaybackCaptureThread();
+            sendDatagramPlaybackCaptureThread.start();
+            
             JFrame jFrame = new JFrame("Aquarius PDU Generation");
             JTabbedPane tabbedPane = new JTabbedPane();
             
@@ -74,6 +140,7 @@ public class MainApplication {
             tabbedPane.addTab("Heartbeat", panel1);
             tabbedPane.addTab("Sequence", panel2);
             tabbedPane.addTab("Db Playback", panel3);
+            
          }
       });
    }

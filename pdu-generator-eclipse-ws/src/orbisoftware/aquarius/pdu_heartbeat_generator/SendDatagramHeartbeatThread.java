@@ -24,24 +24,36 @@ package orbisoftware.aquarius.pdu_heartbeat_generator;
 import java.net.*;
 
 import java.net.DatagramPacket;
+
+import orbisoftware.aquarius.pdu_common.MainApplication;
+
 import java.io.IOException;
 
 public class SendDatagramHeartbeatThread extends Thread {
 
-   private final boolean USE_DATAGRAM_SOCKET = true;
-   public static int DATAGRAM_HEARTBEAT = 5000;
-
-   private DatagramSocket datagramSocket = null;
-   private MulticastSocket multicastSocket = null;
-
-   private DatagramPacket datagram = null;
-
+   private static DatagramSocket datagramSocket = null;
+   private static MulticastSocket multicastSocket = null;
+   
+   private int portNumber = 0;
+   private boolean useMulticast = false;
+   
    private void initSocket() {
 
-      if (USE_DATAGRAM_SOCKET) {
+      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
+
+      if (useMulticast) {
 
          try {
-            datagramSocket = new DatagramSocket();
+
+            InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
+            InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
+            multicastSocket = new MulticastSocket(portNumber);
+
+            // Explicitly join the group on the specified interface
+            NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
+            multicastSocket.setNetworkInterface(netIf);
+            multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
          } catch (Exception e) {
             e.printStackTrace();
          }
@@ -49,7 +61,7 @@ public class SendDatagramHeartbeatThread extends Thread {
       } else {
 
          try {
-            multicastSocket = new MulticastSocket();
+            datagramSocket = new DatagramSocket(portNumber);
          } catch (Exception e) {
             e.printStackTrace();
          }
@@ -67,21 +79,22 @@ public class SendDatagramHeartbeatThread extends Thread {
       while (true) {
 
          try {
-            if (packetGeneratorData.getGeneratorActive()
-                  && packetGeneratorData.datagramDataValid()) {
+            if (packetGeneratorData.getGeneratorActive()) {
 
-               ipAddress = InetAddress.getByName(packetGeneratorData
-                     .getIPAddress());
+               if (useMulticast)
+                  ipAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
+               else
+                  ipAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("BroadcastAddress"));
 
-               datagram = new DatagramPacket(
+               DatagramPacket datagram = new DatagramPacket(
                      packetGeneratorData.getDatagramData(),
                      packetGeneratorData.getDatagramData().length, ipAddress,
-                     packetGeneratorData.getPort());
+                     portNumber);
 
-               if (USE_DATAGRAM_SOCKET)
-                  datagramSocket.send(datagram);
-               else
+               if (useMulticast)
                   multicastSocket.send(datagram);
+               else
+                  datagramSocket.send(datagram);
 
                System.out.println("\nSending "
                      + packetGeneratorData.getDatagramData().length + " bytes");
@@ -91,7 +104,7 @@ public class SendDatagramHeartbeatThread extends Thread {
          }
 
          try {
-            Thread.sleep(DATAGRAM_HEARTBEAT);
+            Thread.sleep(packetGeneratorData.getHeartbeatInterval());
          } catch (InterruptedException exception) {
             // Sleep Interrupted Exception occurred
          }

@@ -68,15 +68,13 @@ public class ProcessDatagramThread extends Thread implements PropertyChangeListe
 
 	public void run() {
 
-		PDULoggerConfig pduLoggerConfig = PDULoggerConfig.getInstance();
-
 		receiveDatagramThread.getPropertyChangeSupport().addPropertyChangeListener(this);
 		receiveDatagramThread.start();
 
 		while (true) {
 
 			List<DatagramPacket> datagramList = new LinkedList<DatagramPacket>();
-			int configuredDISExerciseID = pduLoggerConfig.getDISExerciseID();
+			int configuredDISExerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
 			
 			try {
 

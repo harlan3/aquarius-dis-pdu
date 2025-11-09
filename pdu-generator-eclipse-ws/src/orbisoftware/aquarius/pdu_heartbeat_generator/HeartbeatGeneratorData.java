@@ -25,15 +25,15 @@ public class HeartbeatGeneratorData {
 
    private static HeartbeatGeneratorData instance = null;
    private byte[] datagramData = null;
-   private String ipAddress = null;
    private Boolean generatorActive = false;
-   private int port = 3000;
-
+   private int heartbeatInterval = 5000;
+   
    protected HeartbeatGeneratorData() {
-      setDefaultIpAddress();
+
    }
 
    public static HeartbeatGeneratorData getInstance() {
+      
       if (instance == null) {
          instance = new HeartbeatGeneratorData();
       }
@@ -41,11 +41,22 @@ public class HeartbeatGeneratorData {
    }
 
    public void setGeneratorActive(Boolean newValue) {
+      
       generatorActive = newValue;
    }
 
    public Boolean getGeneratorActive() {
       return generatorActive;
+   }
+   
+   public void setHeartbeatInterval(int newValue) {
+      
+      heartbeatInterval = newValue;
+   }
+
+   public int getHeartbeatInterval() {
+      
+      return heartbeatInterval;
    }
 
    public Boolean datagramDataValid() {
@@ -61,31 +72,13 @@ public class HeartbeatGeneratorData {
    }
 
    public void setDatagramData(byte[] newDatagramData) {
+      
       datagramData = new byte[(newDatagramData.length)];
       datagramData = newDatagramData;
    }
 
    public byte[] getDatagramData() {
+      
       return datagramData;
-   }
-
-   public void setIPAddress(String newIPAddress) {
-      ipAddress = newIPAddress;
-   }
-
-   public String getIPAddress() {
-      return ipAddress;
-   }
-
-   public void setPort(int newPort) {
-      port = newPort;
-   }
-
-   public int getPort() {
-      return port;
-   }
-
-   private void setDefaultIpAddress() {
-         ipAddress = "127.0.0.1";
    }
 }

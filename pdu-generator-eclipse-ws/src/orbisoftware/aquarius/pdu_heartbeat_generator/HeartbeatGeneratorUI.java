@@ -44,17 +44,17 @@ public class HeartbeatGeneratorUI implements ActionListener {
    private static HeartbeatGeneratorUI instance = null;
    private Path currentWorkingDir = Paths.get("").toAbsolutePath().getParent();
    private JTextField heartbeatDelay = null;
-   private JTextField ipAddress = null;
-   private JTextField port = null;
    private JButton fileSelectButton = null;
    private JButton startButton = null;
    private JButton stopButton = null;
    private String disPDUDir = "dis_pdus";
-   private String fileNameDefault = "entity_state_pdu.xml";
+   private String fileNameDefault = "";
    private JTextField fileName = null;
    private JFileChooser fileChooser = null;
    private FileExtensionFilter filter = null;
 
+   private int DATAGRAM_HEARTBEAT = 5000;
+   
    protected HeartbeatGeneratorUI() {
       
    }
@@ -84,47 +84,21 @@ public class HeartbeatGeneratorUI implements ActionListener {
       pane.add(label, c);
 
       heartbeatDelay = new JTextField();
-      heartbeatDelay.setText(Integer.toString(SendDatagramHeartbeatThread.DATAGRAM_HEARTBEAT));
+      heartbeatDelay.setText(Integer.toString(DATAGRAM_HEARTBEAT));
       c.gridx = 1;
       c.gridy = 0;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(heartbeatDelay, c);
 
-      label = new JLabel("IP Address:");
-      c.gridx = 0;
-      c.gridy = 1;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(label, c);
-
-      ipAddress = new JTextField();
-      ipAddress.setText(packetGeneratorData.getIPAddress());
-      c.gridx = 1;
-      c.gridy = 1;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(ipAddress, c);
-
-      label = new JLabel("Port:");
-      c.gridx = 0;
-      c.gridy = 2;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(label, c);
-
-      port = new JTextField();
-      port.setText(Integer.toString(packetGeneratorData.getPort()));
-      c.gridx = 1;
-      c.gridy = 2;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(port, c);
-
       label = new JLabel("File Name:");
       c.gridx = 0;
-      c.gridy = 3;
+      c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       fileSelectButton = new JButton("File Select");
       c.gridx = 1;
-      c.gridy = 3;
+      c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileSelectButton, c);
       fileSelectButton.setEnabled(true);
@@ -135,14 +109,14 @@ public class HeartbeatGeneratorUI implements ActionListener {
             + System.getProperty("file.separator") + disPDUDir
             + System.getProperty("file.separator") + fileNameDefault);
       c.gridx = 0;
-      c.gridy = 4;
+      c.gridy = 2;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileName, c);
 
       startButton = new JButton("Start");
       c.gridx = 0;
-      c.gridy = 5;
+      c.gridy = 3;
       c.gridwidth = 1;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(startButton, c);
@@ -151,7 +125,7 @@ public class HeartbeatGeneratorUI implements ActionListener {
 
       stopButton = new JButton("Stop");
       c.gridx = 1;
-      c.gridy = 5;
+      c.gridy = 3;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(stopButton, c);
       stopButton.setEnabled(false);
@@ -166,7 +140,6 @@ public class HeartbeatGeneratorUI implements ActionListener {
 
       // Create and set up the window.
       JPanel panel = new JPanel();
-      //panel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       filter = new FileExtensionFilter();
 
       // Make the file chooser readonly to disallow file renaming
@@ -183,10 +156,6 @@ public class HeartbeatGeneratorUI implements ActionListener {
 
       // Set up the content pane.
       addComponentsToPane(panel);
-
-      // Display the window.
-      //panel.setSize(300, 260);
-      //panel.setVisible(true);
       
       return panel;
    }
@@ -211,12 +180,9 @@ public class HeartbeatGeneratorUI implements ActionListener {
 
             // Set datagram data
             packetGeneratorData.setDatagramData(packetHandler.getPacketData());
-
-            packetGeneratorData.setIPAddress(ipAddress.getText());
-            packetGeneratorData.setPort(Integer.parseInt(port.getText()));
             packetGeneratorData.setGeneratorActive(true);
-            SendDatagramHeartbeatThread.DATAGRAM_HEARTBEAT = Integer.parseInt(heartbeatDelay.getText());
-
+            packetGeneratorData.setHeartbeatInterval(Integer.parseInt(this.heartbeatDelay.getText()));
+            
             startButton.setEnabled(false);
             stopButton.setEnabled(true);
          } catch (Exception exception) {

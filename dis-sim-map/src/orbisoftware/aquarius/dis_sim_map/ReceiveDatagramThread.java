@@ -28,13 +28,14 @@ import java.beans.*;
 public class ReceiveDatagramThread extends Thread {
 
 	private final int MAX_PACKET_SIZE = 1500;
-	private InetAddress multicastGroupAddress;
-
-	private DatagramSocket dataGramSocket = null;
-	private MulticastSocket multicastSocket = null;
-	private PropertyChangeSupport propertyChangeSupport;
+    private static DatagramSocket datagramSocket = null;
+    private static MulticastSocket multicastSocket = null;
+    private PropertyChangeSupport propertyChangeSupport;
+    
+    private int portNumber = 0;
 	private boolean threadIsActive = false;
-
+	private boolean useMulticast = false;
+		
 	public ReceiveDatagramThread() {
 		propertyChangeSupport = new PropertyChangeSupport(this);
 	}
@@ -49,14 +50,21 @@ public class ReceiveDatagramThread extends Thread {
 
 	private void initSocket() {
 
-		PDULoggerConfig pduLoggerConfig = PDULoggerConfig.getInstance();
-
-		if (pduLoggerConfig.getUseMulticast()) {
-
+		useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+		portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
+		
+		if (useMulticast) {
+			
 			try {
-				multicastGroupAddress = InetAddress.getByName(pduLoggerConfig.getMulticastGroupAddress());
-				multicastSocket = new MulticastSocket(pduLoggerConfig.getPortNumber());
-				multicastSocket.joinGroup(multicastGroupAddress);
+
+				InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
+				InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
+				multicastSocket = new MulticastSocket(portNumber);
+				
+            	// Explicitly join the group on the specified interface
+            	NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
+            	multicastSocket.setNetworkInterface(netIf);
+            	multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -64,7 +72,7 @@ public class ReceiveDatagramThread extends Thread {
 		} else {
 
 			try {
-				dataGramSocket = new DatagramSocket(pduLoggerConfig.getPortNumber());
+				datagramSocket = new DatagramSocket(portNumber);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -73,7 +81,6 @@ public class ReceiveDatagramThread extends Thread {
 
 	public void run() {
 
-		PDULoggerConfig pduLoggerConfig = PDULoggerConfig.getInstance();
 		byte[] buffer = new byte[MAX_PACKET_SIZE];
 
 		initSocket();
@@ -85,10 +92,10 @@ public class ReceiveDatagramThread extends Thread {
 				DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
 
 				try {
-					if (pduLoggerConfig.getUseMulticast()) {
+					if (useMulticast) {
 						multicastSocket.receive(incoming);
 					} else {
-						dataGramSocket.receive(incoming);
+						datagramSocket.receive(incoming);
 					}
 
 					propertyChangeSupport.firePropertyChange("datagramReceived", 0, incoming);
