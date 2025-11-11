@@ -23,53 +23,18 @@ package orbisoftware.aquarius.pdu_playback_capture;
 
 import java.net.*;
 
-import java.net.DatagramPacket;
-
 import javax.swing.event.ChangeEvent;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
+import orbisoftware.aquarius.pdu_common.SharedApplicationData;
 
 import java.io.IOException;
 
 public class SendDatagramPlaybackCaptureThread extends Thread {
-
-   private static DatagramSocket datagramSocket = null;
-   private static MulticastSocket multicastSocket = null;
    
    private int portNumber = 0;
    private boolean useMulticast = false;
    private int THREAD_SLEEP_TIME = 500;
-   
-   private void initSocket() {
-
-      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
-      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
-
-      if (useMulticast) {
-
-         try {
-
-            InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
-            InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
-            multicastSocket = new MulticastSocket(portNumber);
-
-            // Explicitly join the group on the specified interface
-            NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
-            multicastSocket.setNetworkInterface(netIf);
-            multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-
-      } else {
-
-         try {
-            datagramSocket = new DatagramSocket(portNumber);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-      }
-   }
 
    public void run() {
 
@@ -79,7 +44,8 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
       InetAddress ipAddress = null;
       int currentPDUnumber;
 
-      initSocket();
+      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
 
       while (true) {
 
@@ -108,9 +74,9 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
                            pduEntry.byteBuffer.length, ipAddress, portNumber);
 
                      if (useMulticast)
-                        multicastSocket.send(datagram);
+                        SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
                      else
-                        datagramSocket.send(datagram);
+                        SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
 
                      // Generate Change Event to update GUI info
                      ChangeEvent ce = new ChangeEvent(SendDatagramPlaybackCaptureThread.class);

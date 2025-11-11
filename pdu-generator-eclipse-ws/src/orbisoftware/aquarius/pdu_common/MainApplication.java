@@ -108,6 +108,9 @@ public class MainApplication {
                e.printStackTrace();
             }
             
+            // Initalize application socket
+            SharedApplicationData.getInstance().initSocket();
+            
             // Start pdu heartbeat generator send datagram thread
             SendDatagramHeartbeatThread sendDatagramHeartbeatThread = new SendDatagramHeartbeatThread();
             sendDatagramHeartbeatThread.start();

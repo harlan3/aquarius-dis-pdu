@@ -22,8 +22,6 @@
 package orbisoftware.aquarius.pdu_sequence_generator;
 
 import java.net.*;
-
-import java.net.DatagramPacket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.File;
@@ -33,57 +31,19 @@ import javax.swing.event.ChangeEvent;
 import org.xml.sax.XMLReader;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
+import orbisoftware.aquarius.pdu_common.SharedApplicationData;
 import orbisoftware.aquarius.pdu_heartbeat_generator.XMLPacketHandler;
-import orbisoftware.aquarius.pdu_playback_capture.SendDatagramPlaybackCaptureThread;
 
 public class SendDatagramSeqGenThread extends Thread {
 
    private static Path currentWorkingDir = Paths.get("").toAbsolutePath().getParent();
-   private final boolean USE_DATAGRAM_SOCKET = true;
 
    private DatagramPacket datagram = null;
    private static SendDatagramSeqGenThread instance = null;
    private int THREAD_SLEEP_TIME = 500;
    
-   private static DatagramSocket datagramSocket = null;
-   private static MulticastSocket multicastSocket = null;
-   
-   private int portNumber = 0;
-   private boolean useMulticast = false;
-   
    public static SendDatagramSeqGenThread getInstance() {
       return instance;
-   }
-
-   private void initSocket() {
-
-      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
-      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
-
-      if (useMulticast) {
-
-         try {
-
-            InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
-            InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
-            multicastSocket = new MulticastSocket(portNumber);
-
-            // Explicitly join the group on the specified interface
-            NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
-            multicastSocket.setNetworkInterface(netIf);
-            multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-
-      } else {
-
-         try {
-            datagramSocket = new DatagramSocket(portNumber);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-      }
    }
 
    public void run() {
@@ -93,10 +53,13 @@ public class SendDatagramSeqGenThread extends Thread {
       PduSequenceAccess pduSequenceAccess = PduSequenceAccess.getInstance();
       InetAddress ipAddress = null;
       int currentPDUnumber;
-
+      int portNumber;
+      boolean useMulticast;
+      
       instance = this;
-      initSocket();
-
+      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
+      
       while (true) {
 
          try {
@@ -131,9 +94,9 @@ public class SendDatagramSeqGenThread extends Thread {
                            portNumber);
 
                      if (useMulticast)
-                        multicastSocket.send(datagram);
+                        SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
                      else
-                        datagramSocket.send(datagram);
+                        SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
                      
                      try {
                         Thread.sleep(pduSequenceEntry.postDelayMilliseconds);

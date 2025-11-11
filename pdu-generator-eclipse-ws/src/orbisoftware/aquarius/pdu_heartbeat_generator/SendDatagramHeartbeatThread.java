@@ -26,55 +26,22 @@ import java.net.*;
 import java.net.DatagramPacket;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
+import orbisoftware.aquarius.pdu_common.SharedApplicationData;
 
 import java.io.IOException;
 
 public class SendDatagramHeartbeatThread extends Thread {
-
-   private static DatagramSocket datagramSocket = null;
-   private static MulticastSocket multicastSocket = null;
    
    private int portNumber = 0;
    private boolean useMulticast = false;
-   
-   private void initSocket() {
-
-      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
-      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
-
-      if (useMulticast) {
-
-         try {
-
-            InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
-            InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
-            multicastSocket = new MulticastSocket(portNumber);
-
-            // Explicitly join the group on the specified interface
-            NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
-            multicastSocket.setNetworkInterface(netIf);
-            multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-
-      } else {
-
-         try {
-            datagramSocket = new DatagramSocket(portNumber);
-         } catch (Exception e) {
-            e.printStackTrace();
-         }
-      }
-   }
 
    public void run() {
 
-      HeartbeatGeneratorData packetGeneratorData = HeartbeatGeneratorData
-            .getInstance();
-      InetAddress ipAddress = null;
-
-      initSocket();
+      HeartbeatGeneratorData packetGeneratorData = HeartbeatGeneratorData.getInstance();
+      
+      InetAddress ipAddress = null;  
+      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
 
       while (true) {
 
@@ -92,9 +59,9 @@ public class SendDatagramHeartbeatThread extends Thread {
                      portNumber);
 
                if (useMulticast)
-                  multicastSocket.send(datagram);
+                  SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
                else
-                  datagramSocket.send(datagram);
+                  SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
 
                System.out.println("\nSending "
                      + packetGeneratorData.getDatagramData().length + " bytes");
