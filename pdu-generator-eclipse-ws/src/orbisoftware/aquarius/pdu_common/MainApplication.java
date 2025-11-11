@@ -126,6 +126,7 @@ public class MainApplication {
             HeartbeatGeneratorUI packetGeneratorUI = HeartbeatGeneratorUI.getInstance();
             SequenceGeneratorUI sequenceGeneratorUI = SequenceGeneratorUI.getInstance();
             PlaybackCaptureUI playbackCaptureUI = PlaybackCaptureUI.getInstance();
+            playbackCaptureUI.setSendDatagramThread(sendDatagramPlaybackCaptureThread);
             
             JComponent panel1 = packetGeneratorUI.buildPacketGeneratorPanel();
             JComponent panel2 = sequenceGeneratorUI.buildSequenceGeneratorPanel();
@@ -133,7 +134,7 @@ public class MainApplication {
             
             // Close operation when the window is closed
             jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            jFrame.setSize(325, 475);
+            jFrame.setSize(325, 400);
             jFrame.setVisible(true);
 
             jFrame.add(tabbedPane);

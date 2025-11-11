@@ -24,15 +24,12 @@ package orbisoftware.aquarius.pdu_playback_capture;
 public class PlaybackCaptureData {
 
    private static PlaybackCaptureData instance = null;
-   private String ipAddress = null;
    private Boolean playerActive = false;
    private int currentPDUnumber = 0;
-   private int port = 0;
    private boolean loopPlayback = false;
 
    protected PlaybackCaptureData() {
-      setDefaultIpAddress();
-      port = 3000;
+
    }
 
    public static PlaybackCaptureData getInstance() {
@@ -50,22 +47,6 @@ public class PlaybackCaptureData {
       return playerActive;
    }
 
-   public void setIPAddress(String newIPAddress) {
-      ipAddress = newIPAddress;
-   }
-
-   public String getIPAddress() {
-      return ipAddress;
-   }
-
-   public void setPort(int newPort) {
-      port = newPort;
-   }
-
-   public int getPort() {
-      return port;
-   }
-
    public void setLoopPlayback(boolean newLoopPlayback) {
       loopPlayback = newLoopPlayback;
    }
@@ -80,9 +61,5 @@ public class PlaybackCaptureData {
 
    public int getCurrentPDUnumber() {
       return currentPDUnumber;
-   }
-
-   private void setDefaultIpAddress() {
-         ipAddress = "127.0.0.1";
    }
 }

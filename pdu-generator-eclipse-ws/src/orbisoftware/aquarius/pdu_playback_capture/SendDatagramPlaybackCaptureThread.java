@@ -24,31 +24,39 @@ package orbisoftware.aquarius.pdu_playback_capture;
 import java.net.*;
 
 import java.net.DatagramPacket;
-import java.io.IOException;
 
 import javax.swing.event.ChangeEvent;
 
+import orbisoftware.aquarius.pdu_common.MainApplication;
+
+import java.io.IOException;
+
 public class SendDatagramPlaybackCaptureThread extends Thread {
 
-   private final boolean USE_DATAGRAM_SOCKET = true;
-
-   private DatagramSocket datagramSocket = null;
-   private MulticastSocket multicastSocket = null;
-
-   private DatagramPacket datagram = null;
-   private static SendDatagramPlaybackCaptureThread instance = null;
+   private static DatagramSocket datagramSocket = null;
+   private static MulticastSocket multicastSocket = null;
+   
+   private int portNumber = 0;
+   private boolean useMulticast = false;
    private int THREAD_SLEEP_TIME = 500;
-
-   public static SendDatagramPlaybackCaptureThread getInstance() {
-      return instance;
-   }
-
+   
    private void initSocket() {
 
-      if (USE_DATAGRAM_SOCKET) {
+      useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+      portNumber = Integer.parseInt(MainApplication.getInstance().xmlMap.get("PortValue"));
+
+      if (useMulticast) {
 
          try {
-            datagramSocket = new DatagramSocket();
+
+            InetAddress multicastAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
+            InetAddress multicastDeviceAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress"));
+            multicastSocket = new MulticastSocket(portNumber);
+
+            // Explicitly join the group on the specified interface
+            NetworkInterface netIf = NetworkInterface.getByInetAddress(multicastDeviceAddress);
+            multicastSocket.setNetworkInterface(netIf);
+            multicastSocket.joinGroup(new InetSocketAddress(multicastAddress, portNumber), netIf);
          } catch (Exception e) {
             e.printStackTrace();
          }
@@ -56,7 +64,7 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
       } else {
 
          try {
-            multicastSocket = new MulticastSocket();
+            datagramSocket = new DatagramSocket(portNumber);
          } catch (Exception e) {
             e.printStackTrace();
          }
@@ -71,7 +79,6 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
       InetAddress ipAddress = null;
       int currentPDUnumber;
 
-      instance = this;
       initSocket();
 
       while (true) {
@@ -92,17 +99,18 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
                   // after the thread finished sleeping.
                   if (pduPlayerData.getPlayerActive()) {
 
-                     ipAddress = InetAddress.getByName(pduPlayerData
-                           .getIPAddress());
-
-                     datagram = new DatagramPacket(pduEntry.byteBuffer,
-                           pduEntry.byteBuffer.length, ipAddress,
-                           pduPlayerData.getPort());
-
-                     if (USE_DATAGRAM_SOCKET)
-                        datagramSocket.send(datagram);
+                     if (useMulticast)
+                        ipAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("MulticastAddress"));
                      else
+                        ipAddress = InetAddress.getByName(MainApplication.getInstance().xmlMap.get("BroadcastAddress"));
+
+                     DatagramPacket datagram = new DatagramPacket(pduEntry.byteBuffer,
+                           pduEntry.byteBuffer.length, ipAddress, portNumber);
+
+                     if (useMulticast)
                         multicastSocket.send(datagram);
+                     else
+                        datagramSocket.send(datagram);
 
                      // Generate Change Event to update GUI info
                      ChangeEvent ce = new ChangeEvent(SendDatagramPlaybackCaptureThread.class);
