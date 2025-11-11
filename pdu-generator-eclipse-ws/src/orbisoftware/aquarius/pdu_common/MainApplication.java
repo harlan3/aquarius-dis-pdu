@@ -109,7 +109,7 @@ public class MainApplication {
             }
             
             // Initalize application socket
-            SharedApplicationData.getInstance().initSocket();
+            SharedSocketInterface.getInstance().initSocket();
             
             // Start pdu heartbeat generator send datagram thread
             SendDatagramHeartbeatThread sendDatagramHeartbeatThread = new SendDatagramHeartbeatThread();

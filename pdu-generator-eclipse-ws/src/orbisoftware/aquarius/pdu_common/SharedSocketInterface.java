@@ -6,17 +6,17 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.NetworkInterface;
 
-public class SharedApplicationData {
+public class SharedSocketInterface {
 
-   private static SharedApplicationData instance = null;
+   private static SharedSocketInterface instance = null;
    
    private static DatagramSocket datagramSocket = null;
    private static MulticastSocket multicastSocket = null;
    
-   public static SharedApplicationData getInstance() {
+   public static SharedSocketInterface getInstance() {
 
       if (instance == null) {
-         instance = new SharedApplicationData();
+         instance = new SharedSocketInterface();
       }
       return instance;
    }

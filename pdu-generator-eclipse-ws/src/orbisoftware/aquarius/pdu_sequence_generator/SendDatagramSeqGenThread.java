@@ -31,7 +31,7 @@ import javax.swing.event.ChangeEvent;
 import org.xml.sax.XMLReader;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
-import orbisoftware.aquarius.pdu_common.SharedApplicationData;
+import orbisoftware.aquarius.pdu_common.SharedSocketInterface;
 import orbisoftware.aquarius.pdu_heartbeat_generator.XMLPacketHandler;
 
 public class SendDatagramSeqGenThread extends Thread {
@@ -94,9 +94,9 @@ public class SendDatagramSeqGenThread extends Thread {
                            portNumber);
 
                      if (useMulticast)
-                        SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
+                        SharedSocketInterface.getInstance().getMulticastSocket().send(datagram);
                      else
-                        SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
+                        SharedSocketInterface.getInstance().getDatagramSocket().send(datagram);
                      
                      try {
                         Thread.sleep(pduSequenceEntry.postDelayMilliseconds);

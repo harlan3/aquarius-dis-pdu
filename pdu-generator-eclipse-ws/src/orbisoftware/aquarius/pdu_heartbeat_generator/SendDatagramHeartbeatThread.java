@@ -26,7 +26,7 @@ import java.net.*;
 import java.net.DatagramPacket;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
-import orbisoftware.aquarius.pdu_common.SharedApplicationData;
+import orbisoftware.aquarius.pdu_common.SharedSocketInterface;
 
 import java.io.IOException;
 
@@ -59,9 +59,9 @@ public class SendDatagramHeartbeatThread extends Thread {
                      portNumber);
 
                if (useMulticast)
-                  SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
+                  SharedSocketInterface.getInstance().getMulticastSocket().send(datagram);
                else
-                  SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
+                  SharedSocketInterface.getInstance().getDatagramSocket().send(datagram);
 
                System.out.println("\nSending "
                      + packetGeneratorData.getDatagramData().length + " bytes");

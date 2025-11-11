@@ -26,7 +26,7 @@ import java.net.*;
 import javax.swing.event.ChangeEvent;
 
 import orbisoftware.aquarius.pdu_common.MainApplication;
-import orbisoftware.aquarius.pdu_common.SharedApplicationData;
+import orbisoftware.aquarius.pdu_common.SharedSocketInterface;
 
 import java.io.IOException;
 
@@ -74,9 +74,9 @@ public class SendDatagramPlaybackCaptureThread extends Thread {
                            pduEntry.byteBuffer.length, ipAddress, portNumber);
 
                      if (useMulticast)
-                        SharedApplicationData.getInstance().getMulticastSocket().send(datagram);
+                        SharedSocketInterface.getInstance().getMulticastSocket().send(datagram);
                      else
-                        SharedApplicationData.getInstance().getDatagramSocket().send(datagram);
+                        SharedSocketInterface.getInstance().getDatagramSocket().send(datagram);
 
                      // Generate Change Event to update GUI info
                      ChangeEvent ce = new ChangeEvent(SendDatagramPlaybackCaptureThread.class);
