@@ -36,6 +36,8 @@ import java.beans.PropertyChangeListener;
 public class ProcessDatagramThreadDISv5 extends Thread implements
       PropertyChangeListener {
 
+   public final static String currentLoggingMode = "DIS version 5";
+   
    private BlockingQueue<DatagramPacket> queue = new LinkedBlockingQueue<DatagramPacket>();
 
    public void propertyChange(PropertyChangeEvent evt) {

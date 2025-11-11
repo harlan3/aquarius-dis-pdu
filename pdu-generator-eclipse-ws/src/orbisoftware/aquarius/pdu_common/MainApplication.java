@@ -128,6 +128,27 @@ public class MainApplication {
             PlaybackCaptureUI playbackCaptureUI = PlaybackCaptureUI.getInstance();
             playbackCaptureUI.setSendDatagramThread(sendDatagramPlaybackCaptureThread);
             
+            boolean useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+            String multicastAddress = MainApplication.getInstance().xmlMap.get("MulticastAddress");
+            String multicastDeviceAddress = MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress");
+            String broadcastAddress = MainApplication.getInstance().xmlMap.get("BroadcastAddress");
+            String port = MainApplication.getInstance().xmlMap.get("PortValue");
+            int exerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
+                  
+            System.out.println("  Listening on port: " + port);
+
+            if (useMulticast) {
+               
+               System.out.println("  Multicast Address: " + multicastAddress);
+               System.out.println("   Multicast Device: " + multicastDeviceAddress);
+            } else {
+               
+               System.out.println("  Broadcast Address: " + broadcastAddress);
+            }
+               
+            if (exerciseID != 0)
+               System.out.println("Publish on Exercise: " + exerciseID);
+            
             JComponent panel1 = packetGeneratorUI.buildPacketGeneratorPanel();
             JComponent panel2 = sequenceGeneratorUI.buildSequenceGeneratorPanel();
             JComponent panel3 = playbackCaptureUI.buildPlaybackCapturePanel();

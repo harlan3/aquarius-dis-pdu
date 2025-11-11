@@ -139,6 +139,7 @@ public class MainApplication {
       String port = MainApplication.getInstance().xmlMap.get("PortValue");
       int exerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
             
+      System.out.println("     Configured for: " + ProcessDatagramThread.currentLoggingMode);
       System.out.println("  Listening on port: " + port);
 
       if (useMulticast) {

@@ -76,13 +76,6 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 	public static int xLocationAdjustSecondary;
 	
 	protected MainApplication() {
-
-		// Suppress system output. This eliminates all System.out.println!
-		System.setOut(new java.io.PrintStream(new java.io.OutputStream() {
-            public void write(int b) {
-                //DO NOTHING
-            }
-        }));
 		
 		displayList.addListSelectionListener(this);
 	}
@@ -287,6 +280,34 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 					xLocationAdjustSecondary = 8;
 				}
 				
+	            boolean useMulticast = Boolean.parseBoolean(MainApplication.getInstance().xmlMap.get("UseMulticast"));
+	            String multicastAddress = MainApplication.getInstance().xmlMap.get("MulticastAddress");
+	            String multicastDeviceAddress = MainApplication.getInstance().xmlMap.get("MulticastDeviceAddress");
+	            String broadcastAddress = MainApplication.getInstance().xmlMap.get("BroadcastAddress");
+	            String port = MainApplication.getInstance().xmlMap.get("PortValue");
+	            int exerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
+	                  
+	            System.out.println("  Listening on port: " + port);
+
+	            if (useMulticast) {
+	               
+	               System.out.println("  Multicast Address: " + multicastAddress);
+	               System.out.println("   Multicast Device: " + multicastDeviceAddress);
+	            } else {
+	               
+	               System.out.println("  Broadcast Address: " + broadcastAddress);
+	            }
+	               
+	            if (exerciseID != 0)
+	                System.out.println(" Filter on Exercise: " + exerciseID);
+				
+	    		// Suppress system output. This eliminates all System.out.println!
+	    		System.setOut(new java.io.PrintStream(new java.io.OutputStream() {
+	                public void write(int b) {
+	                    //DO NOTHING
+	                }
+	            }));
+	    		
 				GISViewer gisViewer = new GISViewer(fileArray);
 				gisViewer.addWindowListener(new WindowAdapter() {
 					public void windowClosing(WindowEvent e) {

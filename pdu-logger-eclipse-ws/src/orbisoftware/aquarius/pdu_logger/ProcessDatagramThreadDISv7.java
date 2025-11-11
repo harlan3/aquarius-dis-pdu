@@ -33,8 +33,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import java.beans.PropertyChangeListener;
 
-public class ProcessDatagramThread extends Thread implements
+public class ProcessDatagramThreadDISv7 extends Thread implements
       PropertyChangeListener {
+      	  
+   public final static String currentLoggingMode = "DIS version 7";
 
    private BlockingQueue<DatagramPacket> queue = new LinkedBlockingQueue<DatagramPacket>();
 
@@ -71,7 +73,7 @@ public class ProcessDatagramThread extends Thread implements
             .addPropertyChangeListener(this);
       receiveDatagramThread.start();
       receiveDatagramThread.setThreadIsActive(true);
-      
+
       while (true) {
 
          List<DatagramPacket> datagramList = new LinkedList<DatagramPacket>();
