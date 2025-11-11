@@ -7,12 +7,12 @@ del /q bin\*
 REM Clean and compile source
 cd src
 2>nul del "*.class" /s /f /q
-javac -d ../bin orbisoftware/aquarius/pdu_logger/Main.java
+javac -d ../bin orbisoftware/aquarius/pdu_logger/MainApplication.java
 cd ..
 
 REM Create jar file
 cd bin
-echo Main-Class: orbisoftware.aquarius.pdu_logger.Main > tmp
+echo Main-Class: orbisoftware.aquarius.pdu_logger.MainApplication > tmp
 jar cmf tmp ../pdu_logger.jar orbisoftware jargs
 del tmp
 cd ..

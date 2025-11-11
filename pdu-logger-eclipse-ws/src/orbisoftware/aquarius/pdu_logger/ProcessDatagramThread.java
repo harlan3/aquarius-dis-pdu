@@ -64,13 +64,14 @@ public class ProcessDatagramThread extends Thread implements
 
       ReceiveDatagramThread receiveDatagramThread = new ReceiveDatagramThread();
       PDULoggerConfig pduLoggerConfig = PDULoggerConfig.getInstance();
-      int configuredDISExerciseID = pduLoggerConfig.getDISExerciseID();
+      int configuredDISExerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
       int pduCounter = 0;
 
       receiveDatagramThread.getPropertyChangeSupport()
             .addPropertyChangeListener(this);
       receiveDatagramThread.start();
-
+      receiveDatagramThread.setThreadIsActive(true);
+      
       while (true) {
 
          List<DatagramPacket> datagramList = new LinkedList<DatagramPacket>();

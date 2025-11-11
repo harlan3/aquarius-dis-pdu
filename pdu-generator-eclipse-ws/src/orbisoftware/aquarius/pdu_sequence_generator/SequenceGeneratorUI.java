@@ -48,8 +48,6 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
    private static SequenceGeneratorUI instance = null;
 
    private static Path currentWorkingDir = Paths.get("").toAbsolutePath().getParent();
-   private static JTextField ipAddress = null;
-   private static JTextField port = null;
    private static JCheckBox loopPlayback = null;
    private static JButton fileSelectButton = null;
    private static JButton startButton = null;
@@ -83,68 +81,30 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
       GridBagConstraints c = new GridBagConstraints();
       c.weightx = 1.0;
       c.fill = GridBagConstraints.HORIZONTAL;
-
-      label = new JLabel("IP Address:");
-      c.gridx = 0;
-      c.gridy = 0;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(label, c);
-
-      ipAddress = new JTextField();
-      ipAddress.setText(pduPlayerData.getIPAddress());
-      c.gridx = 1;
-      c.gridy = 0;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(ipAddress, c);
-
-      label = new JLabel("Port:");
-      c.gridx = 0;
-      c.gridy = 1;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(label, c);
-
-      port = new JTextField();
-      port.setText(Integer.toString(pduPlayerData.getPort()));
-      c.gridx = 1;
-      c.gridy = 1;
-      c.insets = new Insets(20, 10, 0, 10);
-      pane.add(port, c);
-      
-
-
-      
-      
-      
       
       label = new JLabel("Loop Playback:");
       c.gridx = 0;
-      c.gridy = 2;
+      c.gridy = 0;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       loopPlayback = new JCheckBox();
       loopPlayback.setText("Enabled");
       c.gridx = 1;
-      c.gridy = 2;
+      c.gridy = 0;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(loopPlayback, c);
       loopPlayback.addItemListener(this);
       
-      
-      
-      
-      
-      
-
       label = new JLabel("Sequence File Name:");
       c.gridx = 0;
-      c.gridy = 3;
+      c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       fileSelectButton = new JButton("File Select");
       c.gridx = 1;
-      c.gridy = 3;
+      c.gridy = 1;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileSelectButton, c);
       fileSelectButton.setEnabled(true);
@@ -156,14 +116,14 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
             System.getProperty("file.separator") + "pdu-sequencer-eclipse-ws");
 
       c.gridx = 0;
-      c.gridy = 4;
+      c.gridy = 2;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(fileName, c);
 
       startButton = new JButton("Start");
       c.gridx = 0;
-      c.gridy = 5;
+      c.gridy = 3;
       c.gridwidth = 1;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(startButton, c);
@@ -172,7 +132,7 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
 
       stopButton = new JButton("Stop");
       c.gridx = 1;
-      c.gridy = 5;
+      c.gridy = 3;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(stopButton, c);
       stopButton.setEnabled(false);
@@ -180,25 +140,25 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
 
       label = new JLabel("Current PDU:");
       c.gridx = 0;
-      c.gridy = 6;
+      c.gridy = 4;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       currentPDULabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 6;
+      c.gridy = 4;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(currentPDULabel, c);
 
       label = new JLabel("Elapsed Time:");
       c.gridx = 0;
-      c.gridy = 7;
+      c.gridy = 5;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(label, c);
 
       elapsedTimeLabel = new JLabel("0");
       c.gridx = 1;
-      c.gridy = 7;
+      c.gridy = 5;
       c.insets = new Insets(20, 10, 0, 10);
       pane.add(elapsedTimeLabel, c);
 
@@ -207,7 +167,7 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
       pduSlider.setPaintLabels(true);
       pduSlider.setValue(0);
       c.gridx = 0;
-      c.gridy = 8;
+      c.gridy = 6;
       c.gridwidth = 2;
       c.insets = new Insets(20, 10, 10, 10);
       pane.add(pduSlider, c);
@@ -251,9 +211,6 @@ public class SequenceGeneratorUI implements ActionListener, ChangeListener, Item
       if (e.getSource() == startButton) {
 
          try {
-            pduPlayerData.setIPAddress(ipAddress.getText());
-            pduPlayerData.setPort(Integer.parseInt(port.getText()));
-
             pushStartButton();
          } catch (Exception exception) {
             System.out.println("\nCould not open file");

@@ -35,10 +35,6 @@ public class PDULoggerConfig {
 
    private static PDULoggerConfig instance = null;
    private HashMap<PDU_Type, Boolean> pduLogMap = new HashMap<PDU_Type, Boolean>();
-   private int portNumber = 3000; // Default to port 3000
-   private int exerciseID = 0; // Default to all exercises
-   private String multicastGroupAddress = null;
-   private boolean useMulticast = false;
 
    protected PDULoggerConfig() {
 
@@ -69,35 +65,6 @@ public class PDULoggerConfig {
          return true;
       else
          return false;
-   }
-
-   public void setPortNumber(int portNumber) {
-      this.portNumber = portNumber;
-   }
-
-   public int getPortNumber() {
-      return portNumber;
-   }
-
-   public void setMulticastGroupAddress(String multicastGroupAddress) {
-      this.multicastGroupAddress = multicastGroupAddress;
-      this.useMulticast = true;
-   }
-
-   public String getMulticastGroupAddress() {
-      return multicastGroupAddress;
-   }
-
-   public boolean getUseMulticast() {
-      return useMulticast;
-   }
-
-   public void setDISExerciseID(int exerciseID) {
-      this.exerciseID = exerciseID;
-   }
-
-   public int getDISExerciseID() {
-      return exerciseID;
    }
 
    private void generateDefaultLogFilterConfig() {

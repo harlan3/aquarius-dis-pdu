@@ -24,15 +24,12 @@ package orbisoftware.aquarius.pdu_sequence_generator;
 public class SequenceGeneratorData {
 
    private static SequenceGeneratorData instance = null;
-   private String ipAddress = null;
    private boolean playerActive = false;
    private boolean loopPlayback;
    private int currentPDUnumber = 0;
-   private int port = 0;
 
    protected SequenceGeneratorData() {
-      setDefaultIpAddress();
-      port = 3000;
+
    }
 
    public static SequenceGeneratorData getInstance() {
@@ -49,22 +46,6 @@ public class SequenceGeneratorData {
    public boolean getPlayerActive() {
       return playerActive;
    }
-
-   public void setIPAddress(String newIPAddress) {
-      ipAddress = newIPAddress;
-   }
-
-   public String getIPAddress() {
-      return ipAddress;
-   }
-
-   public void setPort(int newPort) {
-      port = newPort;
-   }
-
-   public int getPort() {
-      return port;
-   }
    
    public void setLoopPlayback(boolean newLoopPlayback) {
       loopPlayback = newLoopPlayback;
@@ -80,9 +61,5 @@ public class SequenceGeneratorData {
 
    public int getCurrentPDUnumber() {
       return currentPDUnumber;
-   }
-
-   private void setDefaultIpAddress() {
-         ipAddress = "127.0.0.1";
    }
 }
