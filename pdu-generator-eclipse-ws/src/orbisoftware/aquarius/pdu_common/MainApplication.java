@@ -135,20 +135,20 @@ public class MainApplication {
             String port = MainApplication.getInstance().xmlMap.get("PortValue");
             int exerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
                   
-            System.out.println("  Listening on port: " + port);
+            System.out.println("       Listening on port: " + port);
 
             if (useMulticast) {
                
-               System.out.println("  Multicast Address: " + multicastAddress);
-               System.out.println("   Multicast Device: " + multicastDeviceAddress);
+               System.out.println("       Multicast Address: " + multicastAddress);
+               System.out.println("        Multicast Device: " + multicastDeviceAddress);
             } else {
                
-               System.out.println("  Broadcast Address: " + broadcastAddress);
+               System.out.println("       Broadcast Address: " + broadcastAddress);
             }
                
             if (exerciseID != 0)
-               System.out.println("Publish on Exercise: " + exerciseID);
-            
+               System.out.println("     Publish on Exercise: " + exerciseID);
+
             JComponent panel1 = packetGeneratorUI.buildPacketGeneratorPanel();
             JComponent panel2 = sequenceGeneratorUI.buildSequenceGeneratorPanel();
             JComponent panel3 = playbackCaptureUI.buildPlaybackCapturePanel();

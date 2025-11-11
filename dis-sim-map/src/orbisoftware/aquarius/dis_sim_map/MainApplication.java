@@ -287,20 +287,22 @@ public class MainApplication implements ActionListener, ListSelectionListener {
 	            String port = MainApplication.getInstance().xmlMap.get("PortValue");
 	            int exerciseID = Integer.parseInt(MainApplication.getInstance().xmlMap.get("ExcerciseID"));
 	                  
-	            System.out.println("  Listening on port: " + port);
+	            System.out.println("       Listening on port: " + port);
 
 	            if (useMulticast) {
 	               
-	               System.out.println("  Multicast Address: " + multicastAddress);
-	               System.out.println("   Multicast Device: " + multicastDeviceAddress);
+	               System.out.println("       Multicast Address: " + multicastAddress);
+	               System.out.println("        Multicast Device: " + multicastDeviceAddress);
 	            } else {
 	               
-	               System.out.println("  Broadcast Address: " + broadcastAddress);
+	               System.out.println("       Broadcast Address: " + broadcastAddress);
 	            }
 	               
-	            if (exerciseID != 0)
-	                System.out.println(" Filter on Exercise: " + exerciseID);
-				
+	            if (exerciseID == 0)
+	            	System.out.println(" All Exercises Displayed: " + exerciseID);
+	            else
+	                System.out.println("      Filter on Exercise: " + exerciseID);
+	            
 	    		// Suppress system output. This eliminates all System.out.println!
 	    		System.setOut(new java.io.PrintStream(new java.io.OutputStream() {
 	                public void write(int b) {
