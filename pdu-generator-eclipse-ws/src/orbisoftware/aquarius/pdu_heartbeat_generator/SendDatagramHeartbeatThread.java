@@ -62,9 +62,6 @@ public class SendDatagramHeartbeatThread extends Thread {
                   SharedSocketInterface.getInstance().getMulticastSocket().send(datagram);
                else
                   SharedSocketInterface.getInstance().getDatagramSocket().send(datagram);
-
-               System.out.println("\nSending "
-                     + packetGeneratorData.getDatagramData().length + " bytes");
             }
          } catch (IOException exception) {
             System.out.println("Error sending datagram packet");
