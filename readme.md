@@ -152,4 +152,7 @@ Companion is a tool to assist in the modification of the hex data contained in t
 XML files used for representing the DIS PDU data. Many of the common conversion
 functions are supported by this tool.
 
+Defaulting Java to use IPv4
+---------------------------
+java -Djava.net.preferIPv4Stack=true -jar pdu_generator.jar
 
