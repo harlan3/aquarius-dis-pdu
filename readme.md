@@ -78,7 +78,7 @@ a captured exercise.
        cd aquarius-dis-pdu <br />
        python config_DISv7.py <br />
        cd pdu-logger-eclipse-ws <br />
-       java -jar pdu_logger.jar -p 3000 > default_db.txt <br />
+       java -Djava.net.preferIPv4Stack=true -jar pdu_logger.jar -p 3000 > default_db.txt <br />
        start the simulation <br />
        when simulation is complete press ctrl-c <br />
        copy default_db.txt ..\pdu-generator-eclipse-ws\playback_db\ <br />
@@ -93,7 +93,7 @@ a captured exercise.
    3.  Start PDU Generator and select the Db Playback tab. Then use the file
        selector to choose the default_db.man file for playback. <br />
        cd pdu-generator-eclipse-ws <br />
-       java -jar pdu_generator.jar <br />
+       java -Djava.net.preferIPv4Stack=true -jar pdu_generator.jar <br />
        select the previously generated default_db.man file <br />
 
        The previously captured DIS PDUs are now played back. Note this 
@@ -120,7 +120,7 @@ interval defined in the Application Settings of this tool.
 If you would like to use a customized set of PDUs containing modified fields, 
 create a new folder and copy the modified xml files into
 aquarius-dis-pdu-master\pdu-generator-eclipse-ws\dis_version_modified. All directories
-that start with “dis_version” will be available for selection by the pdu-generator
+that start with "dis_version" will be available for selection by the pdu-generator
 and pdu-sequencer.
 
 DIS Sim Map

@@ -19,4 +19,4 @@ cd ..
 
 echo
 echo "pdu_generator.jar created"
-echo "usage: java -jar pdu_generator.jar"
+echo "usage: java -Djava.net.preferIPv4Stack=true -jar pdu_generator.jar"
